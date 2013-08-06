@@ -4,15 +4,7 @@ class ReviewsController < ApplicationController
   # GET /reviews
   # GET /reviews.json
   def index
-    # twilio credentials
-    twilio_sid = "ACfffe2a378d744f6c9c2a280c93a5be21"
-    twilio_token = "374dca84e42fc9ca7f67319cb58b601a"
-    twilio_phone_number = "2674158802"
-
-    @twilio_client = Twilio::REST::Client.new twilio_sid, twilio_token
-
-    @review_list = @twilio_client.account.sms.messages.list
-    @reviews = Review.all
+    @reviews = current_user.reviews.all
   end
 
   # GET /reviews/1
