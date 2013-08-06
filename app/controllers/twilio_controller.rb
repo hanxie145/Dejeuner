@@ -6,10 +6,15 @@ class TwilioController < ApplicationController
     number = params[:From]
 
     # hacccckkkkyyy
-    tony = User.find_by_email('txie145@gmail.com')[0]
+    tony = User.where('email = ?', 'txie145@gmail.com')[0]
 
-    tony.reviews.create(body: review)
-    tony.numbers.create(number: number )
+    unless review.nil?
+      tony.reviews.create(body: review)
+    end
+
+    unless number.nil?
+      tony.numbers.create(number: number )
+    end
 
     render 'sms-response.xml.erb', :content_type => 'text/xml'
   end 

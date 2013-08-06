@@ -7,7 +7,7 @@ Dejeuner::Application.routes.draw do
   devise_for :users
   root 'static_pages#landing'
   get 'main' => 'product#main'
-  post 'sms-response' => 'twilio#sms-response'
+  post 'sms-response' => 'twilio#sms_response'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
