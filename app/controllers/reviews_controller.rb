@@ -4,7 +4,25 @@ class ReviewsController < ApplicationController
   # GET /reviews
   # GET /reviews.json
   def index
-    @reviews = current_user.reviews.all
+
+    # twilio credentials
+    twilio_sid = "ACfffe2a378d744f6c9c2a280c93a5be21"
+    twilio_token = "374dca84e42fc9ca7f67319cb58b601a"
+    twilio_phone_number = "2674158802"
+
+    @twilio_client = Twilio::REST::Client.new twilio_sid, twilio_token
+
+    # get all the reviews from logs
+    @reviews = []
+    @twilio_client.account.sms.messages.list.each do |message|
+
+      # hardcode the number in
+      # TODO switch to user.number in the future
+      if message.to == "+12674158802"
+        @reviews.push(message.body)
+      end
+
+    end
   end
 
   # GET /reviews/1
