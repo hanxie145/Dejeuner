@@ -1,0 +1,25 @@
+.navbar.navbar-inverse.navbar-fixed-top
+  .container
+    %a.navbar-bran{:href => "/"} Dejeuner for Restaurants
+
+.container.main-body
+  .row
+    .col-lg-3
+      %ul.nav.nav-pills.nav-stacked.nav-fixed
+        %li 
+          %a{:href => "#", :class => ""} Profile 
+        %li 
+          = link_to "Log Out", destroy_user_session_path, method: :delete, :class => ""
+        %li 
+          %a{:href => "#", :class => ""} Reviews
+        %li 
+          %a{:href => "#", :class => ""} Message
+    
+    .col-lg-4
+      %a{:href => "#", :class => "btn btn-primary btn-block"} Message all customers
+    .col-lg-5
+      %a{:href => "#", :class => "btn btn-primary btn-block"} Message all customers
+
+  .row
+    .col-lg-9.pull-right
+      %a{:href => "#", :class => "btn btn-primary btn-block"} Message all customers

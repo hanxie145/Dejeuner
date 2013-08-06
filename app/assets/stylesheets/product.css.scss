@@ -1,0 +1,49 @@
+// header 
+
+.navbar {
+
+  background-color: #E74C3C; 
+  height: 50px;
+  text-align: center;
+
+  .navbar-bran {
+    font-family: 'Yesteryear', cursive;
+    color: white;
+    font-size: 35px;
+    text-shadow: rgba(0,0,0,0.5) 0px 3px 3px;
+  }
+
+  .nav {
+    color: white;
+  }
+}
+
+// fixed nav bar 
+
+.nav.nav-stacked {
+  position: fixed;
+  display: block;
+  height: 230px;
+  z-index: 1000;
+  width: 280px;
+  text-align: center;
+
+  a {
+    color: white;
+    border-radius: 0;
+  }
+
+  a:hover {
+      background-color: #34495E;
+  }
+
+  li {
+    background-color: #2C3E50;
+  }
+}
+
+// main page
+
+.main-body {
+  margin-top: 4em;
+}

@@ -12,6 +12,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 1.2'
 gem 'twilio-ruby'
+gem 'turbolinks'
 
 group :development, :test do
   gem "better_errors"

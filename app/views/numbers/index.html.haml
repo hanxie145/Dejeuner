@@ -1,0 +1,21 @@
+%h1 Listing numbers
+
+%table
+  %tr
+    %th Number
+    %th User
+    %th
+    %th
+    %th
+
+  - @numbers.each do |number|
+    %tr
+      %td= number.number
+      %td= number.user_id
+      %td= link_to 'Show', number
+      %td= link_to 'Edit', edit_number_path(number)
+      %td= link_to 'Destroy', number, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Number', new_number_path

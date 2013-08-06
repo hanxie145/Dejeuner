@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Number:
+  = @number.number
+%p
+  %b User:
+  = @number.user_id
+
+= link_to 'Edit', edit_number_path(@number)
+\|
+= link_to 'Back', numbers_path
