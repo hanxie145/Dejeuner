@@ -21,14 +21,18 @@ class TwilioController < ApplicationController
 
     # send message to 5 most recent contacts
     # additional parameter: date_sent: Date.today.to_s,
-    contact_numbers = client.account.sms.messages.list(to: "+12674158802").map{ |contact| contact.from}
+    contact_numbers = client.account.sms.messages.list(date_sent: Date.today.to_s, to: "+12674158802").map{ |contact| contact.from}
 
-    contact_numbers = contact_numbers[0..1]
+    s1 = Set.new()
+
+    for number in contact_numbers
+      s1.add(number)
+    end
 
     message = params[:message]
 
     # loop through numbers and send message
-    for number_from in contact_numbers
+    for number_from in s1
 
       client.account.sms.messages.create(
       :from => "+1#{twilio_phone_number}",

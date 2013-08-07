@@ -10,6 +10,7 @@ Dejeuner::Application.routes.draw do
   get 'sms_response' => 'twilio#sms_response'
   get 'mass_message' => 'twilio#mass_message'
   post 'mass_message' => 'twilio#send_mass_message'
+  get 'my_number' => 'static_pages#my_number'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
