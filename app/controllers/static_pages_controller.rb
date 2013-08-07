@@ -6,4 +6,7 @@ class StaticPagesController < ApplicationController
   def my_number 
   end 
 
+  def my_contact
+  end
+
 end
