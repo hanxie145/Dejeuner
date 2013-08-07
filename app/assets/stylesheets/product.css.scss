@@ -31,6 +31,8 @@
   a {
     color: white;
     border-radius: 0;
+    font-family: 'Raleway', 'san-serif';
+    font-weight: '400';
   }
 
   a:hover {
@@ -51,8 +53,44 @@
 h1 {
   color: #E74C3C;
   text-shadow: rgba(0,0,0,0.5) 0px 1px 1px;
+  font-family: 'Raleway', 'san-serif';
+  font-weight: 100;
+}
+
+h2 {
+  font-family: 'Open Sans', 'san-serif';
+}
+
+h3 {
+  font-family: 'Open Sans', 'san-serif';
+}
+
+p {
+  font-family: 'Open Sans', 'san-serif';
 }
 
 .profile-inner, .campaign-inner, .message-inner {
   text-align: center;
+}
+
+// reviews 
+table {
+  color: #e74c3c;
+  font-family: 'Open Sans',sans-serif;
+  thead th {
+  }
+
+  tr {
+    font-size: 30px;
+    height: 50px ;
+  }
+
+  td {
+  }
+
+}
+
+// random btn margin for main pg
+.btn {
+  margin-bottom: 10px;
 }

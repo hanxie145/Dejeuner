@@ -5,19 +5,48 @@
     = render 'layouts/fixed_nav'
 
     .col-lg-9.pull-right
-      .profile-inner
-        %h1 Profile 
-        %h1 Name: Tony Xie 
-        %h1 Restaurant: Tony's Tonics
-        %h1 Plan: Petite
+      %table.table.table-hover.table-bordered.profile-table
+        %thead 
+          %tr 
+            %th 
+              %h1 Profile
+        %tbody 
+          %tr 
+            %td Name: 
+            %td Tony Xie
+          %tr 
+            %td Restaurant: 
+            %td Tony's Tonics
+          %tr 
+            %td Current Plan: 
+            %td Petite
+      = link_to "Edit Profile", '#', :class => "btn btn-large btn-info pull-right"
+  
+    .col-lg-9.pull-right
+      %table.table.table-hover.table-bordered.profile-table
+        %thead 
+          %tr 
+            %th 
+              %h1 Campaigns
+        %tbody 
+          %tr 
+            %td Current: 
+            %td What is your favourite bar snack at Tony's Tonics?
+          %tr 
+            %td Prize: 
+            %td 5% off your tab at the end of the night.  
+          %tr 
+            %td Last: 
+            %td Tell us what you think of our new beer selection - Yes or No to Pilsner?
+      = link_to "Start New Campaign", '#', :class => "btn btn-large btn-warning pull-right"
 
     .col-lg-9.pull-right
-      .message-inner
-        %h1 Mass Message
-        %h1 Marketing Message
-        %h1 Last Message: Come out to Tony's Tonics to try out our new beers on tap and get 50% off all beers from 6-9PM!
-
-    .col-lg-9.pull-right
-      .campaign-inner
-        %h1 Start New Campaign
-        %h1 Current Campaign: What do you think of the latest tonic?
+      %table.table.table-hover.table-bordered.profile-table
+        %thead 
+          %tr 
+            %th 
+              %h1 Last Marketing Blast Sent:
+        %tbody 
+          %tr 
+            %td New beers on tap tonight! 50% off all beers from 6-10PM!
+      = link_to "Send Out Another", '/mass_message', :class => "btn btn-large btn-success pull-right"
