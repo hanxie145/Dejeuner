@@ -47,3 +47,12 @@
 .main-body {
   margin-top: 4em;
 }
+
+h1 {
+  color: #E74C3C;
+  text-shadow: rgba(0,0,0,0.5) 0px 1px 1px;
+}
+
+.profile-inner, .campaign-inner, .message-inner {
+  text-align: center;
+}

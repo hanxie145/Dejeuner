@@ -1,25 +1,23 @@
-.navbar.navbar-inverse.navbar-fixed-top
-  .container
-    %a.navbar-bran{:href => "/"} Dejeuner for Restaurants
+= render 'layouts/header'
 
 .container.main-body
   .row
-    .col-lg-3
-      %ul.nav.nav-pills.nav-stacked.nav-fixed
-        %li 
-          %a{:href => "#", :class => ""} Profile 
-        %li 
-          = link_to "Log Out", destroy_user_session_path, method: :delete, :class => ""
-        %li 
-          %a{:href => "#", :class => ""} Reviews
-        %li 
-          %a{:href => "#", :class => ""} Message
-    
-    .col-lg-4
-      %a{:href => "#", :class => "btn btn-primary btn-block"} Message all customers
-    .col-lg-5
-      %a{:href => "#", :class => "btn btn-primary btn-block"} Message all customers
+    = render 'layouts/fixed_nav'
 
-  .row
     .col-lg-9.pull-right
-      %a{:href => "#", :class => "btn btn-primary btn-block"} Message all customers
+      .profile-inner
+        %h1 Profile 
+        %h1 Name: Tony Xie 
+        %h1 Restaurant: Tony's Tonics
+        %h1 Plan: Petite
+
+    .col-lg-9.pull-right
+      .message-inner
+        %h1 Mass Message
+        %h1 Marketing Message
+        %h1 Last Message: Come out to Tony's Tonics to try out our new beers on tap and get 50% off all beers from 6-9PM!
+
+    .col-lg-9.pull-right
+      .campaign-inner
+        %h1 Start New Campaign
+        %h1 Current Campaign: What do you think of the latest tonic?

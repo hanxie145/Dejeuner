@@ -12,17 +12,20 @@ class ReviewsController < ApplicationController
 
     @twilio_client = Twilio::REST::Client.new twilio_sid, twilio_token
 
-    # get all the reviews from logs
+    # get all the reviews from logs for today
     @reviews = []
-    @twilio_client.account.sms.messages.list.each do |message|
+
+    # additional parameter: date_sent: Date.today.to_s,
+    @twilio_client.account.sms.messages.list(to: "+12674158802").each do |message|
 
       # hardcode the number in
       # TODO switch to user.number in the future
-      if message.to == "+12674158802"
-        @reviews.push(message.body)
-      end
+      @reviews.push(message)
 
     end
+
+    # cut array 
+    @reviews = @reviews[0..10]
   end
 
   # GET /reviews/1

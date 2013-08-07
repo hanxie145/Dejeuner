@@ -1,20 +1,14 @@
-%h1 Listing reviews
+= render 'layouts/header'
 
-%table
-  %tr
-    %th Body
-    %th User
-    %th
-    %th
-    %th
+.container.main-body
+  .row
+    = render 'layouts/fixed_nav'
 
-  - @reviews.each do |review|
-    %tr
-      %td= review
-      %td= link_to 'Show', review
-      %td= link_to 'Edit', edit_review_path(review)
-      %td= link_to 'Destroy', review, :method => :delete, :data => { :confirm => 'Are you sure?' }
+    .col-lg-9
+      %h1 Listing reviews
 
-%br
-
-= link_to 'New Review', new_review_path
+      - @reviews.each do |review| 
+        .col-lg-5 
+          %h3= review.body 
+        .col-lg-4
+          %h3= review.from
