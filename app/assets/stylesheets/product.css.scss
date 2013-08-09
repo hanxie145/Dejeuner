@@ -32,7 +32,8 @@
     color: white;
     border-radius: 0;
     font-family: 'Raleway', 'san-serif';
-    font-weight: '400';
+    font-weight: 100;
+    font-size: 25px;
   }
 
   a:hover {
@@ -40,7 +41,12 @@
   }
 
   li {
+    height: 100px;
     background-color: #2C3E50;
+  }
+
+  image {
+    display: inline-block;
   }
 }
 
