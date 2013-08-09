@@ -100,3 +100,25 @@ table.table {
 .no-margin-top {
   margin-top: 0;
 }
+
+// sign in and sign up
+form {
+
+  label {
+    font-family: 'Raleway', "san-serif"; 
+    font-size: 25px;
+  }
+
+  .btn {
+    margin-top: 10px;
+  }
+}
+
+.form-sign {
+  a {
+    font-family: 'Open Sans', 'san-serif';
+    font-size: 20px;
+  }
+
+  text-align: center;
+}

@@ -1,10 +1,12 @@
 .col-lg-3
   %ul.nav.nav-pills.nav-stacked.nav-fixed
-    %li 
+    %li
+      = image_tag "home-3.png" 
       = link_to "Dashboard", main_path
     %li 
       = link_to "Log Out", destroy_user_session_path, method: :delete
     %li 
       = link_to "Reviews", reviews_path
     %li 
+      = image_tag "bullhorn.png"
       = link_to "Mass Message", "/mass_message"
