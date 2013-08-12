@@ -1,3 +1,4 @@
+# example dataset
 data = {
   labels : ["January","February","March","April","May","June","July"],
   datasets : [
@@ -6,16 +7,24 @@ data = {
       strokeColor : "rgba(192, 57, 43,1.0)",
       pointColor : "#fff",
       pointStrokeColor : "rgba(44, 62, 80,1.0)",
-      data : [28,48,40,19,96,27,100]
+      data : [50,30,28,60,78,100,150]
     }
   ]
 }
 
-$(document).ready ->
+# make the chart using chart.js
+chartFunction = -> 
   ctx = $('#myChart').get(0).getContext('2d')
   myNewChart = new Chart ctx
 
   new Chart(ctx).Line(data, 
     scaleFontFamily: 'Raleway', 
-    scaleFontSize: 20
+    scaleFontSize: 20,
+    bezierCurve : false
     )
+
+$(document).ready ->
+  chartFunction()
+
+$(document).on 'page:change', -> 
+  chartFunction()
