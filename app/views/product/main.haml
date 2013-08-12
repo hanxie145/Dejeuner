@@ -3,42 +3,45 @@
 .container.main-body
   .row
     = render 'layouts/fixed_nav'
-    .col-lg-9.dash-header
+    .col-lg-9.dash-header.pull-right
       .col-lg-3.dash-quick-link.restaurant-quick-link
-        = image_tag "crate-blue.jpg"
-        %h3 Restaurant
-        %p  Tony's Tonics
-        %p  178 Reviews over past 6 months
-        %p  6 Marketing Blasts sent
+        %a{:href => "/profile"} 
+          = image_tag "crate-blue.jpg"
+          %h3 Restaurant
+          %p  Tony's Tonics
+          %p  178 Reviews over past 6 months
+          %p  6 Marketing Blasts sent
       .col-lg-3.dash-quick-link.reviews-quick-link
-        = image_tag "clipboard-2-green.jpg"
-        %h3 New Reviews
-        %p  15 new reviews
+        %a{:href => "/reviews"} 
+          = image_tag "clipboard-2-green.jpg"
+          %h3 New Reviews
+          %p  15 new reviews
       .col-lg-3.dash-quick-link.marketing-quick-link
-        = image_tag "bullhorn-orange.jpg"
-        %h3 Marketing
-        %p  Come tonight from 5-8PM to get 50% off.
+        %a{:href => "/market"} 
+          = image_tag "bullhorn-orange.jpg"
+          %h3 Marketing
+          %p  Come tonight from 5-8PM to get 50% off.
 
 
-    / .col-lg-9.pull-right
-    /   %h1 Feedback Received
-    /   %canvas#myChart{:width => "960", :height => "400"} 
-    /   %table.table.table-hover.table-bordered.profile-table
-    /     %thead 
-    /       %tr 
-    /         %th 
-    /           %h1 Profile
-    /     %tbody 
-    /       %tr 
-    /         %td Name: 
-    /         %td Tony Xie
-    /       %tr 
-    /         %td Restaurant: 
-    /         %td Tony's Tonics
-    /       %tr 
-    /         %td Current Plan: 
-    /         %td Petite
-    /   = link_to "Edit Profile", '#', :class => "btn btn-large btn-info pull-right"
+    .col-lg-9.pull-right
+      %h1 Feedback Received
+      %canvas#myChart{:width => "960", :height => "400"} 
+      %table.table.table-hover.table-bordered.profile-table
+        %thead 
+          %tr 
+            %th 
+              %h1 Profile
+        %tbody 
+          %tr 
+            %td Name: 
+            %td Tony Xie
+          %tr 
+            %td Restaurant: 
+            %td Tony's Tonics
+          %tr 
+            %td Current Plan: 
+            %td Petite
+      = link_to "Edit Profile", '#', :class => "btn btn-large btn-info pull-right"
   
     / .col-lg-9.pull-right
     /   %table.table.table-hover.table-bordered.profile-table

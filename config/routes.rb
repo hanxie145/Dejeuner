@@ -8,8 +8,8 @@ Dejeuner::Application.routes.draw do
   root 'static_pages#landing'
   get 'main' => 'product#main'
   get 'sms_response' => 'twilio#sms_response'
-  get 'mass_message' => 'twilio#mass_message'
-  post 'mass_message' => 'twilio#send_mass_message'
+  get 'market' => 'twilio#mass_message'
+  post 'market' => 'twilio#send_mass_message'
   get 'my_number' => 'static_pages#my_number'
   get 'my_contact' => 'static_pages#my_contact'
   # The priority is based upon order of creation: first created -> highest priority.
