@@ -23,6 +23,7 @@ chartFunction = ->
     bezierCurve : false
     )
 
+# add document bindings for call. I have no idea what I'm doing with turbolinks, so I'm just calling it twice...
 $(document).ready ->
   chartFunction()
 
