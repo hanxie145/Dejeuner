@@ -19,7 +19,8 @@ class TwilioController < ApplicationController
 
     client = Twilio::REST::Client.new twilio_sid, twilio_token
 
-    # send message to 5 most recent contacts
+    # send message to all contacts from today
+    # TODO: set it to send to contacts from all time
     # additional parameter: date_sent: Date.today.to_s,
     contact_numbers = client.account.sms.messages.list(date_sent: Date.today.to_s, to: "+12674158802").map{ |contact| contact.from}
 

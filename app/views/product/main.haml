@@ -8,69 +8,53 @@
         %a{:href => "/profile"} 
           = image_tag "crate-blue.jpg"
           %h3 Restaurant
-          %p  Tony's Tonics
+          %p= @restaurant
           %p  178 Reviews over past 6 months
           %p  6 Marketing Blasts sent
       .col-lg-3.dash-quick-link.reviews-quick-link
         %a{:href => "/reviews"} 
           = image_tag "clipboard-2-green.jpg"
           %h3 New Reviews
-          %p  15 new reviews
+          %p  +15 new reviews
       .col-lg-3.dash-quick-link.marketing-quick-link
         %a{:href => "/market"} 
           = image_tag "bullhorn-orange.jpg"
           %h3 Marketing
-          %p  Come tonight from 5-8PM to get 50% off.
+          %p  Previous Message: Come tonight from 5-8PM to get 50% off.
 
 
     .col-lg-9.pull-right
       %h1 Feedback Received
       %canvas#myChart{:width => "960", :height => "400"} 
+  
+    .col-lg-9.pull-right
       %table.table.table-hover.table-bordered.profile-table
         %thead 
           %tr 
             %th 
-              %h1 Profile
+              %h1 Campaigns
         %tbody 
           %tr 
-            %td Name: 
-            %td Tony Xie
+            %td Number: 
+            %td 12674158802
           %tr 
-            %td Restaurant: 
-            %td Tony's Tonics
+            %td Current: 
+            %td What is your favourite bar snack at Tony's Tonics?
           %tr 
-            %td Current Plan: 
-            %td Petite
-      = link_to "Edit Profile", '#', :class => "btn btn-large btn-info pull-right"
-  
-    / .col-lg-9.pull-right
-    /   %table.table.table-hover.table-bordered.profile-table
-    /     %thead 
-    /       %tr 
-    /         %th 
-    /           %h1 Campaigns
-    /     %tbody 
-    /       %tr 
-    /         %td Number: 
-    /         %td 12674158802
-    /       %tr 
-    /         %td Current: 
-    /         %td What is your favourite bar snack at Tony's Tonics?
-    /       %tr 
-    /         %td Prize: 
-    /         %td 5% off your tab at the end of the night.  
-    /       %tr 
-    /         %td Last: 
-    /         %td Tell us what you think of our new beer selection - Yes or No to Pilsner?
-    /   = link_to "Start New Campaign", '#', :class => "btn btn-large btn-warning pull-right"
+            %td Prize: 
+            %td 5% off your tab at the end of the night.  
+          %tr 
+            %td Last: 
+            %td Tell us what you think of our new beer selection - Yes or No to Pilsner?
+      = link_to "Start New Campaign", '#', :class => "btn btn-large btn-warning pull-right"
 
-    / .col-lg-9.pull-right
-    /   %table.table.table-hover.table-bordered.profile-table
-    /     %thead 
-    /       %tr 
-    /         %th 
-    /           %h1 Last Marketing Blast Sent:
-    /     %tbody 
-    /       %tr 
-    /         %td New beers on tap tonight! 50% off all beers from 6-10PM!
-    /   = link_to "Send Out Another", '/mass_message', :class => "btn btn-large btn-success pull-right"
+    .col-lg-9.pull-right
+      %table.table.table-hover.table-bordered.profile-table
+        %thead 
+          %tr 
+            %th 
+              %h1 Last Marketing Blast Sent:
+        %tbody 
+          %tr 
+            %td New beers on tap tonight! 50% off all beers from 6-10PM!
+      = link_to "Send Out Another", '/mass_message', :class => "btn btn-large btn-success pull-right"

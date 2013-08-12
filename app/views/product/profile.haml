@@ -1,0 +1,22 @@
+= render 'layouts/header'
+
+.container.main-body
+  .row
+    = render 'layouts/fixed_nav'
+    .col-lg-9.pull-right
+      %table.table.table-hover.table-bordered.profile-table
+        %thead 
+          %tr 
+            %th 
+              %h1 Profile
+        %tbody 
+          %tr 
+            %td Name: 
+            %td= @name
+          %tr 
+            %td Restaurant: 
+            %td= @restaurant
+          %tr 
+            %td Current Plan: 
+            %td Petite
+      = link_to "Edit Profile", '#', :class => "btn btn-large btn-info pull-right"
