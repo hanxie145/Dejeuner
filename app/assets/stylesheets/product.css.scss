@@ -109,6 +109,53 @@ table.table {
 
 }
 
+// product dashheader
+.dash-header {
+  background-color: #ecf0f1;
+  height: 240px; 
+  padding: 10px;
+
+  .dash-quick-link {
+    width: 280px; 
+    padding: 10px;
+    margin: 0;
+    height: 220px;
+    background-color: #fff;
+    -moz-box-shadow: 2px 2px 5px #888;
+    -webkit-box-shadow: 2px 2px 5px #888;
+    box-shadow: 2px 2px 5px #888;
+
+    &:nth-child(n+1) {
+      margin-left: 10px;
+    }
+
+    h3, p{
+      font-family: 'Raleway', 'san-serif';
+    }
+
+  }
+
+  .restaurant-quick-link {
+    h3 {
+      color: #3498db;      
+    }
+  }
+
+  .reviews-quick-link {
+    h3 {
+      color: #2ecc71;
+    }
+  }
+
+  .marketing-quick-link {
+    h3 {
+      color: #f1c40f;
+    }
+  }
+
+}
+
+
 // random btn margin for main pg
 .btn {
   margin-bottom: 20px;
