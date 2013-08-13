@@ -2,9 +2,15 @@
   .container
     .landing-inner
       %h1.landing-head Dejeuner for Restaurants
-      %h1 Get feedback and stay connected with your customers
-      = link_to "Sign In", new_user_session_path, :class => "%button btn btn-default btn-lg"
-      = link_to "Sign Up", new_user_registration_path, :class => "button btn btn-primary btn-lg"
+      %h1 Receive feedback from your customers, while building relationships with and marketing to them.
+      = link_to "Sign In", new_user_session_path, :class => "btn btn-info btn-lg"
+      = link_to "Sign Up", new_user_registration_path, :class => "btn btn-success btn-lg"
+
+.row.cursive
+  .col-lg-12
+    %h1 Why Dejeuner?
+
+/ begin benefits
 .container
   .row 
     .col-lg-4.landing-benefits
@@ -21,4 +27,8 @@
       .landing-benefits-inner
         = image_tag "bullhorn.png"
         %h1 Marketing
-        %p No more emails or posters. Use Dejeuner own marketing platform to instantly reach all your customers.
+        %p No more emails or posters. Use Dejeuner's own marketing platform to instantly reach all your customers.
+
+.row.sign-up-landing
+  .col-lg-12
+    = link_to "Sign Up", new_user_registration_path, :class => "btn btn-success btn-lg"
