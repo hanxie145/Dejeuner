@@ -2,8 +2,28 @@
 .container.main-body
   .row
     = render 'layouts/fixed_nav'
+    .col-lg-9.pull-right
+      %table.table.table-hover.table-bordered.profile-table
+        %thead 
+          %tr 
+            %th 
+              %h1 Campaigns
+        %tbody 
+          %tr 
+            %td Number: 
+            %td 12674158802
+          %tr 
+            %td Current: 
+            %td What is your favourite bar snack at Tony's Tonics?
+          %tr 
+            %td Prize: 
+            %td 5% off your tab at the end of the night.  
+          %tr 
+            %td Last: 
+            %td Tell us what you think of our new beer selection - Yes or No to Pilsner?
+      = link_to "Start New Campaign", '#', :class => "btn btn-large btn-warning pull-right"
 
-    .col-lg-9
+    .col-lg-9.pull-right
       %h1.no-margin-top Reviews
       %h3 Current Campaign: What is your favourite bar snack at Tony's Tonics?
       %h3 Prize: 5% off your tab at the end of the night. 

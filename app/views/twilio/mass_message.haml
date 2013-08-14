@@ -3,8 +3,18 @@
 .container.main-body
   .row
     = render 'layouts/fixed_nav'
+    .col-lg-9.pull-right
+      %table.table.table-hover.table-bordered.profile-table
+        %thead 
+          %tr 
+            %th 
+              %h1 Last Marketing Blast Sent:
+        %tbody 
+          %tr 
+            %td New beers on tap tonight! 50% off all beers from 6-10PM!
+      = link_to "Send Out Another", '/mass_message', :class => "btn btn-large btn-success pull-right"
 
-    .col-lg-9 
+    .col-lg-9.pull-right
       %h1.no-margin-top Send out a marketing blast to everyone on your numbers list
       %p Max: 160 characters.
 

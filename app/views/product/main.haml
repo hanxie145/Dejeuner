@@ -26,35 +26,17 @@
     .col-lg-9.pull-right
       %h1 Feedback Received
       %canvas#myChart{:width => "960", :height => "400"} 
-  
-    .col-lg-9.pull-right
-      %table.table.table-hover.table-bordered.profile-table
-        %thead 
-          %tr 
-            %th 
-              %h1 Campaigns
-        %tbody 
-          %tr 
-            %td Number: 
-            %td 12674158802
-          %tr 
-            %td Current: 
-            %td What is your favourite bar snack at Tony's Tonics?
-          %tr 
-            %td Prize: 
-            %td 5% off your tab at the end of the night.  
-          %tr 
-            %td Last: 
-            %td Tell us what you think of our new beer selection - Yes or No to Pilsner?
-      = link_to "Start New Campaign", '#', :class => "btn btn-large btn-warning pull-right"
 
     .col-lg-9.pull-right
-      %table.table.table-hover.table-bordered.profile-table
-        %thead 
-          %tr 
-            %th 
-              %h1 Last Marketing Blast Sent:
-        %tbody 
-          %tr 
-            %td New beers on tap tonight! 50% off all beers from 6-10PM!
-      = link_to "Send Out Another", '/mass_message', :class => "btn btn-large btn-success pull-right"
+      .col-lg-6.dash-main
+        %h3.dash-header-text Current Campaign
+        %p Q: What is your favourite bar snack at Tony's Tonic's?
+        %p Start Date: August 8th
+        %p Duration: 15 days
+      .col-lg-6.dash-main
+        %h3.dash-header-text Recent Reviews
+        %table.table.table-hover
+          %tbody 
+            - for review in @reviews
+              %tr
+                %td= review
