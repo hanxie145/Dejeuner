@@ -27,14 +27,20 @@
       %h1 Feedback Received
       %canvas#myChart{:width => "960", :height => "400"} 
 
-    .col-lg-9.pull-right
+    .col-lg-9.pull-right.campaigns-and-reviews
       .col-lg-6.dash-main
-        %h3.dash-header-text Current Campaign
-        %p Q: What is your favourite bar snack at Tony's Tonic's?
+        .dash-header-text 
+          .dash-header-inner
+            = image_tag "notes.png"
+            %h3 Current Campaign
+        %p Question: What is your favourite bar snack at Tony's Tonic's?
         %p Start Date: August 8th
         %p Duration: 15 days
       .col-lg-6.dash-main
-        %h3.dash-header-text Recent Reviews
+        .dash-header-text 
+          .dash-header-inner
+            = image_tag "clipboard-2-32.png"
+            %h3 Recent Reviews
         %table.table.table-hover
           %tbody 
             - for review in @reviews

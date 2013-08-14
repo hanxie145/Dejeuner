@@ -95,17 +95,67 @@ p {
   text-align: center;
 }
 
+.campaigns-and-reviews {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 .dash-header-text {
-  margin-top: 0px;
-  background-color: #34495e;
-  font-family: 'Raleway', 'san-serif';
-  font-size: 20px;
-  color: #fff;
+  background-color: #2ecc71;
+  height: 50px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  -moz-border-top-left-radius: 10px;
+  -moz-border-top-right-radius: 10px;
+  text-align: center;
+
+  // to get rid of that awk space between the reviews table
+  &:nth-child(0){
+    margin-bottom: 10px;
+  }
+
+  h3 {
+    font-family: 'Raleway', 'san-serif';
+    font-size: 20px;
+    color: #fff;
+    padding-top: 10px;
+    margin-top: 0;
+  }
+
+  .dash-header-inner {
+    padding-top: 10px;
+    img {
+      display: inline;
+    }
+
+    h3 {
+      display: inline;
+    }
+  }
+  
 }
 
 .dash-main {
   border: 1px solid #ecf0f1;
   width: 430px; 
+  padding: 0;
+  border-radius: 10px; 
+  -moz-border-radius: 10px;
+
+  &:nth-child(1) {
+    &:hover {
+      background-color: #ecf0f1;
+    }
+  }
+
+  p {
+    padding-left: 10px;
+    padding-right: 10px;
+
+    &:nth-child(n+2){
+      margin-top: 10px;
+    }
+  }
 
   &:nth-child(2) {
     margin-left: 10px;

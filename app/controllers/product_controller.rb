@@ -14,18 +14,18 @@ class ProductController < ApplicationController
 
     # get all the reviews from logs for today
     reviews = []
+    @reviews_today = @twilio_client.account.sms.messages.list(Date.today.to_s,to: "+12674158802").count
 
     # additional parameter: date_sent: Date.today.to_s,
-    # @twilio_client.account.sms.messages.list(to: "+12674158802").each do |message|
+    @twilio_client.account.sms.messages.list(to: "+12674158802").each do |message|
 
       # hardcode the number in
       # TODO switch to user.number in the future
-      # reviews.push(message.body)
+      reviews.push(message.body)
 
-    # end
+    end
 
     # cut array 
-    reviews = ["I like pickles", "I liked the sausaged", "Beer sucked!", "mints were good"]
     @reviews = reviews[0..4]
   end 
 
