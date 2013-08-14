@@ -15,7 +15,11 @@
         %a{:href => "/reviews"} 
           = image_tag "clipboard-2-green.jpg"
           %h3 New Reviews
-          %p  +15 new reviews
+          %p  
+            + 
+            = @reviews_today
+            Reviews for 
+            = @date
       .col-lg-3.dash-quick-link.marketing-quick-link
         %a{:href => "/market"} 
           = image_tag "bullhorn-orange.jpg"

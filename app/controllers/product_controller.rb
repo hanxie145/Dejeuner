@@ -14,7 +14,8 @@ class ProductController < ApplicationController
 
     # get all the reviews from logs for today
     reviews = []
-    @reviews_today = @twilio_client.account.sms.messages.list(Date.today.to_s,to: "+12674158802").count
+    @date = Date.today.strftime("%A, %B %e")
+    @reviews_today = @twilio_client.account.sms.messages.list(date_sent: Date.today.to_s, to: "+12674158802").count
 
     # additional parameter: date_sent: Date.today.to_s,
     @twilio_client.account.sms.messages.list(to: "+12674158802").each do |message|
