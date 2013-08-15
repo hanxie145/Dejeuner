@@ -13,6 +13,13 @@ Dejeuner::Application.routes.draw do
   get 'my_number' => 'static_pages#my_number'
   get 'my_contact' => 'static_pages#my_contact'
   get 'profile' => 'product#profile'
+
+  namespace :demo do 
+    get 'profile'
+    get 'main'
+    get 'campaign'
+    get 'market'
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

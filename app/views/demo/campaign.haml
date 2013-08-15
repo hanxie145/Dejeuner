@@ -1,7 +1,8 @@
 = render 'layouts/header'
+
 .container.main-body
   .row
-    = render 'layouts/fixed_nav'
+    = render 'layouts/demo_fixed_nav'
     .col-lg-9.pull-right 
       %ul.nav.nav-tabs.pull-right
         %li.active.campaign-tab
@@ -38,8 +39,23 @@
             %th Date Received
             %th Number
         %tbody 
-        - @reviews.each do |review| 
+          %tr
+            %td I enjoyed the pickled sausage the most. 5/5 
+            %td Mon, 14 Aug
+            %td +%0763427806 
           %tr 
-            %td= review.body
-            %td= review.date_sent.slice(0..10)
-            %td= review.from
+            %td I hated the radish! Boooo. get rid of it.
+            %td Mon, 14 Aug
+            %td +%0763427806 
+          %tr 
+            %td Man, I loved the chicken wings.
+            %td Mon, 14 Aug
+            %td +%0763427806 
+          %tr 
+            %td Duddddeeee I'm sooooo wasteddiwqoi
+            %td Mon, 14 Aug
+            %td +%0763427806 
+          %tr 
+            %td Pilsner sucks!
+            %td Mon, 14 Aug
+            %td +%0763427806 

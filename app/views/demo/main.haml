@@ -2,13 +2,13 @@
 
 .container.main-body
   .row
-    = render 'layouts/fixed_nav'
+    = render 'layouts/demo_fixed_nav'
     .col-lg-9.dash-header.pull-right
       .col-lg-3.dash-quick-link.restaurant-quick-link
         %a{:href => "/profile"} 
           = image_tag "crate-blue.jpg"
           %h3 Restaurant
-          %p= @restaurant
+          %p Tony's Tonics
           %p  178 Reviews over past 6 months
           %p  6 Marketing Blasts sent
       .col-lg-3.dash-quick-link.reviews-quick-link
@@ -17,9 +17,9 @@
           %h3 New Reviews
           %p  
             + 
-            = @reviews_today
+            5
             for 
-            = @date_today
+            Today
       .col-lg-3.dash-quick-link.marketing-quick-link
         %a{:href => "/market"} 
           = image_tag "bullhorn-orange.jpg"
@@ -47,6 +47,13 @@
             %h3 Recent Feedback
         %table.table.table-hover
           %tbody 
-            - for review in @reviews
-              %tr
-                %td= review
+            %tr
+              %td I enjoyed the pickled sausage the most. 5/5 
+            %tr 
+              %td I hated the radish! Boooo. get rid of it.
+            %tr 
+              %td Man, I loved the chicken wings.
+            %tr 
+              %td Duddddeeee I'm sooooo wasteddiwqoi
+            %tr 
+              %td Pilsner sucks!

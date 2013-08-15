@@ -1,0 +1,24 @@
+.col-lg-3
+  %ul.nav.nav-pills.nav-stacked.nav-fixed
+    %li
+      %a{:href => "main" }
+        %span 
+          = image_tag "home-3.png" 
+        Dashboard
+    %li 
+      %a{:href => "/demo/profile"}
+        %span 
+          = image_tag 'user-3.png'
+        Profile 
+    %li 
+      %a{:href => "/demo/campaign"} 
+        %span 
+          = image_tag "inbox-2.png"
+        Campaign
+    %li 
+      %a{:href => "/demo/market"} 
+        %span 
+          = image_tag "bullhorn.png"
+        Market
+    %li 
+      = link_to raw("<span>#{image_tag('user-4-remove.png')}</span>Log Out"), root_path

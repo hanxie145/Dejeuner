@@ -12,7 +12,7 @@
   }
 
   .landing-inner {
-    margin-top: 7em; 
+    margin-top: 4em; 
     text-align: center;
 
     h1 {
@@ -29,13 +29,16 @@
   }
 }
 
+.red {
+  color: #fff;
+}
+
 .cursive {
 
   h1 {
     font-family: 'Yesteryear', cursive;
   }
 
-  height: 100px;
   margin-top: 10px;
   background-image: image-url('ps_neutral.png');
   text-align: center;

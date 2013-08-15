@@ -4,7 +4,14 @@
   <%= devise_error_messages! %>
 
   <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
+  <%= f.email_field :email, :class => "input input-large", :autofocus => true %></div>
+
+    <div><%= f.label :name %><br />
+  <%= f.text_field :name, :class => "input input-large" %></div>
+
+  <div><%= f.label :restaurant %><br />
+  <%= f.text_field :restaurant, :class => "input input-large" %></div>
+
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
@@ -14,12 +21,12 @@
   <%= f.password_field :password, :autocomplete => "off" %></div>
 
   <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
+  <%= f.password_field :password_confirmation, :class => "input input-large" %></div>
 
   <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-  <%= f.password_field :current_password %></div>
+  <%= f.password_field :current_password, :class => "input input-large" %></div>
 
-  <div><%= f.submit "Update" %></div>
+  <div><%= f.submit "Update", :class => "btn btn-primary" %></div>
 <% end %>
 
 <h3>Cancel my account</h3>
