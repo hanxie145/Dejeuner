@@ -14,18 +14,21 @@ data = {
 
 # make the chart using chart.js
 chartFunction = -> 
-  ctx = $('#myChart').get(0).getContext('2d')
-  myNewChart = new Chart ctx
 
-  new Chart(ctx).Line(data, 
-    scaleFontFamily: 'Raleway', 
-    scaleFontSize: 20,
-    bezierCurve : false
-    )
+  # check if we're on main page first
+  if $('#myChart').length 
+    ctx = $('#myChart').get(0).getContext('2d')
+    myNewChart = new Chart ctx
+
+    new Chart(ctx).Line(data, 
+      scaleFontFamily: 'Raleway', 
+      scaleFontSize: 20,
+      bezierCurve : false
+      )
 
 # add document bindings for call. I have no idea what I'm doing with turbolinks, so I'm just calling it twice...
 $(document).ready ->
-  # chartFunction()
+  chartFunction()
 
 $(document).on 'page:change', -> 
-  # chartFunction()
+  chartFunction()

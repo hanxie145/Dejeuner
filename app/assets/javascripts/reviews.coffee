@@ -2,8 +2,8 @@
 feedbackTab = -> 
   $('.feedback-tab').click (e) -> 
     e.preventDefault()
-    $('.campaigns').fadeOut()
-    $('.reviews').fadeIn()
+    $('.campaigns').fadeOut 200, -> 
+      $('.reviews').fadeIn()
 
     $(this).addClass('active')
     $('.campaign-tab').removeClass('active')
@@ -11,8 +11,8 @@ feedbackTab = ->
 campaignTab = (e) -> 
   $('.campaign-tab').click (e) -> 
     e.preventDefault()
-    $('.campaigns').fadeIn()
-    $('.reviews').fadeOut()
+    $('.reviews').fadeOut 200, -> 
+      $('.campaigns').fadeIn()
 
     $(this).addClass('active')
     $('.feedback-tab').removeClass('active')

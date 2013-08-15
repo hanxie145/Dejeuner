@@ -3,7 +3,15 @@
 .container.main-body
   .row
     = render 'layouts/fixed_nav'
-    .col-lg-9.pull-right
+    .col-lg-9.pull-right 
+      %ul.nav.nav-tabs.pull-right
+        %li.active.message-tab
+          %a{:href => "#"} Message
+        %li.history-tab
+          %a{:href => "#"} History
+
+    .col-lg-9.pull-right.market-history
+      %h1 Marketing History
       %table.table.table-hover.table-bordered.profile-table
         %thead 
           %tr 
@@ -14,8 +22,8 @@
             %td New beers on tap tonight! 50% off all beers from 6-10PM!
       = link_to "Send Out Another", '/mass_message', :class => "btn btn-large btn-success pull-right"
 
-    .col-lg-9.pull-right
-      %h1.no-margin-top Send out a marketing blast to everyone on your numbers list
+    .col-lg-9.pull-right.market-message
+      %h1.no-margin-top Marketing blast to all restaurant vistors
       %p Max: 160 characters.
 
       = form_tag() do 
