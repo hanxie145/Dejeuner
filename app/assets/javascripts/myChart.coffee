@@ -25,7 +25,7 @@ chartFunction = ->
 
 # add document bindings for call. I have no idea what I'm doing with turbolinks, so I'm just calling it twice...
 $(document).ready ->
-  chartFunction()
+  # chartFunction()
 
 $(document).on 'page:change', -> 
-  chartFunction()
+  # chartFunction()

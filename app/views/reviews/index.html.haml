@@ -2,7 +2,13 @@
 .container.main-body
   .row
     = render 'layouts/fixed_nav'
-    .col-lg-9.pull-right
+    .col-lg-9.pull-right 
+      %ul.nav.nav-tabs.pull-right
+        %li.active.campaign-tab
+          %a{:href => "#"} Campaign
+        %li.feedback-tab
+          %a{:href => "#"} Feedback
+    .col-lg-9.pull-right.campaigns
       %table.table.table-hover.table-bordered.profile-table
         %thead 
           %tr 
@@ -23,18 +29,16 @@
             %td Tell us what you think of our new beer selection - Yes or No to Pilsner?
       = link_to "Start New Campaign", '#', :class => "btn btn-large btn-warning pull-right"
 
-    .col-lg-9.pull-right
-      %h1.no-margin-top Reviews
-      %h3 Current Campaign: What is your favourite bar snack at Tony's Tonics?
-      %h3 Prize: 5% off your tab at the end of the night. 
-      %h3 Number: 12674158802
+    .col-lg-9.pull-right.reviews
       %table.table.table-hover 
         %thead 
           %tr 
             %th Review
+            %th Date Received
             %th Number
         %tbody 
         - @reviews.each do |review| 
           %tr 
             %td= review.body
-            %td= review.from 
+            %td= review.date_sent.slice(0..10)
+            %td= review.from

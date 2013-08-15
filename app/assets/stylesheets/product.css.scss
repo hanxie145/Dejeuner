@@ -5,6 +5,7 @@
   background-color: #E74C3C; 
   height: 50px;
   text-align: center;
+  margin-bottom: 10px;
 
   .navbar-bran {
     font-family: 'Yesteryear', cursive;
@@ -65,10 +66,6 @@
 
 // main page
 
-.main-body {
-  margin-top: 4em;
-}
-
 canvas {
   margin-left: -50px;
 }
@@ -101,7 +98,7 @@ p {
 }
 
 .dash-header-text {
-  background-color: #2ecc71;
+  background-color: #E74C3C;
   height: 50px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
@@ -169,6 +166,8 @@ table.table {
   margin-bottom: 5px; 
 
   thead th {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 100;
   }
 
   tr {
@@ -186,6 +185,7 @@ table.table {
   background-color: #ecf0f1;
   height: 240px; 
   padding: 10px;
+  width: 890px;
 
   a {
       
@@ -199,7 +199,7 @@ table.table {
   }
 
   .dash-quick-link {
-    width: 280px; 
+    width: 282px; 
     padding: 10px;
     margin: 0;
     height: 220px;
@@ -209,7 +209,7 @@ table.table {
     box-shadow: 2px 2px 5px #888;
     cursor: pointer;
 
-    &:nth-child(n+1) {
+    &:nth-child(n+2) {
       margin-left: 10px;
     }
 
