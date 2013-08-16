@@ -21,6 +21,6 @@ $(document).ready ->
   feedbackTab()
   campaignTab()
 
-$(document).on 'page:change', -> 
+$(document).on "page:change", -> 
   feedbackTab()
   campaignTab
