@@ -20,10 +20,16 @@
         %tbody 
           %tr 
             %td New beers on tap tonight! 50% off all beers from 6-10PM!
-      = link_to "Send Out Another", '/mass_message', :class => "btn btn-large btn-success pull-right"
 
     .col-lg-9.pull-right.market-message
-      %h1.no-margin-top Marketing blast to all restaurant vistors
+      %h1.no-margin-top Marketing blast
+      .col-lg-12.dash-main.full-width
+        .dash-header-text 
+          .dash-header-inner
+            %h3 Examples
+        %p Coupon: Show this text to your server for 50% off on your beer.
+        %p Weekly Deal: Buy 1 get 1 free for the next week, August 14 - 21!
+        %p Competition: Respond with BEER to have a chance to win free beer for the week. 
       %p Max: 160 characters.
 
       = form_tag() do 
