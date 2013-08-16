@@ -1,0 +1,9 @@
+.container 
+  .row 
+    .form-sign
+      = form_for(@campaign) do |f|
+        = f.label :description 
+        = f.text_area :description, :autofocus => true, :class => "input input-lg"
+        = f.label :type
+        / = f.select(:feedback, :competition)
+        = f.submit "Make a new campaign", :class => 'btn btn-lg btn-success'

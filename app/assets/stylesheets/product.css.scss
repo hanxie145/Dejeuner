@@ -140,18 +140,17 @@ p {
   border-radius: 10px; 
   -moz-border-radius: 10px;
 
-  &:nth-child(1) {
-    &:hover {
-      background-color: #ecf0f1;
-    }
-  }
-
   p {
     padding-left: 10px;
     padding-right: 10px;
+    &:hover {
+      background-color: #ecf0f1;
+    }
+
 
     &:nth-child(n+2){
-      margin-top: 10px;
+      padding-top: 5px;
+      border-top: 1px solid #ecf0f1;
     }
   }
 
@@ -161,16 +160,10 @@ p {
 
   &.full-width {
     width: 100%;
-    margin-left: 0; 
     margin-bottom: 10px;
-
-    p {
-      &:nth-child(n+2){
-        border-top: 1px solid #ecf0f1;
-      }
     }
   }
-}
+
 
 // reviews 
 table.table {

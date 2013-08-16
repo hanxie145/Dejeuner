@@ -2,6 +2,7 @@ Dejeuner::Application.routes.draw do
 
   resources :numbers
   resources :reviews
+  resources :campaigns
 
   devise_for :users
   root 'static_pages#landing'
@@ -12,7 +13,6 @@ Dejeuner::Application.routes.draw do
   get 'my_number' => 'static_pages#my_number'
   get 'my_contact' => 'static_pages#my_contact'
   get 'profile' => 'product#profile'
-  get 'campaign' => 'campaigns#index'
 
   namespace :demo do 
     get 'profile'

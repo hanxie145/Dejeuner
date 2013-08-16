@@ -17,6 +17,7 @@ gem 'turbolinks'
 group :development, :test do
   gem "better_errors"
   gem 'sqlite3'
+  gem 'rspec-rails', '~> 2.9.0'
 end
 
 group :production do
