@@ -4,6 +4,7 @@ class TwilioController < ApplicationController
     # respond to a text message from twilio
     review = params[:Body]
     number = params[:From]
+    @date_today = @date.strftime("%A, %B %e")
 
     render 'sms_response.xml.erb', :content_type => 'text/xml'
   end 
@@ -42,7 +43,7 @@ class TwilioController < ApplicationController
     )
     end
 
-    render 'product/main'
+    redirect_to main_path
 
   end
 end

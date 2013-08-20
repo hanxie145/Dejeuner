@@ -23,7 +23,7 @@
             %td 12674158802
           %tr 
             %td Type: 
-            %td= @current_campaign.type
+            %td= @current_campaign.campaign_type
           %tr 
             %td Current: 
             %td= @current_campaign.description
@@ -32,19 +32,19 @@
             %td 5% off your tab at the end of the night.  
       = link_to "Start New Campaign", new_campaign_path, :class => "btn btn-large btn-warning pull-right"
 
-    / .col-lg-9.pull-right.reviews
-    /   %table.table.table-hover 
-    /     %thead 
-    /       %tr 
-    /         %th Review
-    /         %th Date Received
-    /         %th Number
-    /     %tbody 
-    /     - @reviews.each do |review| 
-    /       %tr 
-    /         %td= review.body
-    /         %td= review.date_sent.slice(0..10)
-    /         %td= review.from
+    .col-lg-9.pull-right.reviews
+      %table.table.table-hover 
+        %thead 
+          %tr 
+            %th Review
+            %th Date Received
+            %th Number
+        %tbody 
+        - @reviews.each do |review| 
+          %tr 
+            %td= review.body
+            %td= review.date_sent.slice(0..10)
+            %td= review.from
 
     .col-lg-9.pull-right.campaigns-history
       %table.table.table-hover.table-bordered.profile-table
