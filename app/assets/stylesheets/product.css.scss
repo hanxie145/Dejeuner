@@ -5,7 +5,6 @@
   background-color: #E74C3C; 
   height: 50px;
   text-align: center;
-  margin-bottom: 10px;
   border-radius: 0;
 
   .navbar-bran {
@@ -273,5 +272,11 @@ form {
     font-size: 20px;
   }
 
-  text-align: center;
+  width: 500px; 
+  margin: 0 auto;
+
+  .form-control:nth-child(n+2){
+    margin-top: 10px;
+  }
+
 }

@@ -5,7 +5,8 @@ class CampaignsController < ApplicationController
   # GET /campaigns.json
   def index
     @user = current_user
-    @current_campaign = @user.campaigns.last
+    @current_campaign = @user.campaigns.last || ""
+    @key_word = @user.key_word
 
     # twilio credentials
     twilio_sid = "ACfffe2a378d744f6c9c2a280c93a5be21"

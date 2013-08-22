@@ -3,17 +3,22 @@ Dejeuner::Application.routes.draw do
   resources :numbers
   resources :reviews
   resources :campaigns
-
   devise_for :users
+
+  # static pages
   root 'static_pages#landing'
+  get 'pricing' => 'static_pages#pricing'
+  get 'my_number' => 'static_pages#my_number'
+  get 'my_contact' => 'static_pages#my_contact'
+
+  # product
   get 'main' => 'product#main'
   get 'sms_response' => 'twilio#sms_response'
   get 'market' => 'twilio#mass_message'
   post 'market' => 'twilio#send_mass_message'
-  get 'my_number' => 'static_pages#my_number'
-  get 'my_contact' => 'static_pages#my_contact'
   get 'profile' => 'product#profile'
 
+  # demo
   namespace :demo do 
     get 'profile'
     get 'main'

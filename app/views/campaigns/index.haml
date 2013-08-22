@@ -22,6 +22,14 @@
             %td Number: 
             %td 12674158802
           %tr 
+            %td Keyword: 
+            %td
+              = @key_word
+              - if @key_word = ""
+                %a{:href => "key_word", :class => "btn btn-lg btn-primary"} Add key word
+              - else 
+                %a{:href => "key_word/edit", :class => "btn btn-lg btn-primary"} Change  
+          %tr 
             %td Type: 
             %td= @current_campaign.campaign_type
           %tr 

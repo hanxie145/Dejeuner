@@ -9,27 +9,46 @@
 
 .row.cursive
   .col-lg-12
-    %h1 Why Dejeuner?
+    %h1 Dejeuner In 3 simple steps.
 
 / begin benefits
 .container
   .row 
     .col-lg-4.landing-benefits
       .landing-benefits-inner
-        = image_tag "clipboard-2.png"
-        %h1 Feedback
-        %p Away with comment cards! Set up campaigns and receive key feedback from your customers within 5 minutes.
-    .col-lg-4.landing-benefits
-      .landing-benefits-inner
         = image_tag "heart-full.png"
-        %h1 Relationships
-        %p Set up your own incentives for customers to give feedback and build continued relationships.
+        %h1 Sign up and get a number
+        %p Sign up and get your own unique number for your restaurant. Display this number in your restaurant.
     .col-lg-4.landing-benefits
       .landing-benefits-inner
-        = image_tag "bullhorn.png"
-        %h1 Marketing
-        %p No more emails or posters. Use Dejeuner's own marketing platform to instantly reach all your customers.
+        = image_tag "clipboard-2.png"
+        %h1 Create campaigns and get feedback
+        %p Create a question you want answered through Dejeuner. Display this question in your restaurant. Customer text feedback on this question to your Dejeuner number.
+    .col-lg-4.landing-benefits
+      .landing-benefits-inner
+        = image_tag "bullhorn-x.png"
+        %h1 Market to customers through SMS
+        %p When your customers text you feedback, we store their number and allow you to send mass texts to these customers later. Offer coupons, deals, weekly events, and competitions through SMS.
+        
+.row.cursive
+  .col-lg-12
+    %h1 Why Dejeuner?
+
+.row
+  .col-lg-12.landing-how
+    %h1 1. Get phone number. Set up questions you want answered.
+    %h1 2. Restaurant customers text your special number with feedback.
+    %h1 3. Send out coupons and info about events with SMS to these customers. 
 
 .row.sign-up-landing
   .col-lg-12
     = link_to "Sign Up", new_user_registration_path, :class => "btn btn-success btn-lg"
+
+
+/ old copy
+/ %h1 Feedback
+/ %p Away with comment cards! Set up campaigns and receive key feedback from your customers within 5 minutes.
+/ %h1 Relationships
+/ %p Set up your own incentives for customers to give feedback and build continued relationships.
+/ %h1 Marketing
+/ %p No more emails or posters. Use Dejeuner's own marketing platform to instantly reach all your customers.
