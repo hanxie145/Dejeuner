@@ -14,6 +14,11 @@
             %td Name: 
             %td= @name
           %tr 
+            %td= @number 
+            %td
+              - @numbers.each do |number| 
+                = number.number
+          %tr 
             %td Restaurant: 
             %td= @restaurant
           %tr 

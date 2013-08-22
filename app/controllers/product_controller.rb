@@ -1,6 +1,5 @@
 class ProductController < ApplicationController
   before_filter :authenticate_user!
-  include ActionView::Helpers::TextHelper
 
   def main 
     @user = current_user
@@ -49,6 +48,8 @@ class ProductController < ApplicationController
     @user = current_user
     @name = @user.name
     @restaurant = @user.restaurant
+    @numbers = @user.numbers
+    @number = pluralize(@numbers.length, "Number")
 
     # TODO: get user plans
   end

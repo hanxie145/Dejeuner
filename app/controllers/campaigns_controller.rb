@@ -7,6 +7,8 @@ class CampaignsController < ApplicationController
     @user = current_user
     @current_campaign = @user.campaigns.last || ""
     @key_word = @user.key_word
+    @numbers = current_user.numbers
+    @number = pluralize(@numbers.length, "Number")
 
     # twilio credentials
     twilio_sid = "ACfffe2a378d744f6c9c2a280c93a5be21"

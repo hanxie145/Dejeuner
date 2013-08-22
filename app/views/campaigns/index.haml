@@ -19,8 +19,10 @@
               %h1 Campaigns
         %tbody 
           %tr 
-            %td Number: 
-            %td 12674158802
+            %td= @number 
+            %td
+              - @numbers.each do |number| 
+                = number.number
           %tr 
             %td Keyword: 
             %td
@@ -31,10 +33,16 @@
                 %a{:href => "key_word/edit", :class => "btn btn-lg btn-primary"} Change  
           %tr 
             %td Type: 
-            %td= @current_campaign.campaign_type
+            - if @current_campaign != ""
+              %td= @current_campaign.campaign_type
+            - else 
+              %td 
           %tr 
             %td Current: 
-            %td= @current_campaign.description
+            - if @current_campaign != ""
+              %td= @current_campaign.description
+            - else 
+              %td 
           %tr 
             %td Prize: 
             %td 5% off your tab at the end of the night.  
