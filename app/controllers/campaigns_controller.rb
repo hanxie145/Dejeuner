@@ -7,7 +7,7 @@ class CampaignsController < ApplicationController
   def index
     @user = current_user
     @current_campaign = @user.campaigns.last || ""
-    @key_word = @user.key_word
+    @keyword = @user.key_word || ""
     @numbers = current_user.numbers
     @number = pluralize(@numbers.length, "Number")
 

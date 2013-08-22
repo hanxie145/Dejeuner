@@ -12,12 +12,12 @@
             Current keyword:
             = @keyword
         %p Hint: Choose simple keywords, such as BEER, SNACK, or FOOD
-        %p Only letters A-Z and numbers 0-9 are valid
+        %p Only letters A-Z and numbers %0 -9 are valid
         = form_tag() do 
-          .input-group
-            = text_field_tag :key_word, "", {:placeholder => "New Keyword", :class => "form-control"}
-            %span.input-group-btn
-              = submit_tag "Create Keyword", :class => "btn btn-lg btn-success"
+          .input-group.input-group-lg
+            = text_field_tag :key_word, "", {:placeholder => "New Keyword", :class => "form-control input-lg", :autofocus => "true"}
+            .input-group-btn
+              = content_tag :button, "Create Keyword", :type => "submit", :class => "btn btn-lg btn-success"
   .row 
     .col-lg-12
       = link_to "Back to Campaigns", campaigns_path, :class => "btn btn-lg btn-primary" 
