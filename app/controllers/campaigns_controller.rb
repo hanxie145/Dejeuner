@@ -1,5 +1,6 @@
 class CampaignsController < ApplicationController
   before_action :set_campaign, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!
 
   # GET /campaigns
   # GET /campaigns.json
@@ -85,6 +86,16 @@ class CampaignsController < ApplicationController
       format.html { redirect_to campaigns_url }
       format.json { head :no_content }
     end
+  end
+
+  def key_word 
+    @keyword = current_user.key_word || ""
+  end
+
+  # change keyword
+  def update_key_word
+    current_user.update_attributes({key_word: params[:key_word]})
+    redirect_to campaigns_path
   end
 
   private

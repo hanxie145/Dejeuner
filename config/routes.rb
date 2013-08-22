@@ -2,8 +2,12 @@ Dejeuner::Application.routes.draw do
 
   resources :numbers
   resources :reviews
-  resources :campaigns
   devise_for :users
+
+  # campaigns
+  resources :campaigns
+  get 'key_word' => 'campaigns#key_word'
+  post 'key_word' => 'campaigns#update_key_word'
 
   # static pages
   root 'static_pages#landing'

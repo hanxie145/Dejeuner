@@ -1,0 +1,23 @@
+= render 'layouts/header'
+
+.container 
+  .row 
+    .col-lg-12
+      %h1 Keywords are what your customer texts along with their feedback, so we know it is your review. 
+  .row
+    .col-lg-12
+      .form-sign
+        - unless @keyword.empty?
+          %h1 
+            Current keyword:
+            = @keyword
+        %p Hint: Choose simple keywords, such as BEER, SNACK, or FOOD
+        %p Only letters A-Z and numbers 0-9 are valid
+        = form_tag() do 
+          .input-group
+            = text_field_tag :key_word, "", {:placeholder => "New Keyword", :class => "form-control"}
+            %span.input-group-btn
+              = submit_tag "Create Keyword", :class => "btn btn-lg btn-success"
+  .row 
+    .col-lg-12
+      = link_to "Back to Campaigns", campaigns_path, :class => "btn btn-lg btn-primary" 

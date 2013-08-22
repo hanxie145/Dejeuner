@@ -27,10 +27,10 @@
             %td Keyword: 
             %td
               = @key_word
-              - if @key_word = ""
+              - if @key_word.empty?
                 %a{:href => "key_word", :class => "btn btn-lg btn-primary"} Add key word
               - else 
-                %a{:href => "key_word/edit", :class => "btn btn-lg btn-primary"} Change  
+                %a{:href => "key_word", :class => "btn btn-lg btn-primary"} Change  
           %tr 
             %td Type: 
             - if @current_campaign != ""
