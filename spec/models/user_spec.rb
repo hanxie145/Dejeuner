@@ -49,7 +49,7 @@ describe "when email address is already taken" do
     user_with_same_email.save
   end
 
-  it {should_not be_valid}
+  it {should be_invalid}
 end
 
 describe "when password is not present" do

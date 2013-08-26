@@ -1,21 +1,17 @@
 require 'spec_helper'
 
 describe ProductController do 
-  before {@user = User.new(name: "Tony Xie", email: "testtest@gmail.com",restaurant: "Tony's Tonics", password: "foobar145", password_confirmation: "foobar145")}
+  before {@user = create(:user)}
 
   describe 'GET #main page' do 
-    # before { controller.stub(:authenticate_user!).and_return true } 
+    before { controller.stub(:authenticate_user!).and_return true } 
+    before {sign_in @user}
 
-    # it "successfully responds with HTTP 200 status code" do 
-    #   # for authenticate
-    #   current_user = @user
-    #   get :main
-    #   expect(response).to be_success
-    #   expect(response.status).to eq(200)
-    # end
+    it "#main should be valid" do 
+      get :main
+      response.should be_success
+    end
 
   end
-
-
 
 end
