@@ -14,10 +14,17 @@ gem 'jbuilder', '~> 1.2'
 gem 'twilio-ruby'
 gem 'turbolinks'
 
-group :development, :test do
+group :development do 
   gem "better_errors"
   gem 'sqlite3'
   gem 'rspec-rails', '~> 2.9.0'
+end
+
+group :test do
+  gem "database_cleaner", '< 1.1.0' 
+  gem 'factory_girl_rails'
+  gem "cucumber-rails", :require => false
+  gem "capybara"
 end
 
 group :production do
