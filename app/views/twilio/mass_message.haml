@@ -37,3 +37,6 @@
       = form_tag() do 
         = text_area_tag "message", nil, {:class => "text-message-area", :placeholder => "Craft your message..."}
         = submit_tag "Send", :class => "btn btn-success btn-lg pull-right"
+      
+      %h3.chars-left
+        Characters: 0/160
