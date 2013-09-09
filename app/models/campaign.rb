@@ -3,6 +3,6 @@ class Campaign < ActiveRecord::Base
 
   validates :campaign_type, presence: true
   validates :description, presence: true
+  validates :description, length: {maximum: 400}
 
-  
 end
