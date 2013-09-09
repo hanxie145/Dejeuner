@@ -1,5 +1,12 @@
 require 'spec_helper'
 
 describe Campaign do
-  # pending "add some examples to (or delete) #{__FILE__}"
+  before {@campaign = create(:campaign)}
+
+  subject {@campaign}
+
+  it {should respond_to(:campaign_type)}
+  it {should respond_to(:user_id)}
+  it {should be_valid}
+
 end
