@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Email:
+  = @signup_email.email
+%p
+  %b Description:
+  = @signup_email.description
+
+= link_to 'Edit', edit_signup_email_path(@signup_email)
+\|
+= link_to 'Back', signup_emails_path

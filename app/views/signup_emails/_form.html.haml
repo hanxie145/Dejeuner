@@ -1,0 +1,16 @@
+= form_for @signup_email do |f|
+  - if @signup_email.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@signup_email.errors.count, "error")} prohibited this signup_email from being saved:"
+      %ul
+        - @signup_email.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :email
+    = f.text_field :email
+  .field
+    = f.label :description
+    = f.text_area :description
+  .actions
+    = f.submit 'Save'

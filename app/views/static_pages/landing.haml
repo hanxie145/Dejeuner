@@ -1,11 +1,23 @@
 .hero 
   .container
-    .landing-inner
-      %h1.landing-head Dejeuner for Restaurants
-      %h1 Feedback, relationships, and marketings with customers.
-      %h3.red Close Beta. Press demo for sneakpeak. 
-      = link_to "Sign In", new_user_session_path, :class => "btn btn-info btn-lg"
-      = link_to "Demo", 'demo/main', :class => "btn btn-success btn-lg"
+    .row.landing-inner
+      .col-lg-12
+        %h1.landing-head Dejeuner
+        %h1 Feedback, relationships, and marketings with customers.
+        %h3.red Still in development. Sign up below for more information.
+        .col-lg-6.col-lg-offset-3
+          = form_for(@email, url: {controller: "signup_emails", action: "create"}) do |f| 
+            .input-group 
+              = f.email_field :email, :placeholder => "Email", :class => "form-control"
+              %span.input-group-btn
+                = f.submit "Sign Up", :class => "btn btn-info"
+
+            / %input.form-control{:type => "text"}/
+            / %span.input-group-btn
+            /   %button.btn.btn-info Sign Up
+ 
+        / = link_to "Sign In", new_user_session_path, :class => "btn btn-info btn-lg"
+        / = link_to "Demo", 'demo/main', :class => "btn btn-success btn-lg"
 
 .row.cursive
   .col-lg-12
@@ -18,28 +30,18 @@
       .landing-benefits-inner
         = image_tag "heart-full.png"
         %h1 Sign up and get a number
-        %p Sign up and get your own unique number for your restaurant. Display this number in your restaurant.
+        %p Sign up and get your own unique number for your store. Display this number.
     .col-lg-4.landing-benefits
       .landing-benefits-inner
         = image_tag "clipboard-2.png"
         %h1 Create campaigns and get feedback
-        %p Create a question you want answered through Dejeuner. Display this question in your restaurant. Customer text feedback on this question to your Dejeuner number.
+        %p Create a question you want answered through Dejeuner. Display this question in your store. Customer text feedback on this question to your Dejeuner number.
     .col-lg-4.landing-benefits
       .landing-benefits-inner
         = image_tag "bullhorn-x.png"
         %h1 Market to customers through SMS
         %p When your customers text you feedback, we store their number and allow you to send mass texts to these customers later. Offer coupons, deals, weekly events, and competitions through SMS.
-        
-/ .row.cursive
+
+/ .row.sign-up-landing
 /   .col-lg-12
-/     %h1 Why Dejeuner?
-
-/ .row
-/   .col-lg-12.landing-how
-/     %h1 1. Get phone number. Set up questions you want answered.
-/     %h1 2. Restaurant customers text your special number with feedback.
-/     %h1 3. Send out coupons and info about events with SMS to these customers. 
-
-.row.sign-up-landing
-  .col-lg-12
-    = link_to "Sign Up", new_user_registration_path, :class => "btn btn-success btn-lg"
+/     = link_to "Sign Up", new_user_registration_path, :class => "btn btn-success btn-lg"

@@ -1,5 +1,7 @@
 Dejeuner::Application.routes.draw do
 
+  resources :signup_emails, only: [:create]
+
   resources :numbers
   resources :reviews
   devise_for :users
@@ -8,6 +10,9 @@ Dejeuner::Application.routes.draw do
   resources :campaigns
   get 'key_word' => 'campaigns#key_word'
   post 'key_word' => 'campaigns#update_key_word'
+
+  # signupemail
+  get 'signup_email/finish' => 'signup_emails#finish'
 
   # static pages
   root 'static_pages#landing'

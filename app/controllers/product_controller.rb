@@ -20,25 +20,25 @@ class ProductController < ApplicationController
     reviews_today = 0
 
     # additional parameter: date_sent: Date.today.to_s,
-    @twilio_client.account.sms.messages.list(to: "+12674158802").each do |message|
+    # @twilio_client.account.sms.messages.list(to: "+12674158802").each do |message|
 
-      # hardcode the number in
-      # TODO switch to user.number in the future
-      reviews.push(message.body)
+    #   # hardcode the number in
+    #   # TODO switch to user.number in the future
+    #   reviews.push(message.body)
 
-      # check how many new messages for today by checking for date equality from twilio's message
-      date = message.date_sent.slice(5..6)
-      month = message.date_sent.slice(8..10)
-      year = message.date_sent.slice(12..15)
+    #   # check how many new messages for today by checking for date equality from twilio's message
+    #   date = message.date_sent.slice(5..6)
+    #   month = message.date_sent.slice(8..10)
+    #   year = message.date_sent.slice(12..15)
 
-      if((date == @date.mday.to_s) and (month == @date.strftime("%b")) and (year == @date.year.to_s))
-        reviews_today = reviews_today + 1
-      end
+    #   if((date == @date.mday.to_s) and (month == @date.strftime("%b")) and (year == @date.year.to_s))
+    #     reviews_today = reviews_today + 1
+    #   end
 
-      # awww yea getting to use pluralize
-      @reviews_today = pluralize(reviews_today, 'Review')
+    #   # awww yea getting to use pluralize
+    #   @reviews_today = pluralize(reviews_today, 'Review')
 
-    end
+    # end
 
     # cut array 
     @reviews = reviews[0..4]

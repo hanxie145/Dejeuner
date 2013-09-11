@@ -1,6 +1,7 @@
 class StaticPagesController < ApplicationController
 
   def landing 
+    @email = SignupEmail.new
   end 
 
   def pricing 
