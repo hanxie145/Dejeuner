@@ -16,6 +16,7 @@
  *= require ace-ie
  *= require ace-rtl
  *= require ace-skins
- *= require ace.css
+ *= require ace
+ *= require ace-overrides
  *= require_tree .
  */
