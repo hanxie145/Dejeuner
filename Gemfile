@@ -13,6 +13,8 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 1.2'
 gem 'twilio-ruby'
 gem 'turbolinks'
+gem 'font-awesome-rails'
+gem 'delayed_job_active_record'
 
 group :development do 
   gem "better_errors"
