@@ -1,279 +1,273 @@
-// header 
+// // header 
 
-.navbar {
+// .navbar {
 
-  background-color: #E74C3C; 
-  height: 50px;
-  text-align: center;
-  border-radius: 0;
+//   background-color: #E74C3C; 
+//   height: 50px;
+//   text-align: center;
+//   border-radius: 0;
 
-  .navbar-bran {
-    font-family: 'Yesteryear', cursive;
-    color: white;
-    font-size: 35px;
-    text-shadow: rgba(0,0,0,0.5) 0px 3px 3px;
+//   .navbar-bran {
+//     font-family: 'Yesteryear', cursive;
+//     color: white;
+//     font-size: 35px;
+//     text-shadow: rgba(0,0,0,0.5) 0px 3px 3px;
 
-  }
+//   }
 
-   a:hover {
-      text-decoration: none;
-    }
+//    a:hover {
+//       text-decoration: none;
+//     }
 
-  .nav {
-    color: white;
-  }
-}
+//   .nav {
+//     color: white;
+//   }
+// }
 
-// fixed nav bar 
+// // fixed nav bar 
 
-.nav.nav-stacked {
-  position: fixed;
-  display: block;
-  height: 230px;
-  z-index: 1000;
-  width: 280px;
-  text-align: center;
+// .nav.nav-stacked {
+//   position: fixed;
+//   display: block;
+//   height: 230px;
+//   z-index: 1000;
+//   width: 280px;
+//   text-align: center;
 
-  a {
-    color: white;
-    border-radius: 0;
-    font-family: 'Raleway', 'san-serif';
-    font-weight: 100;
-    font-size: 25px;
-    height: 100%;
-  }
+//   a {
+//     color: white;
+//     border-radius: 0;
+//     font-weight: 100;
+//     font-size: 25px;
+//     height: 100%;
+//   }
 
-  a:hover {
-      background-color: #34495E;
-  }
+//   a:hover {
+//       background-color: #34495E;
+//   }
 
-  li {
-    height: 100px;
-    background-color: #2C3E50;
-  }
+//   li {
+//     height: 100px;
+//     background-color: #2C3E50;
+//   }
 
-  img {
-    display: inline-block;
-    float: left;
-  }
+//   img {
+//     display: inline-block;
+//     float: left;
+//   }
 
-  img:hover {
-    transform:rotate(15deg);
-    -ms-transform:rotate(15deg); /* IE 9 */
-    -webkit-transform:rotate(15deg); /* Safari and Chrome */
-  }
-}
+//   img:hover {
+//     transform:rotate(15deg);
+//     -ms-transform:rotate(15deg); /* IE 9 */
+//     -webkit-transform:rotate(15deg); /* Safari and Chrome */
+//   }
+// }
 
-// main page
+// // main page
 
-canvas {
-  margin-left: -50px;
-}
+// canvas {
+//   margin-left: -50px;
+// }
 
-h1 {
-  color: #E74C3C;
-  font-family: 'Raleway', 'san-serif';
-  font-weight: 100;
-}
+// h1 {
+//   color: #E74C3C;
+//   font-weight: 100;
+// }
 
-h2 {
-  font-family: 'Open Sans', 'san-serif';
-}
+// h2 {
+//   font-family: 'Open Sans', 'san-serif';
+// }
 
-h3 {
-  font-family: 'Open Sans', 'san-serif';
-}
+// h3 {
+//   font-family: 'Open Sans', 'san-serif';
+// }
 
-p {
-  font-family: 'Open Sans', 'san-serif';
-}
+// p {
+//   font-family: 'Open Sans', 'san-serif';
+// }
 
-.profile-inner, .campaign-inner, .message-inner {
-  text-align: center;
-}
+// .profile-inner, .campaign-inner, .message-inner {
+//   text-align: center;
+// }
 
-.campaigns-and-reviews {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
+// .campaigns-and-reviews {
+//   margin-top: 10px;
+//   margin-bottom: 10px;
+// }
 
-.dash-header-text {
-  background-color: #E74C3C;
-  height: 50px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  -moz-border-top-left-radius: 10px;
-  -moz-border-top-right-radius: 10px;
-  text-align: center;
+// .dash-header-text {
+//   background-color: #E74C3C;
+//   height: 50px;
+//   border-top-left-radius: 10px;
+//   border-top-right-radius: 10px;
+//   -moz-border-top-left-radius: 10px;
+//   -moz-border-top-right-radius: 10px;
+//   text-align: center;
 
-  // to get rid of that awk space between the reviews table
-  &:nth-child(0){
-    margin-bottom: 10px;
-  }
+//   // to get rid of that awk space between the reviews table
+//   &:nth-child(0){
+//     margin-bottom: 10px;
+//   }
 
-  h3 {
-    font-family: 'Raleway', 'san-serif';
-    font-size: 20px;
-    color: #fff;
-    padding-top: 10px;
-    margin-top: 0;
-  }
+//   h3 {
+//     font-size: 20px;
+//     color: #fff;
+//     padding-top: 10px;
+//     margin-top: 0;
+//   }
 
-  .dash-header-inner {
-    padding-top: 10px;
-    img {
-      display: inline;
-    }
+//   .dash-header-inner {
+//     padding-top: 10px;
+//     img {
+//       display: inline;
+//     }
 
-    h3 {
-      display: inline;
-    }
-  }
+//     h3 {
+//       display: inline;
+//     }
+//   }
   
-}
+// }
 
-.dash-main {
-  border: 1px solid #ecf0f1;
-  width: 430px; 
-  padding: 0;
-  border-radius: 10px; 
-  -moz-border-radius: 10px;
+// .dash-main {
+//   border: 1px solid #ecf0f1;
+//   width: 430px; 
+//   padding: 0;
+//   border-radius: 10px; 
+//   -moz-border-radius: 10px;
 
-  p {
-    padding-left: 10px;
-    padding-right: 10px;
-    &:hover {
-      background-color: #ecf0f1;
-    }
+//   p {
+//     padding-left: 10px;
+//     padding-right: 10px;
+//     &:hover {
+//       background-color: #ecf0f1;
+//     }
 
-    &:nth-child(n+2){
-      padding-top: 5px;
-      border-top: 1px solid #ecf0f1;
-    }
-  }
+//     &:nth-child(n+2){
+//       padding-top: 5px;
+//       border-top: 1px solid #ecf0f1;
+//     }
+//   }
 
-  &.full-width {
-    width: 100%;
-    margin-bottom: 10px;
-    }
-  }
+//   &.full-width {
+//     width: 100%;
+//     margin-bottom: 10px;
+//     }
+//   }
 
-.margin-left-10 {
-    margin-left: 10px;
-  }
+// .margin-left-10 {
+//     margin-left: 10px;
+//   }
 
 
-// reviews 
-table.table {
-  color: #e74c3c;
-  font-family: 'Open Sans',sans-serif;
-  margin-bottom: 5px; 
+// // reviews 
+// table.table {
+//   color: #e74c3c;
+//   font-family: 'Open Sans',sans-serif;
+//   margin-bottom: 5px; 
 
-  thead th {
-    font-family: 'Raleway', sans-serif;
-    font-weight: 100;
-  }
+//   thead th {
+//     font-weight: 100;
+//   }
 
-  tr {
-    font-size: 30px;
-    height: 50px ;
-  }
+//   tr {
+//     font-size: 30px;
+//     height: 50px ;
+//   }
 
-  td {
-  }
+//   td {
+//   }
 
-}
+// }
 
-// product dashheader
-.dash-header {
-  background-color: #ecf0f1;
-  height: 240px; 
-  padding: 10px;
-  width: 890px;
+// // product dashheader
+// .dash-header {
+//   background-color: #ecf0f1;
+//   height: 240px; 
+//   padding: 10px;
+//   width: 890px;
 
-  a {
+//   a {
       
-    &:hover {
-      text-decoration: none;
-    }
+//     &:hover {
+//       text-decoration: none;
+//     }
     
-    p {
-      color: black; 
-    }
-  }
+//     p {
+//       color: black; 
+//     }
+//   }
 
-  .dash-quick-link {
-    width: 282px; 
-    padding: 10px;
-    margin: 0;
-    height: 220px;
-    background-color: #fff;
-    -moz-box-shadow: 2px 2px 5px #888;
-    -webkit-box-shadow: 2px 2px 5px #888;
-    box-shadow: 2px 2px 5px #888;
-    cursor: pointer;
+//   .dash-quick-link {
+//     width: 282px; 
+//     padding: 10px;
+//     margin: 0;
+//     height: 220px;
+//     background-color: #fff;
+//     -moz-box-shadow: 2px 2px 5px #888;
+//     -webkit-box-shadow: 2px 2px 5px #888;
+//     box-shadow: 2px 2px 5px #888;
+//     cursor: pointer;
 
-    &:nth-child(n+2) {
-      margin-left: 10px;
-    }
+//     &:nth-child(n+2) {
+//       margin-left: 10px;
+//     }
 
-    h3, p{
-      font-family: 'Raleway', 'san-serif';
-    }
+//     h3, p{
+//     }
 
-  }
+//   }
 
-  .restaurant-quick-link {
-    h3 {
-      color: #3498db;      
-    }
-  }
+//   .restaurant-quick-link {
+//     h3 {
+//       color: #3498db;      
+//     }
+//   }
 
-  .reviews-quick-link {
-    h3 {
-      color: #2ecc71;
-    }
-  }
+//   .reviews-quick-link {
+//     h3 {
+//       color: #2ecc71;
+//     }
+//   }
 
-  .marketing-quick-link {
-    h3 {
-      color: #f1c40f;
-    }
-  }
+//   .marketing-quick-link {
+//     h3 {
+//       color: #f1c40f;
+//     }
+//   }
 
-}
+// }
 
 
-// random btn margin for main pg
-.btn {
-  margin-bottom: 20px;
-}
+// // random btn margin for main pg
+// .btn {
+//   margin-bottom: 20px;
+// }
 
-.no-margin-top {
-  margin-top: 0;
-}
+// .no-margin-top {
+//   margin-top: 0;
+// }
 
-// sign in and sign up
-form {
+// // sign in and sign up
+// form {
 
-  label {
-    font-family: 'Raleway', "san-serif"; 
-    font-size: 25px;
-  }
+//   label {
+//     font-size: 25px;
+//   }
 
-}
+// }
 
-.form-sign {
-  a {
-    font-family: 'Open Sans', 'san-serif';
-    font-size: 20px;
-  }
+// .form-sign {
+//   a {
+//     font-family: 'Open Sans', 'san-serif';
+//     font-size: 20px;
+//   }
 
-  width: 500px; 
-  margin: 0 auto;
+//   width: 500px; 
+//   margin: 0 auto;
 
-  .form-control:nth-child(n+2){
-    margin-top: 10px;
-  }
+//   .form-control:nth-child(n+2){
+//     margin-top: 10px;
+//   }
 
-}
+// }

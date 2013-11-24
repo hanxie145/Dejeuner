@@ -9,5 +9,13 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require font-awesome
+ *= require bootstrap.min.css
+ *= require bootstrap-editable.css
+ *= require bootstrap-timepicker.css
+ *= require ace-ie.css
+ *= require ace-rtl.css
+ *= require ace-skins.css
+ *= require ace.css
  *= require_tree .
  */
