@@ -60,24 +60,20 @@
   // }
 
 }
+.benefits-container {
+  background-color: #dd5a43;
+  margin-top: 10px;
+}
 
 .landing-benefits {
   margin-top: 10px; 
   text-align: center;
   height: 380px;
-  background-color: #ecf0f1;
   margin-bottom: 10px;
-  border-top-left-radius: 3em;
-  border-bottom-right-radius: 3em;
-
-  img { 
-    background-color: rgba(231, 76, 60, 0.26);
-    padding: 20px;
-    border-radius: 5em;
-  }
 
   .landing-benefits-inner {
     margin-top: 10px;
+    color: #fff;
   }
 
   p {
