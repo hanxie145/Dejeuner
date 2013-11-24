@@ -16,5 +16,4 @@
 //= require ace-elements.min.js
 //= require ace-extra.min.js
 //= require ace.min.js
-//= require additional-methods.min.js
 //= require_tree .

@@ -1,0 +1,27 @@
+= render 'layouts/header'
+.main-container
+  .main-content
+    .row
+      .col-sm-9.col-sm-offset-1
+        .login-container
+          #forgot-box.forgot-box.widget-box.no-border
+            .widget-body
+              .widget-main
+                %h4.header.red.lighter.bigger
+                  %i.icon-key
+                  Retrieve Password
+                .space-6
+                %p
+                  Enter your email to receive instructions
+                = form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f|
+                  = devise_error_messages!
+                  %fieldset
+                    %label.block.clearfix
+                      = f.email_field :email, :autofocus => true, class: 'form-control input-lg', placeholder: 'Enter your email'
+                    .clearfix
+                      = f.submit "Send", class: 'width-35 pull-right btn btn-sm btn-danger'
+              / /widget-main
+              .toolbar.center
+                = link_to "Back to login", new_user_session_path, class: 'back-to-login-link'
+          / /widget-body
+        / /forgot-box
