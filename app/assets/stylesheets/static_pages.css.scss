@@ -64,7 +64,6 @@
 .landing-benefits {
   margin-top: 10px; 
   text-align: center;
-  width: 393px;
   height: 380px;
   background-color: #ecf0f1;
   margin-bottom: 10px;
@@ -79,14 +78,6 @@
 
   .landing-benefits-inner {
     margin-top: 10px;
-  }
-
-  &:nth-child(n+1){
-    margin-left: 10px;
-  }
-
-  &:first-child {
-    margin-left: 0;
   }
 
   p {

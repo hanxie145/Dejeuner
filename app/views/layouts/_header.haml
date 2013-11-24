@@ -1,4 +1,41 @@
-= render "shared/flash"
-.navbar.navbar-inverse
-  .container
-    %a.navbar-bran{:href => "/main"} Dejeuner
+#navbar.navbar.navbar-default
+  #navbar-container.navbar-container
+    .navbar-header.pull-left
+      %a.navbar-brand{href: "/"}
+        %small
+          %i.fa.fa-coffee
+          Dejeuner
+      / /.brand
+    / /.navbar-header
+    .navbar-header.pull-right{role: "navigation"}
+      %ul.nav.ace-nav
+        - if current_user
+          %li.light-blue
+            %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+              %span.user-info
+                %small Welcome,
+                Jason
+              %i.fa.fa-caret-down
+            %ul.user-menu.pull-right.dropdown-menu.dropdown-yellow.dropdown-caret.dropdown-close
+              %li
+                %a{href: "#"}
+                  %i.fa.fa-cog
+                  Settings
+              %li
+                %a{href: "#"}
+                  %i.fa.fa-user
+                  Profile
+              %li.divider
+              %li
+                %a{href: "#"}
+                  %i.fa.fa-off
+                  Logout
+        - else 
+          %li.red
+            = link_to user_registration_path do 
+              Sign Up 
+          %li.red
+            = link_to new_user_session_path do 
+              Sign In
+      / /.ace-nav
+    / /.navbar-header

@@ -1,36 +1,4 @@
-#navbar.navbar.navbar-default
-  #navbar-container.navbar-container
-    .navbar-header.pull-left
-      %a.navbar-brand{href: "/"}
-        %small
-          %i.fa.fa-coffee
-          Dejeuner
-      / /.brand
-    / /.navbar-header
-    .navbar-header.pull-right{role: "navigation"}
-      %ul.nav.ace-nav
-        %li.light-blue
-          %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
-            %span.user-info
-              %small Welcome,
-              Jason
-            %i.fa.fa-caret-down
-          %ul.user-menu.pull-right.dropdown-menu.dropdown-yellow.dropdown-caret.dropdown-close
-            %li
-              %a{href: "#"}
-                %i.fa.fa-cog
-                Settings
-            %li
-              %a{href: "#"}
-                %i.fa.fa-user
-                Profile
-            %li.divider
-            %li
-              %a{href: "#"}
-                %i.fa.fa-off
-                Logout
-      / /.ace-nav
-    / /.navbar-header
+= render 'layouts/header'
   / /.container
 #main-container.main-container
   .main-container-inner
