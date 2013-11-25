@@ -1,90 +1,11 @@
 = render 'layouts/header'
 #main-container.main-container
   .main-container-inner
-    %a#menu-toggler.menu-toggler{href: "#"}
-      %span.menu-text
-    #sidebar.sidebar.menu-min
-      / #sidebar-shortcuts
-      %ul.nav.nav-list
-        %li.active
-          %a{href: "index.html"}
-            %i.fa.fa-dashboard
-            %span.menu-text Dashboard
-        %li
-          %a{href: "typography.html"}
-            %i.fa.fa-text-width
-            %span.menu-text Profile
-        %li
-          %a.dropdown-toggle{href: "#"}
-            %i.fa.fa-desktop
-            %span.menu-text Campaigns
-            %b.arrow.fa.fa-angle-down
-          %ul.submenu
-            %li
-              %a{href: "elements.html"}
-                %i.fa.fa-double-angle-right
-                Elements
-            %li
-              %a{href: "buttons.html"}
-                %i.fa.fa-double-angle-right
-                Buttons & fa.fas
-            %li
-              %a{href: "treeview.html"}
-                %i.fa.fa-double-angle-right
-                Treeview
-            %li
-              %a{href: "jquery-ui.html"}
-                %i.fa.fa-double-angle-right
-                jQuery UI
-            %li
-              %a{href: "nestable-list.html"}
-                %i.fa.fa-double-angle-right
-                Nestable Lists
-            %li
-              %a.dropdown-toggle{href: "#"}
-                %i.fa.fa-double-angle-right
-                Three Level Menu
-                %b.arrow.fa.fa-angle-down
-              %ul.submenu
-                %li
-                  %a{href: "#"}
-                    %i.fa.fa-leaf
-                    Item #1
-                %li
-                  %a.dropdown-toggle{href: "#"}
-                    %i.fa.fa-pencil
-                    4th level
-                    %b.arrow.fa.fa-angle-down
-                  %ul.submenu
-                    %li
-                      %a{href: "#"}
-                        %i.fa.fa-plus
-                        Add Product
-                    %li
-                      %a{href: "#"}
-                        %i.fa.fa-eye-open
-                        View Products
-        %li
-          %a.dropdown-toggle{href: "#"}
-            %i.fa.fa-list
-            %span.menu-text Marketing
-            %b.arrow.fa.fa-angle-down
-          %ul.submenu
-            %li
-              %a{href: "tables.html"}
-                %i.fa.fa-double-angle-right
-                Simple & Dynamic
-            %li
-              %a{href: "jqgrid.html"}
-                %i.fa.fa-double-angle-right
-                jqGrid plugin
-      / /.nav-list
+    = render 'layouts/sidebar'
     .main-content
       #breadcrumbs.breadcrumbs
         %ul.breadcrumb
-          %li
-            %i.fa.fa-home.home-fa.fa
-            %a{href: "#"} Home
+          %i.fa.fa-dashboard
           %li.active Dashboard
         / .breadcrumb
         #nav-search.nav-search
@@ -719,39 +640,7 @@
         / /.row
       / /.page-content
     / /.main-content
-    #ace-settings-container.ace-settings-container
-      #ace-settings-btn.btn.btn-app.btn-xs.btn-warning.ace-settings-btn
-        %i.fa.fa-cog.bigger-150
-      #ace-settings-box.ace-settings-box
-        %div
-          .pull-left
-            %select#skin-colorpicker.hide
-              %option{"data-skin" => "default", value: "#438EB9"} #438EB9
-              %option{"data-skin" => "skin-1", value: "#222A2D"} #222A2D
-              %option{"data-skin" => "skin-2", value: "#C6487E"} #C6487E
-              %option{"data-skin" => "skin-3", value: "#D0D0D0"} #D0D0D0
-          %span   Choose Skin
-        %div
-          %input#ace-settings-navbar.ace.ace-checkbox-2{type: "checkbox"}/
-          %label.lbl{for: "ace-settings-navbar"} Fixed Navbar
-        %div
-          %input#ace-settings-sidebar.ace.ace-checkbox-2{type: "checkbox"}/
-          %label.lbl{for: "ace-settings-sidebar"} Fixed Sidebar
-        %div
-          %input#ace-settings-breadcrumbs.ace.ace-checkbox-2{type: "checkbox"}/
-          %label.lbl{for: "ace-settings-breadcrumbs"} Fixed Breadcrumbs
-        %div
-          %input#ace-settings-rtl.ace.ace-checkbox-2{type: "checkbox"}/
-          %label.lbl{for: "ace-settings-rtl"} Right To Left (rtl)
-        %div
-          %input#ace-settings-add-container.ace.ace-checkbox-2{type: "checkbox"}/
-          %label.lbl{for: "ace-settings-add-container"}
-            Inside
-            %b .container
-    / /#ace-settings-container
   / /.main-container-inner
-  %a#btn-scroll-up.btn-scroll-up.btn.btn-sm.btn-inverse{href: "#"}
-    %i.fa.fa-double-angle-up.fa.fa-only.bigger-110
 / /.main-container
 / basic scripts
 / inline scripts related to this page

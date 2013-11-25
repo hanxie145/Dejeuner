@@ -1,0 +1,56 @@
+#sidebar.sidebar.menu-min
+  / #sidebar-shortcuts
+  %ul.nav.nav-list
+    %li.active
+      %a{href: "index.html"}
+        %i.fa.fa-dashboard
+        %span.menu-text Dashboard
+    %li
+      %a{href: "typography.html"}
+        %i.fa.fa-user
+        %span.menu-text Profile
+    %li
+      %a.dropdown-toggle{href: "#"}
+        %i.fa.fa-desktop
+        %span.menu-text Campaigns
+        %b.fa.fa-angle-down
+      %ul.submenu
+        %li
+          %a{href: "#"}
+            %i.fa.fa-angle-double-right
+            New campaign
+        %li
+          %a{href: "#"}
+            %i.fa.fa-double-angle-right
+            Reviews
+        %li
+          %a{href: "#"}
+            %i.fa.fa-double-angle-right
+            Past campaigns
+    %li
+      %a.dropdown-toggle{href: "#"}
+        %i.fa.fa-comment-o
+        %span.menu-text Marketing
+        %b.arrow.fa.fa-angle-down
+      %ul.submenu
+        %li
+          %a{href: "#"}
+            %i.fa.fa-double-angle-right
+            Send out a blast
+        %li
+          %a{href: "#"}
+            %i.fa.fa-double-angle-right
+            Contacts
+        %li
+          %a{href: "#"}
+            %i.fa.fa-double-angle-right
+            Marketing history
+    %li 
+      %a{:href => "#"}
+        %i.fa.fa-sign-out
+        %span.menu-text Log out 
+    %li 
+      %a{:href => "#"}
+        %i.fa.fa-question
+        %span.menu-text Help 
+  / /.nav-list
