@@ -1,65 +1,132 @@
 = render 'layouts/header'
-
-.pricing-header
-  .container
-    .row
-      .col-lg-12
-        %h1 Pricing Plan
-        %h1 Choose the plan best suited for your business. Or try the trial for free.
-
-.container        
-  .row 
-    .col-lg-3.pricing-table
-      %h1.center Trial
-      %p Try it for free for 7 days. 
-      %ul 
-        What's included
-        %li Shared phone number
-        %li Up to 100 Subscribers
-        %li One Marketing Blast
-      %ul 
-        What your missing
-        %li Unique phone number
-        %li Higher subscriber limit
-        %li Permenant account
-      %a{:href => "#", :class => "btn btn-success btn-lg"} Sign Up 
-    .col-lg-3.pricing-table
-      %h1.center Petite
-      %p For small to medium single-location restaurant.
-      %ul 
-        What's included:
-        %li Unique phone number
-        %li Up to 500 Subscribers at once
-        %li Send out 3 Marketing Blasts per month
-        %li Email Support
-      %ul 
-        What your missing 
-        %li Phone Support
-        %li Special Analytics
-      %a{:href => "#", :class => "btn btn-success btn-lg"} Sign Up 
-    .col-lg-3.pricing-table
-      %h1.center Moyenne
-      %p For medium to large single or multiple location restaurants.
-      %ul 
-        What's included:
-        %li Up to 1500 Subscribers at once 
-        %li Send out 5 Marketing Blasts per month 
-        %li Phone support
-      %ul 
-        What your missing
-        %li Special Analytics
-      %a{:href => "#", :class => "btn btn-success btn-lg"} Sign Up 
-    .col-lg-3.pricing-table
-      %h1.center Grande
-      %p For multiple location restaurants of a greater size
-      %ul 
-        What's included: 
-        %li Up to 5000 Subscribers at once 
-        %li Send out 10 Marketing Blasts per month 
-        %li Special Analytics 
-        %li Phone support
-      %ul 
-        What your missing
-        %li Nothing
-      %a{:href => "#", :class => "btn btn-success btn-lg"} Sign Up 
-
+.container
+  .row
+    .col-sm-12
+      .page-header
+        %h1 
+          Pricing Plans
+          %small 
+            %i.fa.fa-double-angle-right
+            Keep your customers coming back for seconds
+.container
+  .row
+    .col-xs-4.col-sm-3.pricing-span-header
+      .widget-box.transparent.pricing-widget 
+        .widget-header
+          %h5.bigger.lighter Plan Name
+        .widget-body
+          .widget-main.no-padding
+            %ul.list-unstyled.list-striped.pricing-table-header
+              %li Unique Dejeuner Number
+              %li Subscriber count
+              %li Marketing blasts
+              %li Email support
+              %li Private phone support
+              %li Schedule marketing blasts
+              %li Special technical support
+    .col-xs-8.col-sm-9.pricing-span-body
+      .pricing-span
+        .widget-box.pricing-box-small
+          .widget-header.header-color-red3
+            %h5.bigger.lighter Trial
+          .widget-body
+            .widget-main.no-padding
+              %ul.list-unstyled.list-striped.pricing-table
+                %li Shared number
+                %li 100
+                %li Only 5
+                %li No
+                %li No
+                %li No
+                %li
+                  %i.icon-remove.red
+              .price
+                %span.label.label-lg.label-inverse.arrowed-in.arrowed-in-right
+                  Free!
+            %div
+              %a.btn.btn-block.btn-sm.btn-danger{:href => "#"}
+                %span Sign up
+      .pricing-span
+        .widget-box.pricing-box-small
+          .widget-header.header-color-orange
+            %h5.bigger.lighter Petite
+          .widget-body
+            .widget-main.no-padding
+              %ul.list-unstyled.list-striped.pricing-table
+                %li 
+                  %i.fa.fa-check.green 
+                %li 1000
+                %li 5 / month
+                %li 
+                  %i.fa.fa-check.green
+                %li 
+                  %i.fa.fa-times.red
+                %li
+                  %i.fa.fa-times.red
+                %li 
+                  %i.fa.fa-times.red
+              .price
+                %span.label.label-lg.label-inverse.arrowed-in.arrowed-in-right
+                  $49
+                  %small /month
+            %div
+              %a.btn.btn-block.btn-sm.btn-warning{:href => "#"}
+                %span Sign up
+      .pricing-span
+        .widget-box.pricing-box-small
+          .widget-header.header-color-blue
+            %h5.bigger.lighter Moyenne
+          .widget-body
+            .widget-main.no-padding
+              %ul.list-unstyled.list-striped.pricing-table
+                %li
+                  %i.fa.fa-check.green
+                %li 1500
+                %li 10 / month
+                %li
+                  %i.fa.fa-check.green
+                %li
+                  %i.fa.fa-check.green
+                %li
+                  %i.fa.fa-check.green
+                %li 
+                  %i.fa.fa-times.red
+              .price
+                %span.label.label-lg.label-inverse.arrowed-in.arrowed-in-right
+                  $89
+                  %small /month
+            %div
+              %a.btn.btn-block.btn-sm.btn-primary{:href => "#"}
+                %span Sign up
+      .pricing-span
+        .widget-box.pricing-box-small
+          .widget-header.header-color-green
+            %h5.bigger.lighter Grande
+          .widget-body
+            .widget-main.no-padding
+              %ul.list-unstyled.list-striped.pricing-table
+                %li 
+                  %i.fa.fa-check.green
+                %li 5,000
+                %li 15
+                %li
+                  %i.fa.fa-check.green
+                %li
+                  %i.fa.fa-check.green
+                %li
+                  %i.fa.fa-check.green
+                %li 
+                  %i.fa.fa-check.green
+              .price
+                %span.label.label-lg.label-inverse.arrowed-in.arrowed-in-right
+                  $149
+                  %small /month
+            %div
+              %a.btn.btn-block.btn-sm.btn-success{:href => "#"}
+                %span Sign up
+    .col-sm-12
+      .page-footer
+        %h1 
+          More than 5,000 subscribers?
+          %a{:href => "#"} Contact us 
+          for special prices

@@ -81,29 +81,8 @@
 }
 
 
-// pricing page 
 .center {
   text-align: center;
-}
-
-.pricing-header {
-  background-image: image_url('debut_light_@2X.png')
-}
-
-.pricing-table {
-  border: 1px solid #E74C3C; 
-  margin-top: 20px; 
-  height: 400px; 
-  width: 24%;
-
-  &:nth-child(n+2) {
-    margin-left: 10px;
-  }
-
-  .btn {
-    position: absolute;
-    bottom: 0;
-  }
 }
 
 // alerts 

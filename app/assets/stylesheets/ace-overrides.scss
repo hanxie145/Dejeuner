@@ -1,3 +1,37 @@
 .navbar {
   background-color: #dd5a43;
 }
+
+body {
+  background-color: #fff;
+}
+
+// for pricing tables
+.pricing-span, .pricing-widget{
+  li {
+    height: 60px;
+    font-size: 17px;
+  }
+}
+
+.price {
+  .label-lg {
+    font-size: 15px;
+  }
+}
+
+.page-footer {
+  margin: 0 0 12px;
+  border-top: 1px dotted #e2e2e2;
+  padding-top: 16px;
+  padding-top: 7px;
+  margin-top: 10px;
+
+   h1 {
+    padding: 0;
+    margin: 0 8px;
+    font-size: 24px;
+    font-weight: lighter;
+    color: black;
+  }
+}

@@ -9,7 +9,7 @@
     / /.navbar-header
     .navbar-header.pull-right{role: "navigation"}
       %ul.nav.ace-nav
-        - if current_user && params[:controller] != 'static_pages'
+        - if current_user
           %li.red
             %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
               %span.user-info
@@ -30,7 +30,7 @@
           %li.red
             = link_to "About", '#'
           %li.red
-            = link_to "Pricing", '#'
+            = link_to "Pricing", '/pricing'
           %li.red
             = link_to new_user_registration_path do 
               Sign Up 
