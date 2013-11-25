@@ -1,45 +1,48 @@
 = render 'layouts/header'
-.container.main-body
-  .row
-    = render 'layouts/fixed_nav'
-    .col-lg-9.pull-right 
-      %ul.nav.nav-tabs.pull-right
-        %li.active.campaign-tab
-          %a{:href => "#"} Campaign
-        %li.feedback-tab
-          %a{:href => "#"} Feedback
-          
-    .col-lg-9.pull-right.campaigns
-      %table.table.table-hover.table-bordered.profile-table
-        %thead 
-          %tr 
-            %th 
-              %h1 Campaigns
-        %tbody 
-          %tr 
-            %td Number: 
-            %td 12674158802
-          %tr 
-            %td Current: 
-            %td What is your favourite bar snack at Tony's Tonics?
-          %tr 
-            %td Prize: 
-            %td 5% off your tab at the end of the night.  
-          %tr 
-            %td Last: 
-            %td Tell us what you think of our new beer selection - Yes or No to Pilsner?
-      = link_to "Start New Campaign", '#', :class => "btn btn-large btn-warning pull-right"
-
-    .col-lg-9.pull-right.reviews
-      %table.table.table-hover 
-        %thead 
-          %tr 
-            %th Review
-            %th Date Received
-            %th Number
-        %tbody 
-        - @reviews.each do |review| 
-          %tr 
-            %td= review.body
-            %td= review.date_sent.slice(0..10)
-            %td= review.from
+#main-container.main-container
+  .main-container-inner
+    = render 'layouts/sidebar'
+    .main-content
+      #breadcrumbs.breadcrumbs
+        %ul.breadcrumb
+          %li.active
+            %a{:href => "/campaigns"} Campaigns
+          %li 
+            %i.fa.fa-comment-o
+            Reviews
+        / .breadcrumb
+      .page-content
+        .page-header
+          %h1
+            Reviews
+            %small
+              %i.fa.fa-double-angle-right
+              What people are saying about your business
+        / /.page-header
+        .row
+          .col-xs-12
+            .col-sm-12
+              .widget-box
+                .widget-header
+                  %h4.lighter.smaller
+                    %i.fa.fa-comment.blue
+                    Conversations
+                .widget-body
+                  .widget-main.no-padding
+                    .dialogs
+                      - @reviews.each do |review| 
+                        .itemdiv.dialogdiv
+                          .user
+                          .body
+                            .time
+                              %i.fa.fa-time
+                              %span.red
+                                = review.date_sent.slice(0..10)
+                            .name.red
+                              = review.from
+                            .text
+                              = review.body
+                    / /widget-main
+                  / /widget-body
+                / /widget-box
+              / /span
