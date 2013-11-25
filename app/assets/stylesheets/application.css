@@ -10,9 +10,7 @@
  *
  *= require_self
  *= require font-awesome
- *= require bootstrap.min
- *= require bootstrap-editable
- *= require bootstrap-timepicker
+ *= require bootstrap
  *= require ace-ie
  *= require ace-rtl
  *= require ace-skins
