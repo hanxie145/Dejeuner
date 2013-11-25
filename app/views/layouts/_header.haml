@@ -9,6 +9,11 @@
     / /.navbar-header
     .navbar-header.pull-right{role: "navigation"}
       %ul.nav.ace-nav
+        - if params[:controller] == 'static_pages'
+          %li.red
+            = link_to "About", '/about'
+          %li.red
+            = link_to "Pricing", '/pricing'
         - if current_user
           %li.red
             %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
@@ -17,6 +22,14 @@
                 Jason
               %i.fa.fa-caret-down
             %ul.user-menu.pull-right.dropdown-menu.dropdown-yellow.dropdown-caret.dropdown-close
+              %li 
+                %a{:href => "/"} 
+                  %i.fa.fa-home
+                  Home page
+              %li 
+                %a{:href => "/main"}
+                  %i.fa.fa-dashboard 
+                  Dashboard 
               %li
                 %a{href: "/profile"}
                   %i.fa.fa-user
@@ -27,10 +40,6 @@
                   %i.fa.fa-off
                   Logout
         - else 
-          %li.red
-            = link_to "About", '/about'
-          %li.red
-            = link_to "Pricing", '/pricing'
           %li.red
             = link_to new_user_registration_path do 
               Sign Up 
