@@ -5,6 +5,7 @@ class CampaignsController < ApplicationController
   # GET /campaigns
   # GET /campaigns.json
   def index
+    set_user()
     # @user = current_user
     # @current_campaign = @user.campaigns.last || ""
     # @keyword = @user.key_word || ""

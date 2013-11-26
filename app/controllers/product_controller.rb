@@ -2,7 +2,7 @@ class ProductController < ApplicationController
   before_filter :authenticate_user!
 
   def main 
-    @user = current_user
+    set_user()
     @restaurant = @user.restaurant 
 
     # get reviews
@@ -45,7 +45,7 @@ class ProductController < ApplicationController
   end 
 
   def profile
-    @user = current_user
+    set_user()
     @name = @user.name
     @first_name = @name.split(' ')[0]
     @last_name = @name.split(' ')[1]

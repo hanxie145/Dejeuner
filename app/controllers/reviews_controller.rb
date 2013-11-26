@@ -4,6 +4,7 @@ class ReviewsController < ApplicationController
   # GET /reviews
   # GET /reviews.json
   def index
+    set_user()
 
     # twilio credentials
     twilio_sid = "ACfffe2a378d744f6c9c2a280c93a5be21"

@@ -19,7 +19,7 @@
             %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
               %span.user-info
                 %small Welcome,
-                Jason
+                = @user.name
               %i.fa.fa-caret-down
             %ul.user-menu.pull-right.dropdown-menu.dropdown-yellow.dropdown-caret.dropdown-close
               %li 
@@ -46,3 +46,6 @@
           %li.red
             = link_to new_user_session_path do 
               Sign In
+        %li.red
+          %a{:href => "#"}
+            Contact us 
