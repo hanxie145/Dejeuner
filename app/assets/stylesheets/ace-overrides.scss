@@ -6,6 +6,14 @@ body {
   background-color: #fff;
 }
 
+// for sessions/new in devise 
+.toolbar {
+  color: #FE9;
+  font-size: 14px;
+  font-weight: bold;
+  text-shadow: 1px 0px 1px rgba(0, 0, 0, 0.25);
+}
+
 // for pricing tables
 .pricing-span, .pricing-widget{
   li {
