@@ -1,22 +1,22 @@
 #sidebar.sidebar.menu-min
   / #sidebar-shortcuts
   %ul.nav.nav-list
-    %li.active
-      %a{href: "index.html"}
+    %li{:class => ('active' if controller_name() == 'product' && action_name() == 'main') }
+      %a{href: "/main"}
         %i.fa.fa-dashboard
         %span.menu-text Dashboard
-    %li
-      %a{href: "typography.html"}
+    %li{:class => ('active' if controller_name() == 'product' && action_name() == 'profile') }
+      %a{href: "/profile"}
         %i.fa.fa-user
         %span.menu-text Profile
-    %li
-      %a.dropdown-toggle{href: "#"}
-        %i.fa.fa-desktop
+    %li{:class => ('active' if controller_name() == 'reviews' || controller_name() == 'campaigns') }
+      %a.dropdown-toggle{href: "/campaigns"}
+        %i.fa.fa-flag
         %span.menu-text Campaigns
         %b.fa.fa-angle-down
       %ul.submenu
         %li
-          %a{href: "#"}
+          = link_to new_campaign_path do
             %i.fa.fa-angle-double-right
             New campaign
         %li
@@ -27,7 +27,7 @@
           %a{href: "#"}
             %i.fa.fa-angle-double-right
             Past campaigns
-    %li
+    %li{:class => ('active' if controller_name() == 'sms') }
       %a.dropdown-toggle{href: "#"}
         %i.fa.fa-comment-o
         %span.menu-text Marketing

@@ -5,33 +5,33 @@ class CampaignsController < ApplicationController
   # GET /campaigns
   # GET /campaigns.json
   def index
-    @user = current_user
-    @current_campaign = @user.campaigns.last || ""
-    @keyword = @user.key_word || ""
-    @numbers = current_user.numbers
-    @number = pluralize(@numbers.length, "Number")
+    # @user = current_user
+    # @current_campaign = @user.campaigns.last || ""
+    # @keyword = @user.key_word || ""
+    # @numbers = current_user.numbers
+    # @number = pluralize(@numbers.length, "Number")
 
     # twilio credentials
     twilio_sid = "ACfffe2a378d744f6c9c2a280c93a5be21"
     twilio_token = "374dca84e42fc9ca7f67319cb58b601a"
     twilio_phone_number = "2674158802"
 
-    @twilio_client = Twilio::REST::Client.new twilio_sid, twilio_token
+    # @twilio_client = Twilio::REST::Client.new twilio_sid, twilio_token
 
-    # get all the reviews from logs for today
-    @reviews = []
+    # # get all the reviews from logs for today
+    # @reviews = []
 
-    # additional parameter: date_sent: Date.today.to_s,
-    @twilio_client.account.sms.messages.list(to: "+12674158802").each do |message|
+    # # additional parameter: date_sent: Date.today.to_s,
+    # @twilio_client.account.sms.messages.list(to: "+12674158802").each do |message|
 
-      # hardcode the number in
-      # TODO switch to user.number in the future
-      @reviews.push(message)
+    #   # hardcode the number in
+    #   # TODO switch to user.number in the future
+    #   @reviews.push(message)
 
-    end
+    # end
 
-    # cut array 
-    @reviews = @reviews[0..10]
+    # # cut array 
+    # @reviews = @reviews[0..10]
   end
 
   # GET /campaigns/1

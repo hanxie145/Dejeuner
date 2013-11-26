@@ -1,27 +1,22 @@
 = render 'layouts/header'
-
-.container.main-body
-  .row
-    = render 'layouts/fixed_nav'
-    .col-lg-9.pull-right
-      %table.table.table-hover.table-bordered.profile-table
-        %thead 
-          %tr 
-            %th 
-              %h1 Profile
-        %tbody 
-          %tr 
-            %td Name: 
-            %td= @name
-          %tr 
-            %td= @number 
-            %td
-              - @numbers.each do |number| 
-                = number.number
-          %tr 
-            %td Restaurant: 
-            %td= @restaurant
-          %tr 
-            %td Current Plan: 
-            %td Petite
-      = link_to "Edit Profile", edit_user_registration_path, :class => "btn btn-large btn-info pull-right"
+#main-container.main-container
+  .main-container-inner
+    = render 'layouts/sidebar'
+    .main-content
+      #breadcrumbs.breadcrumbs
+        %ul.breadcrumb
+          %li.active 
+            %i.fa.fa-user
+            Profile
+        / .breadcrumb
+      .page-content
+        .page-header
+          %h1
+            Profile
+            %small
+              %i.fa.fa-angle-double-right
+              Your infomation
+        / /.page-header
+        .row
+          .col-xs-12
+            / PAGE CONTENT BEGINS

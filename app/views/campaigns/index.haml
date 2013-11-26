@@ -1,81 +1,38 @@
 = render 'layouts/header'
-.container.main-body
-  .row
-    = render 'layouts/fixed_nav'
-    .col-lg-9.pull-right 
-      %ul.nav.nav-tabs.pull-right
-        %li.active.campaign-tab
-          %a{:href => "#"} Campaigns
-        %li.feedback-tab
-          %a{:href => "#"} Feedback
-        %li.campaigns-history-tab
-          %a{:href => "#"} Past Campaigns 
-          
-    .col-lg-9.pull-right.campaigns
-      %table.table.table-hover.table-bordered.profile-table
-        %thead 
-          %tr 
-            %th 
-              %h1 Campaigns
-        %tbody 
-          %tr 
-            %td= @number 
-            %td
-              - @numbers.each do |number| 
-                = number.number
-          %tr 
-            %td Keyword: 
-            %td
-              = @keyword
-              - if @keyword.empty?
-                %a{:href => "key_word", :class => "btn btn-lg btn-primary"} Add key word
-              - else 
-                %a{:href => "key_word", :class => "btn btn-lg btn-primary"} Change  
-          %tr 
-            %td Type: 
-            - if @current_campaign != ""
-              %td= @current_campaign.campaign_type
-            - else 
-              %td 
-          %tr 
-            %td Current: 
-            - if @current_campaign != ""
-              %td= @current_campaign.description
-            - else 
-              %td 
-          %tr 
-            %td Prize: 
-            %td 5% off your tab at the end of the night.  
-      = link_to "Start New Campaign", new_campaign_path, :class => "btn btn-large btn-warning pull-right"
-
-    .col-lg-9.pull-right.reviews
-      %table.table.table-hover 
-        %thead 
-          %tr 
-            %th Review
-            %th Date Received
-            %th Number
-        %tbody 
-        - @reviews.each do |review| 
-          %tr 
-            %td= review.body
-            %td= review.date_sent.slice(0..10)
-            %td= review.from
-
-    .col-lg-9.pull-right.campaigns-history
-      %table.table.table-hover.table-bordered.profile-table
-        %thead 
-          %tr 
-            %th 
-              %h1 Past Campaigns
-        %tbody 
-          %tr 
-            %td Number: 
-            %td 12674158802
-          %tr 
-            %td Type: 
-            %td Feedback
-          %tr 
-            %td Date: 
-            %td August 14th, 2013
-
+#main-container.main-container
+  .main-container-inner
+    = render 'layouts/sidebar'
+    .main-content
+      #breadcrumbs.breadcrumbs
+        %ul.breadcrumb
+          %li
+            %i.fa.fa-flag 
+            Campaigns
+        / .breadcrumb
+      .page-content
+        .page-header
+          %h1
+            Campaigns
+            %small
+              %i.fa.fa-angle-double-right
+              Feedback and marketing with customers
+        / /.page-header
+        .row
+          .col-xs-12
+            .col-sm-6
+              .widget-box
+                .widget-header
+                  %h4.lighter.smaller 
+                    %i.fa.fa-question-circle.blue 
+                    Current campaign
+                .widget-body
+                  .widget-main
+                    %p
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, saepe, quasi, voluptates ea maxime vitae unde magnam pariatur repellat harum temporibus sit ducimus est explicabo neque quas voluptate incidunt perferendis.
+            .col-sm-6
+              .widget-box
+                .widget-header
+                  %h4.lighter.smaller
+                    %i.fa.fa-comment.blue
+                    Conversations
+                
