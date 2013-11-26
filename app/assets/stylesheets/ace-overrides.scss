@@ -6,6 +6,27 @@ body {
   background-color: #fff;
 }
 
+// for flash
+.alert {
+  position: fixed;
+  width: 200px;
+  z-index: 10000;
+  right: 10em;
+
+  .container {
+    width: 300px;
+    height: 100px;
+    background-color: black;
+    border-radius: 1em;
+    padding: 1em;
+    color: #468847;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    border: 1px solid transparent;
+    border-radius: 4px;
+  }
+}
+
 // for sessions/new in devise 
 .toolbar {
   color: #FE9;

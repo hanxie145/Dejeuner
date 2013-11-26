@@ -1,6 +1,6 @@
 # alert 
 alertFadeOut = -> 
-  $(".alert").fadeOut 3000
+  $(".alert").fadeOut 4000
 
 $(document).ready -> alertFadeOut()
 $(document).on "page:change", -> alertFadeOut()
