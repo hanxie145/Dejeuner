@@ -19,4 +19,147 @@
         / /.page-header
         .row
           .col-xs-12
-            / PAGE CONTENT BEGINS
+            #user-profile-3.user-profile.row
+              .col-sm-offset-1.col-sm-10
+                %form.form-horizontal
+                  .tabbable
+                    %ul.nav.nav-tabs.padding-16
+                      %li.active
+                        %a{"data-toggle" => "tab", :href => "#edit-basic"}
+                          %i.green.icon-edit.bigger-125
+                          Basic Info
+                      %li
+                        %a{"data-toggle" => "tab", :href => "#edit-settings"}
+                          %i.purple.icon-cog.bigger-125
+                          Settings
+                      %li
+                        %a{"data-toggle" => "tab", :href => "#edit-password"}
+                          %i.blue.icon-key.bigger-125
+                          Password
+                    .tab-content.profile-edit-tab-content
+                      #edit-basic.tab-pane.active
+                        %h4.header.blue.bolder.smaller General
+                        .row
+                          .col-xs-12.col-sm-8
+                            .form-group
+                              %label.col-sm-4.control-label.no-padding-right{:for => "form-field-username"} Username
+                              .col-sm-8
+                                %input#form-field-username.col-xs-12.col-sm-10{:placeholder => "Username", :type => "text", :value => "alexdoe"}
+                            .space-4
+                            .form-group
+                              %label.col-sm-4.control-label.no-padding-right{:for => "form-field-first"} Name
+                              .col-sm-8
+                                %input#form-field-first.input-small{:placeholder => "First Name", :type => "text", :value => "Alex"}
+                                  %input#form-field-last.input-small{:placeholder => "Last Name", :type => "text", :value => "Doe"}
+                        %hr
+                          .form-group
+                            %label.col-sm-3.control-label.no-padding-right{:for => "form-field-date"} Birth Date
+                            .col-sm-9
+                              .input-medium
+                                .input-group
+                                  %input#form-field-date.input-medium.date-picker{"data-date-format" => "dd-mm-yyyy", :placeholder => "dd-mm-yyyy", :type => "text"}
+                                    %span.input-group-addon
+                                      %i.icon-calendar
+                          .space-4
+                          .form-group
+                            %label.col-sm-3.control-label.no-padding-right Gender
+                            .col-sm-9
+                              %label.inline
+                                %input.ace{:name => "form-field-radio", :type => "radio"}
+                                  %span.lbl Male
+                              \&nbsp; &nbsp; &nbsp;
+                              %label.inline
+                                %input.ace{:name => "form-field-radio", :type => "radio"}
+                                  %span.lbl Female
+                          .space-4
+                          .form-group
+                            %label.col-sm-3.control-label.no-padding-right{:for => "form-field-comment"} Comment
+                            .col-sm-9
+                              %textarea#form-field-comment
+                          .space
+                          %h4.header.blue.bolder.smaller Contact
+                          .form-group
+                            %label.col-sm-3.control-label.no-padding-right{:for => "form-field-email"} Email
+                            .col-sm-9
+                              %span.input-icon.input-icon-right
+                                %input#form-field-email{:type => "email", :value => "alexdoe@gmail.com"}
+                                  %i.icon-envelope
+                          .space-4
+                          .form-group
+                            %label.col-sm-3.control-label.no-padding-right{:for => "form-field-website"} Website
+                            .col-sm-9
+                              %span.input-icon.input-icon-right
+                                %input#form-field-website{:type => "url", :value => "http://www.alexdoe.com/"}
+                                  %i.icon-globe
+                          .space-4
+                          .form-group
+                            %label.col-sm-3.control-label.no-padding-right{:for => "form-field-phone"} Phone
+                            .col-sm-9
+                              %span.input-icon.input-icon-right
+                                %input#form-field-phone.input-medium.input-mask-phone{:type => "text"}
+                                  %i.icon-phone.icon-flip-horizontal
+                          .space
+                          %h4.header.blue.bolder.smaller Social
+                          .form-group
+                            %label.col-sm-3.control-label.no-padding-right{:for => "form-field-facebook"} Facebook
+                            .col-sm-9
+                              %span.input-icon
+                                %input#form-field-facebook{:type => "text", :value => "facebook_alexdoe"}
+                                  %i.icon-facebook.blue
+                          .space-4
+                          .form-group
+                            %label.col-sm-3.control-label.no-padding-right{:for => "form-field-twitter"} Twitter
+                            .col-sm-9
+                              %span.input-icon
+                                %input#form-field-twitter{:type => "text", :value => "twitter_alexdoe"}
+                                  %i.icon-twitter.light-blue
+                          .space-4
+                          .form-group
+                            %label.col-sm-3.control-label.no-padding-right{:for => "form-field-gplus"} Google+
+                            .col-sm-9
+                              %span.input-icon
+                                %input#form-field-gplus{:type => "text", :value => "google_alexdoe"}
+                                  %i.icon-google-plus.red
+                      #edit-settings.tab-pane
+                        .space-10
+                        %div
+                          %label.inline
+                            %input.ace{:name => "form-field-checkbox", :type => "checkbox"}
+                              %span.lbl Make my profile public
+                        .space-8
+                        %div
+                          %label.inline
+                            %input.ace{:name => "form-field-checkbox", :type => "checkbox"}
+                              %span.lbl Email me new updates
+                        .space-8
+                        %div
+                          %label.inline
+                            %input.ace{:name => "form-field-checkbox", :type => "checkbox"}
+                              %span.lbl Keep a history of my conversations
+                          %label.inline
+                            %span.space-2.block
+                            for
+                            %input.input-mini{:maxlength => "3", :type => "text"}
+                              days
+                      #edit-password.tab-pane
+                        .space-10
+                        .form-group
+                          %label.col-sm-3.control-label.no-padding-right{:for => "form-field-pass1"} New Password
+                          .col-sm-9
+                            %input#form-field-pass1{:type => "password"}
+                        .space-4
+                        .form-group
+                          %label.col-sm-3.control-label.no-padding-right{:for => "form-field-pass2"} Confirm Password
+                          .col-sm-9
+                            %input#form-field-pass2{:type => "password"}
+                  .clearfix.form-actions
+                    .col-md-offset-3.col-md-9
+                      %button.btn.btn-info{:type => "button"}
+                        %i.icon-ok.bigger-110
+                        Save
+                      \&nbsp; &nbsp;
+                      %button.btn{:type => "reset"}
+                        %i.icon-undo.bigger-110
+                        Reset
+              / /span
+            / /user-profile
