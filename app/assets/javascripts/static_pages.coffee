@@ -2,5 +2,13 @@
 alertFadeOut = -> 
   $(".alert").fadeOut 4000
 
-$(document).ready -> alertFadeOut()
-$(document).on "page:change", -> alertFadeOut()
+sidebarToggle = -> 
+  $('.sidebar-collapse').click (e) -> 
+    $('#sidebar').toggleClass 'menu-min'
+
+$(document).ready -> 
+  alertFadeOut()
+  sidebarToggle()
+$(document).on "page:change", -> 
+  alertFadeOut()
+  sidebarToggle()
