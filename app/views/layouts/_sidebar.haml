@@ -1,4 +1,4 @@
-#sidebar.sidebar.menu-min
+#sidebar.sidebar
   / #sidebar-shortcuts
   %ul.nav.nav-list
     %li{:class => ('active' if controller_name() == 'product' && action_name() == 'main') }
@@ -10,11 +10,15 @@
         %i.fa.fa-user
         %span.menu-text Profile
     %li{:class => ('active' if controller_name() == 'reviews' || controller_name() == 'campaigns') }
-      %a.dropdown-toggle{href: "/campaigns"}
+      %a.dropdown-toggle{href: "#"}
         %i.fa.fa-flag
         %span.menu-text Campaigns
-        %b.fa.fa-angle-down
+        %b.arrow.fa.fa-angle-down
       %ul.submenu
+        %li 
+          = link_to campaigns_path do 
+            %i.fa.fa-angle-double-right
+            My campaigns 
         %li
           = link_to new_campaign_path do
             %i.fa.fa-angle-double-right
@@ -53,4 +57,7 @@
       %a{:href => "#"}
         %i.fa.fa-question
         %span.menu-text Help 
+  #sidebar-collapse.sidebar-collapse
+    %i.fa.fa-angle-double-left{"data-icon1" => "icon-angle-double-left", "data-icon2" => "icon-angle-double-right"}
+    %i.fa.fa-angle-double-right{"data-icon1" => "icon-angle-double-left", "data-icon2" => "icon-angle-double-right"}
   / /.nav-list

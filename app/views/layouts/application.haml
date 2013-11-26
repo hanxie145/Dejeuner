@@ -28,5 +28,8 @@
     - flash.each do |key, value|
       .alert{:class => "#{key}"}
         .container
-          = value
+          %p.red.float-right{"data-dismiss" => "alert"}
+            %i.fa.fa-times.fa-2x
+          %p 
+            = value
     = yield

@@ -20,48 +20,34 @@
         .row
           .col-xs-12
             / PAGE CONTENT BEGINS
-            .alert.alert-block.alert-success
-              %button.close{"data-dismiss" => "alert", type: "button"}
-                %i.fa.fa-remove
-              %i.fa.fa-ok.green
-              Welcome to
-              %strong.green
-                Ace
-                %small (v1.2)
-              ,
-              the lightweight, feature-rich and easy to use admin template.
             .row
               .space-6
-              .col-sm-7.infobox-container
+              .col-sm-6.infobox-container
                 .infobox.infobox-green
                   .infobox-fa.fa
                     %i.fa.fa-comments
                   .infobox-data
                     %span.infobox-data-number 32
-                    .infobox-content comments + 2 reviews
-                  .stat.stat-success 8%
+                    .infobox-content Reviews 
+                  .badge.badge-success +10 today
                 .infobox.infobox-blue
                   .infobox-fa.fa
-                    %i.fa.fa-twitter
-                  .infobox-data
-                    %span.infobox-data-number 11
-                    .infobox-content new followers
-                  .badge.badge-success
-                    +32%
-                    %i.fa.fa-arrow-up
-                .infobox.infobox-pink
-                  .infobox-fa.fa
-                    %i.fa.fa-shopping-cart
+                    %i.fa.fa-flag
                   .infobox-data
                     %span.infobox-data-number 8
-                    .infobox-content new orders
-                  .stat.stat-important 4%
+                    .infobox-content Campaigns launched
+                .infobox.infobox-pink
+                  .infobox-fa.fa
+                    %i.fa.fa-comment-o
+                  .infobox-data
+                    %span.infobox-data-number 500
+                    .infobox-content sms's left
                 .infobox.infobox-red
                   .infobox-fa.fa
-                    %i.fa.fa-flask
+                    %i.fa.fa-smile-o
                   .infobox-data
-                    %span.infobox-data-number 7
-                    .infobox-content experiments
+                    %span.infobox-data-number 767
+                    .infobox-content subscribers
                 .infobox.infobox-orange2
                   .infobox-chart
                     %span.sparkline{"data-values" => "196,128,202,177,154,94,100,170,224"}
@@ -71,16 +57,6 @@
                   .badge.badge-success
                     7.2%
                     %i.fa.fa-arrow-up
-                .infobox.infobox-blue2
-                  .infobox-progress
-                    .easy-pie-chart.percentage{"data-percent" => "42", "data-size" => "46"}
-                      %span.percent> 42
-                      \%
-                  .infobox-data
-                    %span.infobox-text traffic used
-                    .infobox-content
-                      %span.bigger-110 ~
-                      58GB remaining
                 .space-6
                 .infobox.infobox-green.infobox-small.infobox-dark
                   .infobox-progress
@@ -103,58 +79,6 @@
                     .infobox-content Downloads
                     .infobox-content 1,205
               .vspace-sm
-              .col-sm-5
-                .widget-box
-                  .widget-header.widget-header-flat.widget-header-small
-                    %h5
-                      %i.fa.fa-signal
-                      Traffic Sources
-                    .widget-toolbar.no-border
-                      %button.btn.btn-minier.btn-primary.dropdown-toggle{"data-toggle" => "dropdown"}
-                        This Week
-                        %i.fa.fa-angle-down.fa.fa-on-right.bigger-110
-                      %ul.dropdown-menu.pull-right.dropdown-125.dropdown-lighter.dropdown-caret
-                        %li.active
-                          %a.blue{href: "#"}
-                            %i.fa.fa-caret-right.bigger-110  
-                            This Week
-                        %li
-                          %a{href: "#"}
-                            %i.fa.fa-caret-right.bigger-110.invisible  
-                            Last Week
-                        %li
-                          %a{href: "#"}
-                            %i.fa.fa-caret-right.bigger-110.invisible  
-                            This Month
-                        %li
-                          %a{href: "#"}
-                            %i.fa.fa-caret-right.bigger-110.invisible  
-                            Last Month
-                  .widget-body
-                    .widget-main
-                      #piechart-placeholder
-                      .hr.hr8.hr-double
-                      .clearfix
-                        .grid3
-                          %span.grey
-                            %i.fa.fa-facebook-sign.fa.fa-2x.blue
-                            \  likes
-                          %h4.bigger.pull-right 1,255
-                        .grid3
-                          %span.grey
-                            %i.fa.fa-twitter-sign.fa.fa-2x.purple
-                            \  tweets
-                          %h4.bigger.pull-right 941
-                        .grid3
-                          %span.grey
-                            %i.fa.fa-pinterest-sign.fa.fa-2x.red
-                            \  pins
-                          %h4.bigger.pull-right 1,050
-                    / /widget-main
-                  / /widget-body
-                / /widget-box
-              / /span
-            / /row
             .hr.hr32.hr-dotted
             .row
               .col-sm-5
