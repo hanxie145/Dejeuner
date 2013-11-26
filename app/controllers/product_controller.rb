@@ -47,6 +47,8 @@ class ProductController < ApplicationController
   def profile
     @user = current_user
     @name = @user.name
+    @first_name = @name.split(' ')[0]
+    @last_name = @name.split(' ')[1]
     @restaurant = @user.restaurant
     @numbers = @user.numbers
     @number = pluralize(@numbers.length, "Number")
