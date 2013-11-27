@@ -25,7 +25,7 @@
           = link_to new_campaign_path do
             %i.fa.fa-angle-double-right
             New campaign
-        %li
+        %li{:class => ('active' if controller_name() == 'reviews' && action_name == 'index')}
           %a{href: "/reviews"}
             %i.fa.fa-angle-double-right
             Reviews
