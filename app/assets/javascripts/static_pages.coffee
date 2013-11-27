@@ -1,6 +1,6 @@
 # alert 
 alertFadeOut = -> 
-  $(".alert").fadeOut 4000
+  $(".alert").fadeOut 6000
 
 sidebarToggle = -> 
   $('.sidebar-collapse').click (e) -> 

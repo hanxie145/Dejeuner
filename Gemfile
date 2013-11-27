@@ -15,6 +15,7 @@ gem 'twilio-ruby'
 gem 'turbolinks'
 gem 'font-awesome-rails'
 gem 'delayed_job_active_record'
+gem 'plivo'
 
 group :development do 
   gem "better_errors"

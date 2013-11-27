@@ -35,7 +35,7 @@
             Past campaigns
     %li{:class => ('active' if controller_name() == 'product' && action_name() == 'market') }
       %a.dropdown-toggle{href: "#"}
-        %i.fa.fa-comment-o
+        %i.fa.fa-bullhorn
         %span.menu-text Marketing
         %b.arrow.fa.fa-angle-down
       %ul.submenu
@@ -43,6 +43,9 @@
           %a{href: "/market"}
             %i.fa.fa-angle-double-right
             Send out a blast
+        %li 
+          %a{:href => "#"}
+            Top up on sms credits
         %li
           %a{href: "/contacts"}
             %i.fa.fa-angle-double-right
