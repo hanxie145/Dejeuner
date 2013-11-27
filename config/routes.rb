@@ -27,6 +27,7 @@ Dejeuner::Application.routes.draw do
   get 'market' => 'product#market'
   post 'market' => 'twilio#send_mass_message'
   get 'profile' => 'product#profile'
+  get 'help' => 'product#help'
 
   # demo
   namespace :demo do 

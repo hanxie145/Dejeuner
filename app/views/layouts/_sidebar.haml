@@ -52,11 +52,11 @@
             %i.fa.fa-angle-double-right
             Marketing history
     %li 
-      %a{:href => "#"}
+      = link_to destroy_user_session_path, method: :delete do 
         %i.fa.fa-sign-out
         %span.menu-text Log out 
     %li 
-      %a{:href => "#"}
+      %a{:href => "help"}
         %i.fa.fa-question
         %span.menu-text Help 
   #sidebar-collapse.sidebar-collapse

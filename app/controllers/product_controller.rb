@@ -60,4 +60,7 @@ class ProductController < ApplicationController
     set_user()
   end
   
+  def help 
+    set_user()
+  end
 end
