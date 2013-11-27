@@ -11,38 +11,39 @@ sidebarToggle = ->
 staticPagesGraphs = -> 
   d1 = [[1,10], [2, 150], [3, 237], [4, 288], [5, 388], [6, 678], [7, 1000]]
 
-  sales_charts = $("#sales-charts").css(
-    width: "100%"
-    height: "300px"
-  )
-  $.plot "#sales-charts", [
-    label: "Subscribers"
-    data: d1
-  ],
-    hoverable: true
-    shadowSize: 0
-    series:
-      lines:
-        show: true
+  if $('#sales-charts').length
+    sales_charts = $("#sales-charts").css(
+      width: "100%"
+      height: "300px"
+    )
+    $.plot "#sales-charts", [
+      label: "Subscribers"
+      data: d1
+    ],
+      hoverable: true
+      shadowSize: 0
+      series:
+        lines:
+          show: true
 
-      points:
-        show: true
+        points:
+          show: true
 
-    xaxis:
-      tickLength: 0
+      xaxis:
+        tickLength: 0
 
-    yaxis:
-      ticks: 10
-      min: 0
-      max: 1000
-      tickDecimals: 3
+      yaxis:
+        ticks: 10
+        min: 0
+        max: 1000
+        tickDecimals: 3
 
-    grid:
-      backgroundColor:
-        colors: ["#fff", "#fff"]
+      grid:
+        backgroundColor:
+          colors: ["#fff", "#fff"]
 
-      borderWidth: 1
-      borderColor: "#555"
+        borderWidth: 1
+        borderColor: "#555"
 
   # for slim scroll or overflow-y
   $(".dialogs,.comments").slimScroll height: "300px"
