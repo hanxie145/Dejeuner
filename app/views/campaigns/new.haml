@@ -1,13 +1,45 @@
-.container 
-  .row 
-    .form-sign
-      = form_for(@campaign) do |f|
-        = f.label :description 
-        = f.text_area :description, :autofocus => true, :class => "input input-lg"
-        = f.radio_button(:campaign_type, "Feedback")
-        = f.label(:campaign_type, "Feedback")
-        = f.radio_button(:campaign_type, "Competition")
-        = f.label(:campaign_type, "Competition")
-
-        / = f.select(:feedback, :competition)
-        = f.submit "Make a new campaign", :class => 'btn btn-lg btn-success'
+= render 'layouts/header'
+#main-container.main-container
+  .main-container-inner
+    = render 'layouts/sidebar'
+    .main-content
+      #breadcrumbs.breadcrumbs
+        %ul.breadcrumb
+          %li.active
+            %i.fa.fa-flag
+            Campaigns
+          %li 
+            New campaign  
+        / .breadcrumb
+      .page-content
+        .page-header
+          %h1
+            New Campaign
+        / /.page-header
+        .row
+          .col-xs-12
+            .row
+              .col-sm-6
+                .widget-box
+                  .widget-header
+                    %h4 Create a new campaign
+                  .widget-body
+                    .widget-main
+                      = form_for(@campaign) do |f|
+                        = f.label :description, "What do you want feedback on?"
+                        = f.text_area :description, :autofocus => true, :class => "form-control", :placeholder => "What is your favourite beer at Tony's Tonics", :rows => 8
+                        .hr.hr16
+                        = f.radio_button(:campaign_type, "Feedback", checked:true)
+                        = f.label(:campaign_type, "Feedback")
+                        = f.radio_button(:campaign_type, "Competition")
+                        = f.label(:campaign_type, "Competition")
+                        .hr.hr16
+                        = f.submit "Make a new campaign", :class => 'btn btn-block btn-info'
+              .col-sm-6
+                - if @campaign.errors.any?
+                  %blockquote.red.pull-right 
+                    %h2.lighter.red.text-align-right Error!
+                    - @campaign.errors.full_messages.each do |msg|
+                      %p= msg
+                %blockquote.green.pull-right
+                  %p A campaign is a question you want answered by your customers

@@ -17,11 +17,11 @@
         %span.menu-text Campaigns
         %b.arrow.fa.fa-angle-down
       %ul.submenu
-        %li{:class => ('active' if controller_name() == 'campaigns' || action_name == 'index')}
+        %li{:class => ('active' if controller_name() == 'campaigns' && action_name == 'index')}
           = link_to campaigns_path do 
             %i.fa.fa-angle-double-right
             My campaigns 
-        %li
+        %li{:class => ('active' if controller_name() == 'campaigns' && action_name == 'new')}
           = link_to new_campaign_path do
             %i.fa.fa-angle-double-right
             New campaign

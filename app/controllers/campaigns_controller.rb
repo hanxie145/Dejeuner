@@ -42,6 +42,7 @@ class CampaignsController < ApplicationController
 
   # GET /campaigns/new
   def new
+    set_user()
     @campaign = Campaign.new
   end
 
@@ -52,6 +53,7 @@ class CampaignsController < ApplicationController
   # POST /campaigns
   # POST /campaigns.json
   def create
+    set_user()
     @campaign = current_user.campaigns.new(campaign_params)
 
     respond_to do |format|
