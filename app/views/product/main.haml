@@ -16,13 +16,14 @@
             %small
               %i.fa.fa-angle-double-right
               Howzit going
+              = @user.name
+              , you have...
         / /.page-header
         .row
           .col-xs-12
             / PAGE CONTENT BEGINS
             .row
-              .space-6
-              .col-sm-6.infobox-container
+              .col-sm-12.infobox-container
                 .infobox.infobox-green
                   .infobox-fa.fa
                     %i.fa.fa-comments
@@ -49,12 +50,66 @@
                     %span.infobox-data-number 767
                     .infobox-content subscribers
                 .space-6
+            .row
+              .space-6
+              .col-sm-12
+                .widget-box.transparent
+                  .widget-header.widget-header-flat
+                    %h4.lighter
+                      %i.fa.fa-signal
+                      Your subscriber stats
+                  .widget-body
+                    .widget-main.padding-4
+                      #sales-charts
+                    .hr.hr32
+                    .clearfix
+                    .grid3
+                      %span.grey
+                        %i.icon-facebook-sign.icon-2x.blue
+                        New Subscribers this month
+                      %h4.bigger.pull-right.red 1,255
+                    .grid3
+                      %span.grey
+                        %i.icon-twitter-sign.icon-2x.purple
+                        That have given
+                      %h4.bigger.pull-right.green 
+                        941
+                        new reviews
+                    .grid3
+                      %span.grey
+                        %i.icon-pinterest-sign.icon-2x.red
+                        Sms's sent to them
+                      %h4.bigger.pull-right.blue 1,050
+            .hr.hr32.hr-dotted
+            .row
+              .col-sm-6
+                .widget-box
+                  .widget-header
+                    %h4.lighter.smaller 
+                      %i.fa.fa-question-circle.blue 
+                      Current campaign
+                  .widget-body
+                    .widget-main
+                      %p
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, saepe, quasi, voluptates ea maxime vitae unde magnam pariatur repellat harum temporibus sit ducimus est explicabo neque quas voluptate incidunt perferendis.
+                      = link_to 'Start a new campaign', '/marketing', class: 'btn btn-block btn-info'
+
+                .hr.hr32.hr-dotted
+                .widget-box 
+                  .widget-header.transparent 
+                    %h4.lighter.smaller 
+                      %i.fa.fa-bullhorn.blue 
+                      Last marketing blast sent
+                  .widget-body
+                    .widget-main
+                      %p Come to tony's tonics at 5pm for 50% off on your drinks.
+                      = link_to 'Send out a new marketing blast!', '/marketing', class: 'btn btn-block btn-info'
               .col-sm-6
                 .widget-box
                   .widget-header
                     %h4.lighter.smaller
                       %i.fa.fa-comment.blue
-                      Recent Conversation
+                      Recent conversations
                   .widget-body
                     .widget-main.no-padding
                       .dialogs
@@ -119,36 +174,7 @@
                             .tools
                               %a.btn.btn-minier.btn-info{href: "#"}
                                 %i.fa.fa-only.fa.fa-share-alt
-                      %form
-                        .form-actions
-                          .input-group
-                            %input.form-control{name: "message", placeholder: "Type your message here ...", type: "text"}/
-                            %span.input-group-btn
-                              %button.btn.btn-sm.btn-info.no-radius{type: "button"}
-                                %i.fa.fa-share-alt
-                                Send
-                    / /widget-main
-                  / /widget-body
-                / /widget-box
-              .vspace-sm
-            .hr.hr32.hr-dotted
-            .row
-              .col-sm-12
-                .widget-box.transparent
-                  .widget-header.widget-header-flat
-                    %h4.lighter
-                      %i.fa.fa-signal
-                      Sale Stats
-                    .widget-toolbar
-                      %a{"data-action" => "collapse", href: "#"}
-                        %i.fa.fa-chevron-up
-                  .widget-body
-                    .widget-main.padding-4
-                      #sales-charts
-                    / /widget-main
-                  / /widget-body
-                / /widget-box
-            .hr.hr32.hr-dotted
+              .vspace-sm              
             .row
               / /span
             / /row
@@ -159,63 +185,3 @@
     / /.main-content
   / /.main-container-inner
 / /.main-container
-/ basic scripts
-/ inline scripts related to this page
-:javascript
-  jQuery(function($) {
-    var d1 = [];
-    for (var i = 0; i < Math.PI * 2; i += 0.5) {
-      d1.push([i, Math.sin(i)]);
-    }
-  
-    var d2 = [];
-    for (var i = 0; i < Math.PI * 2; i += 0.5) {
-      d2.push([i, Math.cos(i)]);
-    }
-  
-    var d3 = [];
-    for (var i = 0; i < Math.PI * 2; i += 0.2) {
-      d3.push([i, Math.tan(i)]);
-    }
-    
-  
-    var sales_charts = $('#sales-charts').css({'width':'100%' , 'height':'220px'});
-    $.plot("#sales-charts", [
-      { label: "Domains", data: d1 },
-      { label: "Hosting", data: d2 },
-      { label: "Services", data: d3 }
-    ], {
-      hoverable: true,
-      shadowSize: 0,
-      series: {
-        lines: { show: true },
-        points: { show: true }
-      },
-      xaxis: {
-        tickLength: 0
-      },
-      yaxis: {
-        ticks: 10,
-        min: -2,
-        max: 2,
-        tickDecimals: 3
-      },
-      grid: {
-        backgroundColor: { colors: [ "#fff", "#fff" ] },
-        borderWidth: 1,
-        borderColor:'#555'
-      }
-    });
-      
-    //Android's default browser somehow is confused when tapping on label which will lead to dragging the task
-    //so disable dragging when clicking on label
-    var agent = navigator.userAgent.toLowerCase();
-    if("ontouchstart" in document && /applewebkit/.test(agent) && /android/.test(agent))
-      $('#tasks').on('touchstart', function(e){
-      var li = $(e.target).closest('#tasks li');
-      if(li.length == 0)return;
-      var label = li.find('label.inline').get(0);
-      if(label == e.target || $.contains(label, e.target)) e.stopImmediatePropagation() ;
-    });
-  
-  })
