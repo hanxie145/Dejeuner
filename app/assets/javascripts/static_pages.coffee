@@ -4,7 +4,8 @@ alertFadeOut = ->
 
 sidebarToggle = -> 
   $('.sidebar-collapse').click (e) -> 
-    $('#sidebar').toggleClass 'menu-min'
+    e.preventDefault()
+    $('#sidebar').toggleClass '.menu-min'
 
 # for the line chart on the dashboard page
 staticPagesGraphs = -> 

@@ -24,7 +24,7 @@ Dejeuner::Application.routes.draw do
   # product
   get 'main' => 'product#main'
   get 'sms_response' => 'twilio#sms_response'
-  get 'market' => 'twilio#mass_message'
+  get 'market' => 'product#market'
   post 'market' => 'twilio#send_mass_message'
   get 'profile' => 'product#profile'
 

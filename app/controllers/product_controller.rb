@@ -55,5 +55,9 @@ class ProductController < ApplicationController
 
     # TODO: get user plans
   end
+
+  def market 
+    set_user()
+  end
   
 end

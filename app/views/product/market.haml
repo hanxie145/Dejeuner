@@ -1,0 +1,44 @@
+= render 'layouts/header'
+#main-container.main-container
+  .main-container-inner
+    = render 'layouts/sidebar'
+    .main-content
+      #breadcrumbs.breadcrumbs
+        %ul.breadcrumb
+          %li
+            %i.fa.fa-conversation
+            Marketing
+        / .breadcrumb
+      .page-content
+        .page-header
+          %h1
+            Reviews
+            %small
+              %i.fa.fa-angle-double-right
+              What people are saying about your business
+        / /.page-header
+        .row
+          .col-xs-12
+            .col-sm-6
+              .widget-box
+                .widget-header
+                  %h4.lighter.smaller 
+                    %i.fa.fa-question-circle.blue 
+                    Current campaign
+                .widget-body
+                  .widget-main
+                    %p
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, saepe, quasi, voluptates ea maxime vitae unde magnam pariatur repellat harum temporibus sit ducimus est explicabo neque quas voluptate incidunt perferendis.
+            .col-sm-6
+              .widget-box
+                .widget-header
+                  %h4.lighter.smaller
+                    %i.fa.fa-comment.blue
+                    Conversations
+                .widget-body
+                  .widget-main.no-padding
+                    .dialogs
+                    / /widget-main
+                  / /widget-body
+                / /widget-box
+              / /span
