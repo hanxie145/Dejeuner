@@ -2,8 +2,14 @@ class TwilioController < ApplicationController
 
   def sms_response
     # respond to a text message from twilio
-    review = params[:Body]
-    number = params[:From]
+    @from = params[:From]
+    @to = params[:To]
+    @text = params[:Text]
+    # figure out which user it is 
+    user = Number.where('number = ?', @to)[0].user 
+
+    # figure out sms_response 
+    @response = user.sms_response.response
 
     render 'sms_response.xml.erb', :content_type => 'text/xml'
   end 
