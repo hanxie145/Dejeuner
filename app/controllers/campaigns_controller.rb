@@ -42,13 +42,15 @@ class CampaignsController < ApplicationController
 
   def reward
     set_user()
-    @current_reward = current_user.sms_response.response
+    if @user.sms_response
+      @current_reward = @user.sms_response.response
+    end
     @sms_response = SmsResponse.new
   end
 
   def create_reward
     set_user() 
-    @sms_response = current_user.build_sms_response params[:response]
+    @sms_response = current_user.build_sms_response response: params[:sms_response][:response]
     if @sms_response.save
       redirect_to campaigns_path, notice: 'Sms reward added / changed'
     else

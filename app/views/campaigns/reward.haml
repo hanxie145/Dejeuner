@@ -35,7 +35,7 @@
                       = form_for @sms_response, url: reward_path, method: :post do |f|
                         .form-group
                           = f.label :new_reward
-                          = f.text_area :response, class: 'form-control', placeholder: "#{@current_reward if @current_reward}", rows: 6
+                          = f.text_area :response, class: 'form-control', placeholder: "#{@current_reward? @current_reward : "Show this to your waiter for 50% off your beer tab for the night!"}", rows: 6
                         = f.submit 'Create new reward', class: 'btn btn-info btn-block'
               .col-sm-6 
                 - if @sms_response.errors.any?
