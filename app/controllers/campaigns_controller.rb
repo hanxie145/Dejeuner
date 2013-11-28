@@ -42,6 +42,8 @@ class CampaignsController < ApplicationController
 
   def reward
     set_user()
+    @current_reward = current_user.sms_response.response
+    @sms_response = SmsResponse.new
   end
 
   def create_reward

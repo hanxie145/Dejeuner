@@ -25,8 +25,8 @@
           = link_to new_campaign_path do
             %i.fa.fa-angle-double-right
             New campaign
-        %li{:class => ('active' if controller_name() == 'reviews' && action_name == 'index')}
-          %a{href: "/reviews"}
+        %li{:class => ('active' if controller_name() == 'campaigns' && action_name == 'reward')}
+          %a{href: "/reward"}
             %i.fa.fa-angle-double-right
             Set reward        
         %li{:class => ('active' if controller_name() == 'reviews' && action_name == 'index')}

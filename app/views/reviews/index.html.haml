@@ -46,9 +46,9 @@
                             .time
                               %i.fa.fa-time
                               %span.red
-                                = review.date_sent.slice(0..10)
+                                = review.created_at.strftime('%a %d %b %Y')
                             .name.red
-                              = review.from
+                              = review.from_number
                             .text
                               = review.body
                     / /widget-main

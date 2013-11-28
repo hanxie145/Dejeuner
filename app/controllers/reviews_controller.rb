@@ -6,7 +6,6 @@ class ReviewsController < ApplicationController
   def index
     set_user()
     @latest_campaign = current_user.campaigns.last
-
     @reviews = current_user.reviews
   end
 
