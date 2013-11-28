@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(version: 20131128194722) do
   end
 
   create_table "sms_contacts", force: true do |t|
-    t.integer  "number"
+    t.string  "number"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
