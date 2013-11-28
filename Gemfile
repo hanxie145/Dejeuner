@@ -16,6 +16,7 @@ gem 'turbolinks'
 gem 'font-awesome-rails'
 gem 'delayed_job_active_record'
 gem 'plivo'
+gem 'daemons'
 
 group :development do 
   gem "better_errors"
