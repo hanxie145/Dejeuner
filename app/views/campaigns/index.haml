@@ -43,6 +43,16 @@
                           %i.fa.fa-phone 
                           Get more numbers
                       .hr.hr8.hr-dotted
+                      .form-group
+                        %label.col-sm-3.control-label.no-padding-right{:for => "form-field-2"} Reward
+                        .col-sm-9
+                          %input.col-sm-12{:value => "#{@reward}", :type => "text"}
+                      .form-group
+                        = link_to reward_path, class: 'btn btn-info btn-block' do 
+                          %i.fa.fa-dollar
+                          Set reward
+                      .hr.hr8.hr-dotted
+
             .col-sm-6
               .widget-box.transparent
                 .widget-header

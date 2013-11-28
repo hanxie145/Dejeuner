@@ -28,20 +28,27 @@
                   .infobox-fa.fa
                     %i.fa.fa-comments
                   .infobox-data
-                    %span.infobox-data-number 32
-                    .infobox-content Reviews 
-                  .badge.badge-success +10 today
+                    %span.infobox-data-number 
+                      = @reviews_count
+                    .infobox-content 
+                      Reviews
+                  .badge.badge-success
+                    +
+                    = @new_reviews_today
+                    today
                 .infobox.infobox-blue
                   .infobox-fa.fa
                     %i.fa.fa-flag
                   .infobox-data
-                    %span.infobox-data-number 8
+                    %span.infobox-data-number 
+                      = @campaigns_count
                     .infobox-content Campaigns launched
                 .infobox.infobox-pink
                   .infobox-fa.fa
                     %i.fa.fa-comment-o
                   .infobox-data
-                    %span.infobox-data-number 500
+                    %span.infobox-data-number
+                      = @sms_count
                     .infobox-content sms's left
                 .infobox.infobox-red
                   .infobox-fa.fa
