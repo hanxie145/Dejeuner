@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131128194722) do
+ActiveRecord::Schema.define(version: 20131128201131) do
 
   create_table "campaigns", force: true do |t|
     t.string   "description"
@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(version: 20131128194722) do
   end
 
   create_table "sms_contacts", force: true do |t|
-    t.string  "number"
+    t.string   "number"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -89,7 +89,7 @@ ActiveRecord::Schema.define(version: 20131128194722) do
     t.string   "restaurant"
     t.string   "name"
     t.string   "key_word"
-    t.integer  "sms_credit"
+    t.integer  "sms_credit",             default: 0
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
