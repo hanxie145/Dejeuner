@@ -5,6 +5,7 @@ class ReviewsController < ApplicationController
   # GET /reviews.json
   def index
     set_user()
+    @latest_campaign = current_user.campaigns.last
 
     # twilio credentials
     twilio_sid = "ACfffe2a378d744f6c9c2a280c93a5be21"

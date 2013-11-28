@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
   validates :email, uniqueness: true
 
   # relations
-  has_many :numbers 
+  has_many :numbers, dependent: :destroy
   has_many :reviews 
   has_many :campaigns
 end
