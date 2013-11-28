@@ -40,6 +40,14 @@ class CampaignsController < ApplicationController
   def show
   end
 
+  def reward
+    set_user()
+  end
+
+  def create_reward
+    set_user() 
+  end
+
   # GET /campaigns/new
   def new
     set_user()

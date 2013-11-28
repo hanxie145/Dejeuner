@@ -10,6 +10,8 @@ Dejeuner::Application.routes.draw do
   resources :campaigns
   get 'key_word' => 'campaigns#key_word'
   post 'key_word' => 'campaigns#update_key_word'
+  get 'reward' => 'campaigns#reward'
+  post 'reward' => 'campaigns#create_reward'
 
   # signupemail
   get 'signup_email/finish' => 'signup_emails#finish'

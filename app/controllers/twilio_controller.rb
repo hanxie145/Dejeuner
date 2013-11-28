@@ -5,8 +5,12 @@ class TwilioController < ApplicationController
     @from = params[:From]
     @to = params[:To]
     @text = params[:Text]
+
     # figure out which user it is 
     user = Number.where('number = ?', @to)[0].user 
+
+    # save the text as a review to the user 
+    user.reviews.create(from_number: @from, body: @text)
 
     # figure out sms_response 
     @response = user.sms_response.response
