@@ -13,6 +13,7 @@ class User < ActiveRecord::Base
 
   # relations
   has_many :numbers, dependent: :destroy
-  has_many :reviews 
-  has_many :campaigns
+  has_many :reviews, dependent: :destroy
+  has_many :campaigns, dependent: :destroy
+  has_one :sms_response, dependent: :destroy
 end
