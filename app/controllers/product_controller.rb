@@ -4,10 +4,14 @@ class ProductController < ApplicationController
   def main 
     set_user()
     @restaurant = @user.restaurant 
-    @reviews_count = current_user.reviews.count
-    @new_reviews_today = current_user.reviews.where('created_at >= ?', Date.today).count
-    @campaigns_count = current_user.campaigns.count
+    my_reviews = current_user.reviews
+    @reviews_count = my_reviews.count
+    @new_reviews_today = my_reviews.where('created_at >= ?', Date.today).count
+    my_campaigns = current_user.campaigns
+    @current_campaign = my_campaigns.last.description
+    @campaigns_count = my_campaigns.count
     @sms_count = current_user.sms_credit
+    @contacts_count = current_user.sms_contacts.count
   end 
 
   def profile

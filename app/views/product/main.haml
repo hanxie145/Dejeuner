@@ -31,7 +31,7 @@
                     %span.infobox-data-number 
                       = @reviews_count
                     .infobox-content 
-                      Reviews
+                      = (pluralize @reviews_count, "review").split(' ')[1]
                   .badge.badge-success
                     +
                     = @new_reviews_today
@@ -42,7 +42,9 @@
                   .infobox-data
                     %span.infobox-data-number 
                       = @campaigns_count
-                    .infobox-content Campaigns launched
+                    .infobox-content 
+                      = (pluralize @campaigns_count, "campaign").split(' ')[1]
+                      launched
                 .infobox.infobox-pink
                   .infobox-fa.fa
                     %i.fa.fa-comment-o
@@ -54,8 +56,11 @@
                   .infobox-fa.fa
                     %i.fa.fa-smile-o
                   .infobox-data
-                    %span.infobox-data-number 767
-                    .infobox-content subscribers
+                    %span.infobox-data-number
+                      = @contacts_count
+                    .infobox-content 
+                      / some hacking to pluralize, because we only want the second part of the word
+                      = (pluralize @contacts_count, "subscriber").split(' ')[1]
                 .space-6
             .row
               .space-6
@@ -98,7 +103,7 @@
                   .widget-body
                     .widget-main
                       %p
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, saepe, quasi, voluptates ea maxime vitae unde magnam pariatur repellat harum temporibus sit ducimus est explicabo neque quas voluptate incidunt perferendis.
+                        = @current_campaign
                       = link_to 'Start a new campaign', '/marketing', class: 'btn btn-block btn-info'
 
                 .hr.hr32.hr-dotted
