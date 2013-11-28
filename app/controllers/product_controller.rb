@@ -8,9 +8,11 @@ class ProductController < ApplicationController
     @reviews_count = my_reviews.count
     @new_reviews_today = my_reviews.where('created_at >= ?', Date.today).count
     my_campaigns = current_user.campaigns
-    @current_campaign = my_campaigns.last.description
+    if my_campaigns.any?
+      @current_campaign = my_campaigns.last.description
+    end
     @campaigns_count = my_campaigns.count
-    @sms_count = current_user.sms_credit
+    @sms_count = current_user.sms_credit || 0
     @contacts_count = current_user.sms_contacts.count
   end 
 
