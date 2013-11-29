@@ -20,6 +20,10 @@ require 'spec_helper'
 
 describe CampaignsController do
 
+  # sign in user and by pass authentication
+  before {@user = create(:user)}
+  before {sign_in @user}
+
   # This should return the minimal set of attributes required to create a valid
   # Campaign. As you add validations to Campaign, be sure to
   # update the return value of this method accordingly.
@@ -34,13 +38,18 @@ describe CampaignsController do
     {}
   end
 
-  # describe "GET index" do
+
+  describe "GET index" do
   #   it "assigns all campaigns as @campaigns" do
   #     campaign = Campaign.create! valid_attributes
   #     get :index, {}, valid_session
   #     assigns(:campaigns).should eq([campaign])
   #   end
-  # end
+    it 'should be valid' do 
+      get :index 
+      response.should be_success
+    end
+  end
 
   # describe "GET show" do
   #   it "assigns the requested campaign as @campaign" do

@@ -4,8 +4,8 @@ class SmsController < ApplicationController
 
   def send_message()
     # plivo stuff
-    auth_id = ENV[PLIVO_AUTH_ID]
-    auth_token = ENV[PLIVO_AUTH_TOKEN]
+    auth_id = ENV["PLIVO_AUTH_ID"]
+    auth_token = ENV["PLIVO_AUTH_TOKEN"]
     phone_numbers = ["17185772625", "17185771083", "17185750512", "17185750144", "17185584451"]
 
     # get msg and contacts
