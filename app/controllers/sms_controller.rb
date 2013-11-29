@@ -1,5 +1,6 @@
 class SmsController < ApplicationController
   include Plivo
+  before_filter :authenticate_user!
 
   def send_message()
     # plivo stuff
@@ -22,6 +23,11 @@ class SmsController < ApplicationController
     
     flash[:notice] = "Message send successful"
     redirect_to main_path
+  end
+
+  def subscribers 
+    set_user()
+    @sms_contacts = current_user.sms_contacts
   end
 
 end

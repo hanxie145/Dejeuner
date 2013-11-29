@@ -25,19 +25,15 @@ Dejeuner::Application.routes.draw do
 
   # product
   get 'main' => 'product#main'
-  get 'sms_response' => 'twilio#sms_response'
-  get 'market' => 'product#market'
-  post 'market' => 'sms#send_message'
   get 'profile' => 'product#profile'
   get 'help' => 'product#help'
 
-  # demo
-  namespace :demo do 
-    get 'profile'
-    get 'main'
-    get 'campaign'
-    get 'market'
-  end
+  # marketing 
+  get 'sms_response' => 'twilio#sms_response'
+  get 'market' => 'product#market'
+  post 'market' => 'sms#send_message'
+  get 'subscribers' => 'sms#subscribers'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

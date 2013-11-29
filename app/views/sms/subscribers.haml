@@ -1,0 +1,75 @@
+= render 'layouts/header'
+#main-container.main-container
+  .main-container-inner
+    = render 'layouts/sidebar'
+    .main-content
+      #breadcrumbs.breadcrumbs
+        %ul.breadcrumb
+          %li
+            %i.fa.fa-user
+            Subscribers
+        / .breadcrumb
+      .page-content
+        .page-header
+          %h1
+            Subscribers
+            %small
+              %i.fa.fa-angle-double-right
+              People listening to your business
+        / /.page-header
+        .row
+          .col-xs-12
+            .row
+              .col-sm-12
+                .table-header Your subscribers
+                .table-responsive
+                  #sample-table-2_wrapper.dataTables_wrapper{:role => "grid"}
+                    .row
+                      .col-sm-6
+                        #sample-table-2_length.dataTables_length
+                          %label
+                            Display
+                            %select{"aria-controls" => "sample-table-2", :name => "sample-table-2_length", :size => "1"}
+                              %option{:selected => "selected", :value => "10"} 10
+                              %option{:value => "25"} 25
+                              %option{:value => "50"} 50
+                              %option{:value => "100"} 100
+                            records
+                      .col-sm-6
+                        #sample-table-2_filter.dataTables_filter
+                          %label
+                            Search:
+                            %input{"aria-controls" => "sample-table-2", :type => "text"}/
+                    %table#sample-table-2.table.table-striped.table-bordered.table-hover.dataTable{"aria-describedby" => "sample-table-2_info"}
+                      %thead
+                        %tr{:role => "row"}
+                          %th.sorting{"aria-controls" => "sample-table-2", "aria-label" => "Domain: activate to sort column ascending", :colspan => "1", :role => "columnheader", :rowspan => "1", :style => "width: 160px;", :tabindex => "0"} Number
+                          %th.sorting{"aria-controls" => "sample-table-2", "aria-label" => "Price: activate to sort column ascending", :colspan => "1", :role => "columnheader", :rowspan => "1", :style => "width: 104px;", :tabindex => "0"} Date subscribed
+                          %th.hidden-480.sorting{"aria-controls" => "sample-table-2", "aria-label" => "Clicks: activate to sort column ascending", :colspan => "1", :role => "columnheader", :rowspan => "1", :style => "width: 113px;", :tabindex => "0"} Delete?
+                      %tbody{"aria-live" => "polite", "aria-relevant" => "all", :role => "alert"}
+                        - @sms_contacts.each do |sms_contact|
+                          %tr
+                            %td
+                              %p.p-larger.blue.small 16049108862
+                            %td 
+                              %p.p-larger.blue.small Feb 12
+                            %td
+                              %a.btn.btn-danger{:href => "#"} Delete? 
+                    .row
+                      .col-sm-6
+                        #sample-table-2_info.dataTables_info Showing 1 to 10 of 23 entries
+                      .col-sm-6
+                        .dataTables_paginate.paging_bootstrap
+                          %ul.pagination
+                            %li.prev.disabled
+                              %a{:href => "#"}
+                                %i.fa.fa-angle-double-left
+                            %li.active
+                              %a{:href => "#"} 1
+                            %li
+                              %a{:href => "#"} 2
+                            %li
+                              %a{:href => "#"} 3
+                            %li.next
+                              %a{:href => "#"}
+                                %i.fa.fa-angle-double-right

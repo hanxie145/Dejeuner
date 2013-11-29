@@ -10,7 +10,11 @@ class CampaignsController < ApplicationController
     # @keyword = @user.key_word || ""
     # @numbers = current_user.numbers
     # @number = pluralize(@numbers.length, "Number")
-    @reward = @user.sms_response.response || ""
+    if @user.sms_response
+      @reward = @user.sms_response.response
+    else
+      @reward = ""
+    end
   end
 
   # GET /campaigns/1
