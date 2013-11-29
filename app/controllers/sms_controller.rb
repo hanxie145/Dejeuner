@@ -25,11 +25,12 @@ class SmsController < ApplicationController
              'type' => 'sms',
         }
 
-    # send message and increment the user's sms sent count
+    # send message and increment the user's sms sent count while decrementing their sms_credits
     if p.send_message(params)
-      # TODO update with actual value
-      new_sms_sent_val = current_user.sms_sent + 10 
+      new_sms_sent_val = current_user.sms_sent + contacts.count 
+      new_sms_credit_val = current_user.sms_credit - contacts.count
       current_user.update_attribute :sms_sent, new_sms_sent_val
+      current_user.update_attribute :sms_credit, new_sms_credit_val
     end
 
     flash[:notice] = "Message send successful"
