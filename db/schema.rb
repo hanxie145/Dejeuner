@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131128201131) do
+ActiveRecord::Schema.define(version: 20131129031611) do
 
   create_table "campaigns", force: true do |t|
     t.string   "description"
@@ -90,6 +90,7 @@ ActiveRecord::Schema.define(version: 20131128201131) do
     t.string   "name"
     t.string   "key_word"
     t.integer  "sms_credit",             default: 0
+    t.integer  "sms_sent",               default: 0
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

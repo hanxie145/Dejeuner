@@ -65,8 +65,7 @@
                 %blockquote
                   %p 
                     You have 
-                    / TODO replace with actual number of credits 
-                    500
+                    = @user.sms_credit || 0
                     sms credits left
                   = link_to '#', class: "btn btn-block btn-info" do 
                     %i.fa.fa-briefcase
@@ -80,4 +79,9 @@
                   = text_area_tag 'message', nil, :class => 'form-control market-text-area', placeholder: "Come in to Tony's Tonics on Wednesday between 5 and 8PM for 50% off on all beers on tap!"
                   .clearfix.form-actions
                     .col-sm-offset-3.col-sm-9
-                      = submit_tag "Send message", class: 'btn btn-info'
+                      = link_to main_path, class: 'btn btn-default' do 
+                        %i.fa.fa-dashboard 
+                        Back to dashboard
+                      = button_tag class: 'btn btn-info' do 
+                        %i.fa.fa-envelope-o
+                        Send message
