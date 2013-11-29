@@ -5,10 +5,12 @@ class ProductController < ApplicationController
     set_user()
     @restaurant = @user.restaurant 
 
+    # reviews 
     @reviews = current_user.reviews
     @reviews_count = @reviews.count
     @new_reviews_today = @reviews.where('created_at >= ?', Date.today).count
     my_campaigns = current_user.campaigns
+    @reviews_this_month = @reviews.where('created_at >= ?', Date.today.beginning_of_month).count
     
     if my_campaigns.any?
       @current_campaign = my_campaigns.last.description
@@ -21,6 +23,9 @@ class ProductController < ApplicationController
     else
       @last_marketing_blast = "No marketing blasts sent yet"
     end
+
+    # subscriber data for the sales chart. Get all subscribers by filtering from beginning of month 
+    @subscribers_this_month = current_user.sms_contacts.where('created_at >= ?', Date.today.beginning_of_month).count
   end 
 
   def profile

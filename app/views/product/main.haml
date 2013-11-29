@@ -72,21 +72,21 @@
                       Your subscriber stats
                   .widget-body
                     .widget-main.padding-4
-                      #sales-charts
+                      #sales-charts{"data-graph" => "#{@subscribers_this_month}"}
                     .hr.hr32
                     .clearfix
                     .grid3
                       %span.grey
                         %i.icon-facebook-sign.icon-2x.blue
                         New Subscribers this month
-                      %h4.bigger.pull-right.red 1,255
+                      %h4.bigger.pull-right.red 
+                        = @subscribers_this_month
                     .grid3
                       %span.grey
                         %i.icon-twitter-sign.icon-2x.purple
                         That have given
                       %h4.bigger.pull-right.green 
-                        941
-                        new reviews
+                        = pluralize(@reviews_this_month, "review")
                     .grid3
                       %span.grey
                         %i.icon-pinterest-sign.icon-2x.red
