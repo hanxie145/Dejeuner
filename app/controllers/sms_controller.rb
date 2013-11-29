@@ -31,6 +31,9 @@ class SmsController < ApplicationController
       new_sms_credit_val = current_user.sms_credit - contacts.count
       current_user.update_attribute :sms_sent, new_sms_sent_val
       current_user.update_attribute :sms_credit, new_sms_credit_val
+
+      # save the text of the marketing blast for later 
+      current_user.marketing_blasts.create :description => message
     end
 
     flash[:notice] = "Message send successful"

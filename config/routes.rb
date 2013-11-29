@@ -32,7 +32,7 @@ Dejeuner::Application.routes.draw do
   get 'sms_response' => 'twilio#sms_response'
   get 'market' => 'product#market'
   post 'market' => 'sms#send_message'
-  get 'subscribers' => 'sms#subscribers'
+  get 'subscribers' => 'sms#subscribers', as: :sms_contacts
   resources :sms_contacts, only: [:destroy]
 
   # The priority is based upon order of creation: first created -> highest priority.

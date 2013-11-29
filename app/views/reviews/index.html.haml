@@ -39,18 +39,21 @@
                 .widget-body
                   .widget-main.no-padding
                     .dialogs
-                      - @reviews.each do |review| 
-                        .itemdiv.dialogdiv
-                          .user
-                          .body
-                            .time
-                              %i.fa.fa-time
-                              %span.red
-                                = review.created_at.strftime('%a %d %b %Y')
-                            .name.red
-                              = review.from_number
-                            .text
-                              = review.body
+                      - if @reviews.any?
+                        - @reviews.each do |review| 
+                          .itemdiv.dialogdiv
+                            .user
+                            .body
+                              .time
+                                %i.fa.fa-time
+                                %span.red
+                                  = review.created_at.strftime('%a %d %b %Y')
+                              .name.red
+                                = review.from_number
+                              .text
+                                = review.body
+                      - else 
+                        %h4.lighter.blue No feedback yet. Just put your number up somewhere to start!
                     / /widget-main
                   / /widget-body
                 / /widget-box

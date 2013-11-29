@@ -51,7 +51,7 @@
                   .infobox-data
                     %span.infobox-data-number
                       = @sms_count
-                    .infobox-content sms's left
+                    .infobox-content sms credits left
                 .infobox.infobox-red
                   .infobox-fa.fa
                     %i.fa.fa-smile-o
@@ -105,8 +105,9 @@
                     .widget-main
                       %p
                         = @current_campaign
-                      = link_to 'Start a new campaign', new_campaign_path, class: 'btn btn-block btn-info'
-
+                      = link_to new_campaign_path, class: 'btn btn-block btn-info' do 
+                        %i.fa.fa-flag 
+                        Start a new campaign
                 .hr.hr32.hr-dotted
                 .widget-box 
                   .widget-header.transparent 
@@ -115,8 +116,10 @@
                       Last marketing blast sent
                   .widget-body
                     .widget-main
-                      %p Come to tony's tonics at 5pm for 50% off on your drinks.
-                      = link_to 'Send out a new marketing blast!', '/market', class: 'btn btn-block btn-info'
+                      %p= @last_marketing_blast
+                      = link_to market_path, class: 'btn btn-block btn-info' do 
+                        %i.fa.fa-envelope-o 
+                        Send out a new marketing blast!
               .col-sm-6
                 .widget-box
                   .widget-header
@@ -126,67 +129,21 @@
                   .widget-body
                     .widget-main.no-padding
                       .dialogs
-                        .itemdiv.dialogdiv
-                          .user
-                          .body
-                            .time
-                              %i.fa.fa-time
-                              %span.green 4 sec
-                            .name
-                              %a{href: "#"} Alexa
-                            .text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque commodo massa sed ipsum porttitor facilisis.
-                            .tools
-                              %a.btn.btn-minier.btn-info{href: "#"}
-                                %i.fa.fa-only.fa.fa-share-alt
-                        .itemdiv.dialogdiv
-                          .user
-                          .body
-                            .time
-                              %i.fa.fa-time
-                              %span.blue 38 sec
-                            .name
-                              %a{href: "#"} John
-                            .text Raw denim you probably haven't heard of them jean shorts Austin.
-                            .tools
-                              %a.btn.btn-minier.btn-info{href: "#"}
-                                %i.fa.fa-only.fa.fa-share-alt
-                        .itemdiv.dialogdiv
-                          .user
-                          .body
-                            .time
-                              %i.fa.fa-time
-                              %span.orange 2 min
-                            .name
-                              %a{href: "#"} Bob
-                              %span.label.label-info.arrowed.arrowed-in-right admin
-                            .text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque commodo massa sed ipsum porttitor facilisis.
-                            .tools
-                              %a.btn.btn-minier.btn-info{href: "#"}
-                                %i.fa.fa-only.fa.fa-share-alt
-                        .itemdiv.dialogdiv
-                          .user
-                          .body
-                            .time
-                              %i.fa.fa-time
-                              %span.grey 3 min
-                            .name
-                              %a{href: "#"} Jim
-                            .text Raw denim you probably haven't heard of them jean shorts Austin.
-                            .tools
-                              %a.btn.btn-minier.btn-info{href: "#"}
-                                %i.fa.fa-only.fa.fa-share-alt
-                        .itemdiv.dialogdiv
-                          .user
-                          .body
-                            .time
-                              %i.fa.fa-time
-                              %span.green 4 min
-                            .name
-                              %a{href: "#"} Alexa
-                            .text Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            .tools
-                              %a.btn.btn-minier.btn-info{href: "#"}
-                                %i.fa.fa-only.fa.fa-share-alt
+                        - if @reviews.any?
+                          - @reviews.each do |review| 
+                            .itemdiv.dialogdiv
+                              .user
+                              .body
+                                .time
+                                  %i.fa.fa-time
+                                  %span.red
+                                    = review.created_at.strftime('%a %d %b %Y')
+                                .name.red
+                                  = review.from_number
+                                .text
+                                  = review.body
+                        - else 
+                          %h4.lighter.blue No feedback yet. Just put your number up somewhere to start!
               .vspace-sm              
             .row
               / /span

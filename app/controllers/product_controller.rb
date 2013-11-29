@@ -4,16 +4,23 @@ class ProductController < ApplicationController
   def main 
     set_user()
     @restaurant = @user.restaurant 
-    my_reviews = current_user.reviews
-    @reviews_count = my_reviews.count
-    @new_reviews_today = my_reviews.where('created_at >= ?', Date.today).count
+
+    @reviews = current_user.reviews
+    @reviews_count = @reviews.count
+    @new_reviews_today = @reviews.where('created_at >= ?', Date.today).count
     my_campaigns = current_user.campaigns
+    
     if my_campaigns.any?
       @current_campaign = my_campaigns.last.description
     end
     @campaigns_count = my_campaigns.count
     @sms_count = current_user.sms_credit || 0
     @contacts_count = current_user.sms_contacts.count
+    if @user.marketing_blasts.any?
+      @last_marketing_blast = @user.marketing_blasts.last.description
+    else
+      @last_marketing_blast = "No marketing blasts sent yet"
+    end
   end 
 
   def profile
