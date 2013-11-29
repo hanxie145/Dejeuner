@@ -17,6 +17,7 @@ gem 'font-awesome-rails'
 gem 'delayed_job_active_record'
 gem 'plivo'
 gem 'daemons'
+gem 'figaro'
 
 group :development do 
   gem "better_errors"
