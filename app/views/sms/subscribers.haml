@@ -50,11 +50,13 @@
                         - @sms_contacts.each do |sms_contact|
                           %tr
                             %td
-                              %p.p-larger.blue.small 16049108862
+                              %p.p-larger.blue.small 
+                                = sms_contact.number
                             %td 
-                              %p.p-larger.blue.small Feb 12
+                              %p.p-larger.blue.small 
+                                = sms_contact.created_at.strftime('%a %d %b %Y')
                             %td
-                              %a.btn.btn-danger{:href => "#"} Delete? 
+                              = link_to "Delete", sms_contact_path(sms_contact), method: :delete, class: 'btn btn-danger' 
                     .row
                       .col-sm-6
                         #sample-table-2_info.dataTables_info Showing 1 to 10 of 23 entries

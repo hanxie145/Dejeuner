@@ -33,6 +33,7 @@ Dejeuner::Application.routes.draw do
   get 'market' => 'product#market'
   post 'market' => 'sms#send_message'
   get 'subscribers' => 'sms#subscribers'
+  resources :sms_contacts, only: [:destroy]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
