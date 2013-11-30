@@ -28,7 +28,10 @@ describe CampaignsController do
   # Campaign. As you add validations to Campaign, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    {}
+    {
+      :description => "testing campaigns", 
+      :campaign_type => "feedback" 
+    }
   end
   
   # This should return the minimal set of values that should be in the session
@@ -59,12 +62,29 @@ describe CampaignsController do
   #   end
   # end
 
-  # describe "GET new" do
-  #   it "assigns a new campaign as @campaign" do
-  #     get :new, {}, valid_session
-  #     assigns(:campaign).should be_a_new(Campaign)
-  #   end
-  # end
+  describe "GET new" do
+    it "should be valid" do 
+      get :new
+      response.should be_success
+    end
+
+    it "assigns a new campaign as @campaign" do
+      get :new, {}, valid_session
+      assigns(:campaign).should be_a_new(Campaign)
+    end
+  end
+
+  describe "GET reward" do 
+    it "should be valid" do 
+      get :reward 
+      response.should be_success
+    end
+
+    it "assigns a new sms_response as @sms_response" do 
+      get :reward, {}, valid_session 
+      assigns(:sms_response).should be_a_new(SmsResponse)
+    end
+  end
 
   # describe "GET edit" do
   #   it "assigns the requested campaign as @campaign" do
@@ -74,13 +94,14 @@ describe CampaignsController do
   #   end
   # end
 
-  # describe "POST create" do
-  #   describe "with valid params" do
-  #     it "creates a new Campaign" do
-  #       expect {
-  #         post :create, {:campaign => valid_attributes}, valid_session
-  #       }.to change(Campaign, :count).by(1)
-  #     end
+  describe "POST create" do
+    describe "with valid params" do
+      it "creates a new Campaign" do
+        expect {
+          post :create, {:campaign => valid_attributes}, valid_session
+        }.to change(Campaign, :count).by(1)
+      end
+    end
 
   #     it "assigns a newly created campaign as @campaign" do
   #       post :create, {:campaign => valid_attributes}, valid_session
@@ -109,7 +130,7 @@ describe CampaignsController do
   #       response.should render_template("new")
   #     end
   #   end
-  # end
+  end
 
   # describe "PUT update" do
   #   describe "with valid params" do
