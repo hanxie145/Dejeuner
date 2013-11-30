@@ -1,0 +1,25 @@
+= render 'layouts/header'
+.contact-container 
+  .container
+    .row
+      .col-sm-12
+        .about-inner
+          .about-head
+            Contact
+.container
+  .row
+    .col-sm-8
+      %h1
+        %b Contact us
+      .hr.hr8.hr-dotted
+      %p.lighter.p-larger 
+        Any questions about how Dejeuner works or about plans? Feel free to reach us at 
+        %a{:href => "#"} info@mydejeuner.com
+        \.
+    .col-sm-4
+      .widget-box.transparent
+        .widget-header
+          %h4.lighter Or if you are ready to get started
+        .widget-body
+          %p 
+            = link_to 'Pricing', '/pricing', class: 'btn btn-block btn-info'

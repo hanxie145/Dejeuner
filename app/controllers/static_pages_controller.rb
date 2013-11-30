@@ -20,7 +20,8 @@ class StaticPagesController < ApplicationController
   def my_number 
   end 
 
-  def my_contact
+  def contact
+    set_user()
   end
 
 end

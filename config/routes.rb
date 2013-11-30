@@ -22,6 +22,7 @@ Dejeuner::Application.routes.draw do
   get 'my_number' => 'static_pages#my_number'
   get 'my_contact' => 'static_pages#my_contact'
   get 'about' => 'static_pages#about'
+  get 'contact' => 'static_pages#contact'
 
   # product
   get 'main' => 'product#main'

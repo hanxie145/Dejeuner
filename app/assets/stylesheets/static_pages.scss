@@ -41,29 +41,37 @@
   width: 100%; 
   height: 200px; 
   text-align: center;
+}
+.about-inner {
+  h1 {
+    padding: 10px; 
+    color: white; 
+    padding-left: 0;
+  }
 
-  .about-inner {
-    h1 {
-      padding: 10px; 
-      color: white; 
-      padding-left: 0;
-    }
-
-    .about-head {
-      font-family: 'Yesteryear', cursive;
-      font-size: 100px;
-      color: white;
-      background-color: transparent;
-      margin-bottom: 0;
-      padding-bottom: 0;
-    }
+  .about-head {
+    font-family: 'Yesteryear', cursive;
+    font-size: 100px;
+    color: white;
+    background-color: transparent;
+    margin-bottom: 0;
+    padding-bottom: 0;
   }
 }
 
-
+.contact-container{
+  background: #ffffff image-url("fall-leaves-blur.JPG") no-repeat center center fixed; 
+  background-position-y: -29em;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  width: 100%; 
+  height: 200px; 
+  text-align: center;
+}
 
 .cursive {
-
   h1 {
     font-family: 'Yesteryear', cursive;
     padding-top: 10px;
