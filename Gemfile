@@ -18,6 +18,7 @@ gem 'delayed_job_active_record'
 gem 'plivo'
 gem 'daemons'
 gem 'figaro'
+gem 'will_paginate', '~> 3.0'
 
 group :development do 
   gem "better_errors"

@@ -26,20 +26,7 @@
                   #sample-table-2_wrapper.dataTables_wrapper{:role => "grid"}
                     .row
                       .col-sm-6
-                        #sample-table-2_length.dataTables_length
-                          %label
-                            Display
-                            %select{"aria-controls" => "sample-table-2", :name => "sample-table-2_length", :size => "1"}
-                              %option{:selected => "selected", :value => "10"} 10
-                              %option{:value => "25"} 25
-                              %option{:value => "50"} 50
-                              %option{:value => "100"} 100
-                            records
-                      .col-sm-6
-                        #sample-table-2_filter.dataTables_filter
-                          %label
-                            Search:
-                            %input{"aria-controls" => "sample-table-2", :type => "text"}/
+                        = will_paginate @sms_contacts
                     %table#sample-table-2.table.table-striped.table-bordered.table-hover.dataTable{"aria-describedby" => "sample-table-2_info"}
                       %thead
                         %tr{:role => "row"}
@@ -59,19 +46,10 @@
                               = link_to "Delete", sms_contact_path(sms_contact), method: :delete, class: 'btn btn-danger' 
                     .row
                       .col-sm-6
-                        #sample-table-2_info.dataTables_info Showing 1 to 10 of 23 entries
+                        #sample-table-2_info.dataTables_info 
+                          Showing 1 to 10 of 
+                          = @sms_contacts.count
+                          entries
                       .col-sm-6
                         .dataTables_paginate.paging_bootstrap
-                          %ul.pagination
-                            %li.prev.disabled
-                              %a{:href => "#"}
-                                %i.fa.fa-angle-double-left
-                            %li.active
-                              %a{:href => "#"} 1
-                            %li
-                              %a{:href => "#"} 2
-                            %li
-                              %a{:href => "#"} 3
-                            %li.next
-                              %a{:href => "#"}
-                                %i.fa.fa-angle-double-right
+                          = will_paginate @sms_contacts

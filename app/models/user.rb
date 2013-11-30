@@ -19,6 +19,7 @@ class User < ActiveRecord::Base
   has_many :marketing_blasts, dependent: :destroy
 
   has_one :sms_response, dependent: :destroy
+  has_one :current_campaign, dependent: :destroy, class_name: "Campaign"
 
   def create_review(body, from_number)
     self.reviews.create(body: body, from_number: from_number)

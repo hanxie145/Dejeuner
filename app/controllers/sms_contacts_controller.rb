@@ -6,7 +6,7 @@ class SmsContactsController < ApplicationController
   # GET /SmsContacts.json
   def index
     set_user()
-    @sms_contacts = @user.sms_contacts
+    @sms_contacts = @user.sms_contacts.paginate(page: params[:page], per_page: 15)
   end
 
   # GET /SmsContacts/1
