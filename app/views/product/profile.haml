@@ -36,20 +36,20 @@
                             .form-group
                               %label.col-sm-4.control-label.no-padding-right{:for => "form-field-username"} Username
                               .col-sm-8
-                                %input#form-field-username.col-xs-12.col-sm-10{:placeholder => "Username", :type => "text", :value => "#{@name}"}
+                                %input#form-field-username.col-xs-12.col-sm-10{:placeholder => "Username", :type => "text", :value => "#{@name}", disabled: true}
                             .space-4
                             .form-group
                               %label.col-sm-4.control-label.no-padding-right{:for => "form-field-first"} Name
                               .col-sm-8
-                                %input#form-field-first.input-small{:placeholder => "First Name", :type => "text", :value => @first_name}
-                                  %input#form-field-last.input-small{:placeholder => "Last Name", :type => "text", :value => @last_name}
+                                %input#form-field-first.input-small{:placeholder => "First Name", :type => "text", :value => @first_name, disabled: true}
+                                %input#form-field-last.input-small{:placeholder => "Last Name", :type => "text", :value => @last_name, disabled: true}
                         %hr
                           %h4.header.blue.bolder.smaller Business info
                           .form-group
                             %label.col-sm-3.control-label.no-padding-right{:for => "form-field-email"} Business name
                             .col-sm-9
                               %span.input-icon.input-icon-right
-                                %input#form-field-email{:type => "text",placeholder: "Tony's tonics"}
+                                %input#form-field-email{:type => "text",placeholder: "Tony's tonics", disabled: true}
                                   %i.icon-envelope
                         %hr
                           %h4.header.blue.bolder.smaller Contact
@@ -57,21 +57,21 @@
                             %label.col-sm-3.control-label.no-padding-right{:for => "form-field-email"} Email
                             .col-sm-9
                               %span.input-icon.input-icon-right
-                                %input#form-field-email{:type => "email", :value => @user.email}
+                                %input#form-field-email{:type => "email", :value => @user.email, disabled: true}
                                   %i.icon-envelope
                           .space-4
                           .form-group
                             %label.col-sm-3.control-label.no-padding-right{:for => "form-field-website"} Website
                             .col-sm-9
                               %span.input-icon.input-icon-right
-                                %input#form-field-website{:type => "url", :value => "http://www.mywebsite.com/"}
+                                %input#form-field-website{:type => "url", :value => "http://www.mywebsite.com/", disabled: true}
                                   %i.icon-globe
                           .space-4
                           .form-group
                             %label.col-sm-3.control-label.no-padding-right{:for => "form-field-phone"} Phone
                             .col-sm-9
                               %span.input-icon.input-icon-right
-                                %input#form-field-phone.input-medium.input-mask-phone{:type => "text", placeholder: '1231231234'}
+                                %input#form-field-phone.input-medium.input-mask-phone{:type => "text", placeholder: '1231231234', disabled: true}
                                   %i.icon-phone.icon-flip-horizontal
                   .clearfix.form-actions
                     .col-md-offset-3.col-md-9

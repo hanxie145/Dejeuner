@@ -23,6 +23,9 @@ describe CampaignsController do
   # sign in user and by pass authentication
   before {@user = create(:user)}
   before {sign_in @user}
+  before do 
+    @campaign = @user.campaigns.new(description: 'testing campaigns', campaign_type: 'feedback')
+  end
 
   # This should return the minimal set of attributes required to create a valid
   # Campaign. As you add validations to Campaign, be sure to
@@ -85,6 +88,21 @@ describe CampaignsController do
       assigns(:sms_response).should be_a_new(SmsResponse)
     end
   end
+
+  # why don't these two examples work?
+  # describe "when user id is not present" do 
+  #   it "should not be valid" do
+  #     before {@campaign.user_id = nil}
+  #     it {should_not be_valid}
+  #   end
+  # end
+
+  # describe "when description is empty" do 
+  #   it "should not be valid" do
+  #     before {@campaign.description = nil} 
+  #     it {should_not be_valid} 
+  #   end
+  # end
 
   # describe "GET edit" do
   #   it "assigns the requested campaign as @campaign" do

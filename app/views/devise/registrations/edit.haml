@@ -1,0 +1,47 @@
+= render 'layouts/header'
+#main-container.main-container
+  .main-container-inner
+    = render 'layouts/sidebar'
+    .main-content
+      #breadcrumbs.breadcrumbs
+        %ul.breadcrumb
+          %li.active
+            %i.fa.fa-user
+            %a{:href => "/profile"} Profile
+          %li 
+            Edit
+        / .breadcrumb
+      .page-content
+        .page-header
+          %h1
+            Edit Information
+        / /.page-header
+        .row
+          .col-xs-12
+            .row
+              .col-sm-6
+                .form-sign
+                  = form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }, :class => "form") do |f|
+                    = devise_error_messages!
+                    .form-group
+                      = f.email_field :email, :class => "input form-control", :autofocus =>true, :placeholder => "Email"
+                    .form-group
+                      = f.text_field :name, :class => "input form-control", :placeholder => "Name"
+                    .form-group
+                      = f.text_field :restaurant, :class => "input form-control", :placeholder => "Restaurant"
+                    .form-group
+                      = f.password_field :password, :autocomplete => "off", :class => "input form-control", :placeholder => "Password (Leave blank if you don't want to change)"
+                    .form-group
+                      = f.password_field :password_confirmation, :class => "input form-control", :placeholder => "New password confirm"
+                    .form-group
+                      = f.label :current_password
+                      %i (we need your current password to confirm your changes)
+                    .form-group
+                      = f.password_field :current_password, :class => "input form-control", :placeholder => "Current Password"
+                    .form-group
+                      = link_to profile_path, :class => "btn btn btn-info" do 
+                        %i.fa.fa-user 
+                        Back to profile
+                      = button_tag(:class => "btn btn btn-primary") do 
+                        %i.fa.fa-check 
+                        Update information

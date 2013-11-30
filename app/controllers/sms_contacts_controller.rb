@@ -1,10 +1,12 @@
 class SmsContactsController < ApplicationController
   before_action :set_SmsContact, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!
 
   # GET /SmsContacts
   # GET /SmsContacts.json
   def index
-    @sms_contacts = SmsContact.all
+    set_user()
+    @sms_contacts = @user.sms_contacts
   end
 
   # GET /SmsContacts/1

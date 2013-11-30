@@ -66,8 +66,8 @@
                 .widget-body
                   .widget-main
                     %p
-                      - if @current_campaign
-                        = @current_campaign.description
+                      - if @current_campaign_description
+                        = @current_campaign_description
                       - else 
                         No campaigns started yet. Click on the button below to start one.
                     = link_to "Start a new campaign!", new_campaign_path, class: 'btn btn-info btn-block'   

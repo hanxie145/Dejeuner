@@ -6,7 +6,7 @@ class CampaignsController < ApplicationController
   # GET /campaigns.json
   def index
     set_user()
-    @current_campaign = @user.campaigns.last || ""
+    @current_campaign_description = (@user.campaigns.any? ? @user.campaigns.last.description : "")
     # @keyword = @user.key_word || ""
     # @numbers = current_user.numbers
     # @number = pluralize(@numbers.length, "Number")
