@@ -29,11 +29,6 @@
                         = f.label :description, "What do you want feedback on?"
                         = f.text_area :description, :autofocus => true, :class => "form-control", :placeholder => "What is your favourite beer at Tony's Tonics", :rows => 8
                         .hr.hr16
-                        = f.radio_button(:campaign_type, "Feedback", checked:true)
-                        = f.label(:campaign_type, "Feedback")
-                        = f.radio_button(:campaign_type, "Competition")
-                        = f.label(:campaign_type, "Competition")
-                        .hr.hr16
                         = f.submit "Make a new campaign", :class => 'btn btn-block btn-info'
               .col-sm-6
                 - if @campaign.errors.any?
