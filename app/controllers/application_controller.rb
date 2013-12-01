@@ -11,7 +11,8 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_up_path_for(resource)
-    main_path
+    # direct to the corresponding payments page with the plan the user is signing up for
+    new_charges_path(:plan => params[:plan])
   end
 
   protected 

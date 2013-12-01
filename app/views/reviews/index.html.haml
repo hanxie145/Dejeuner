@@ -29,7 +29,14 @@
                 .widget-body
                   .widget-main
                     %p
-                      = @latest_campaign.description
+                      - if @latest_campaign
+                        = @latest_campaign.description
+                      - else 
+                        No campaigns started yet. 
+                        .form-group
+                          = link_to new_campaign_path, class: "btn btn-primary btn-block" do 
+                            %i.fa.fa-flag 
+                            Start one now
             .col-sm-6
               .widget-box
                 .widget-header

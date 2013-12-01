@@ -34,16 +34,23 @@
                           %th.sorting{"aria-controls" => "sample-table-2", "aria-label" => "Price: activate to sort column ascending", :colspan => "1", :role => "columnheader", :rowspan => "1", :style => "width: 104px;", :tabindex => "0"} Date subscribed
                           %th.hidden-480.sorting{"aria-controls" => "sample-table-2", "aria-label" => "Clicks: activate to sort column ascending", :colspan => "1", :role => "columnheader", :rowspan => "1", :style => "width: 113px;", :tabindex => "0"} Delete?
                       %tbody{"aria-live" => "polite", "aria-relevant" => "all", :role => "alert"}
-                        - @sms_contacts.each do |sms_contact|
-                          %tr
-                            %td
-                              %p.p-larger.blue.small 
-                                = sms_contact.number
+                        - if @sms_contacts.any?
+                          - @sms_contacts.each do |sms_contact|
+                            %tr
+                              %td
+                                %p.p-larger.blue.small 
+                                  = sms_contact.number
+                              %td 
+                                %p.p-larger.blue.small 
+                                  = sms_contact.created_at.strftime('%a %d %b %Y')
+                              %td
+                                = link_to "Delete", sms_contact_path(sms_contact), method: :delete, class: 'btn btn-danger' 
+                        - else 
+                          %tr 
                             %td 
-                              %p.p-larger.blue.small 
-                                = sms_contact.created_at.strftime('%a %d %b %Y')
-                            %td
-                              = link_to "Delete", sms_contact_path(sms_contact), method: :delete, class: 'btn btn-danger' 
+                              No subscribers yet. Just put your number up somewhere and start collecting contacts!
+                            %td 
+                            %td 
                     .row
                       .col-sm-6
                         #sample-table-2_info.dataTables_info 

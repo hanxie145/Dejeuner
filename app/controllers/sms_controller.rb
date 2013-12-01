@@ -42,7 +42,7 @@ class SmsController < ApplicationController
 
   def subscribers 
     set_user()
-    @user.sms_contacts.any? ? @sms_contacts = @user.sms_contacts.paginate(page: params[:page], per_page: 10) : @sms_contacts = []
+    @sms_contacts = @user.sms_contacts.paginate(page: params[:page], per_page: 10)
   end
 
 end

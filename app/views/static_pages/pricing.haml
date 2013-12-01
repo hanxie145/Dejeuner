@@ -49,7 +49,7 @@
                   $49
                   %small /month
             %div
-              %a.btn.btn-block.btn-sm.btn-warning{:href => new_user_registration_path}
+              %a.btn.btn-block.btn-sm.btn-warning{:href => new_user_registration_path(:plan => "petite")}
                 %span Start your free 14 day trial
       .pricing-span
         .widget-box.pricing-box-small
@@ -75,7 +75,7 @@
                   $99
                   %small /month
             %div
-              %a.btn.btn-block.btn-sm.btn-primary{:href => new_user_registration_path}
+              %a.btn.btn-block.btn-sm.btn-primary{:href => new_user_registration_path(:plan => "moyenne")}
                 %span Start your free 14 day trial
       .pricing-span
         .widget-box.pricing-box-small
@@ -101,7 +101,7 @@
                   $149
                   %small /month
             %div
-              %a.btn.btn-block.btn-sm.btn-success{:href => new_user_registration_path}
+              %a.btn.btn-block.btn-sm.btn-success{:href => new_user_registration_path(:plan => "grande")}
                 %span Start your free 14 day trial
     .col-sm-12
       .page-footer
