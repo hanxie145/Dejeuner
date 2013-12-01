@@ -12,6 +12,6 @@
         %article
           %label.amount
             %span= @display_price
-        %script.stripe-button{"data-amount" => "#{@price}", "data-description" => "Subscribing to the #{@plan} plan", "data-key" => ENV["STRIPE_TEST_PUBLISHABLE_KEY"], :src => "https://checkout.stripe.com/checkout.js"}
+        %script.stripe-button{"data-name" => "Dejeuner", "data-amount" => "#{@price}", "data-description" => "Subscribing to the #{@plan} plan", "data-key" => ENV["STRIPE_TEST_PUBLISHABLE_KEY"], "data-email" => @email, :src => "https://checkout.stripe.com/checkout.js"}
         / to keep track of what plan the user is subscribing to 
         = hidden_field_tag "stripe_plan_id", @stripe_plan_id

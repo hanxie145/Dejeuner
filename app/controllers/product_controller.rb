@@ -36,8 +36,7 @@ class ProductController < ApplicationController
     @restaurant = @user.restaurant
     @numbers = @user.numbers
     @number = pluralize(@numbers.length, "Number")
-
-    # TODO: get user plans
+    @plan = @user.plan
   end
 
   def market 

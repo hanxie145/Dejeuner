@@ -36,13 +36,18 @@
                             .form-group
                               %label.col-sm-4.control-label.no-padding-right{:for => "form-field-username"} Username
                               .col-sm-8
-                                %input#form-field-username.col-xs-12.col-sm-10{:placeholder => "Username", :type => "text", :value => "#{@name}", disabled: true}
+                                %input#form-field-username.col-xs-12.col-sm-10{:placeholder => "Username", :type => "text", :value => @name, disabled: true}
                             .space-4
                             .form-group
                               %label.col-sm-4.control-label.no-padding-right{:for => "form-field-first"} Name
                               .col-sm-8
                                 %input#form-field-first.input-small{:placeholder => "First Name", :type => "text", :value => @first_name, disabled: true}
                                 %input#form-field-last.input-small{:placeholder => "Last Name", :type => "text", :value => @last_name, disabled: true}
+                            .space-4
+                            .form-group
+                              %label.col-sm-4.control-label.no-padding-right{:for => "form-field-first"} Plan
+                              .col-sm-8
+                                %input#form-field-username.col-xs-12.col-sm-10{:type => "text", :value => @plan, disabled: true}
                         %hr
                           %h4.header.blue.bolder.smaller Business info
                           .form-group
