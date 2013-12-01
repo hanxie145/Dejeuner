@@ -27,27 +27,6 @@
     .col-xs-8.col-sm-9.pricing-span-body
       .pricing-span
         .widget-box.pricing-box-small
-          .widget-header.header-color-red3
-            %h5.bigger.lighter Trial
-          .widget-body
-            .widget-main.no-padding
-              %ul.list-unstyled.list-striped.pricing-table
-                %li Shared number
-                %li 100
-                %li Only 5
-                %li No
-                %li No
-                %li No
-                %li
-                  %i.icon-remove.red
-              .price
-                %span.label.label-lg.label-inverse.arrowed-in.arrowed-in-right
-                  Free!
-            %div
-              %a.btn.btn-block.btn-sm.btn-danger{:href => "#"}
-                %span Sign up
-      .pricing-span
-        .widget-box.pricing-box-small
           .widget-header.header-color-orange
             %h5.bigger.lighter Petite
           .widget-body
@@ -70,8 +49,8 @@
                   $49
                   %small /month
             %div
-              %a.btn.btn-block.btn-sm.btn-warning{:href => "#"}
-                %span Sign up
+              %a.btn.btn-block.btn-sm.btn-warning{:href => new_user_registration_path}
+                %span Start your free 14 day trial
       .pricing-span
         .widget-box.pricing-box-small
           .widget-header.header-color-blue
@@ -93,11 +72,11 @@
                   %i.fa.fa-times.red
               .price
                 %span.label.label-lg.label-inverse.arrowed-in.arrowed-in-right
-                  $89
+                  $99
                   %small /month
             %div
-              %a.btn.btn-block.btn-sm.btn-primary{:href => "#"}
-                %span Sign up
+              %a.btn.btn-block.btn-sm.btn-primary{:href => new_user_registration_path}
+                %span Start your free 14 day trial
       .pricing-span
         .widget-box.pricing-box-small
           .widget-header.header-color-green
@@ -122,8 +101,8 @@
                   $149
                   %small /month
             %div
-              %a.btn.btn-block.btn-sm.btn-success{:href => "#"}
-                %span Sign up
+              %a.btn.btn-block.btn-sm.btn-success{:href => new_user_registration_path}
+                %span Start your free 14 day trial
     .col-sm-12
       .page-footer
         %h1 

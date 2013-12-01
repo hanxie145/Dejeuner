@@ -6,6 +6,9 @@ Dejeuner::Application.routes.draw do
   resources :reviews
   devise_for :users
 
+  # charges 
+  get 'charges/new/:plan' => 'charges#new'
+
   # campaigns
   resources :campaigns
   get 'key_word' => 'campaigns#key_word'

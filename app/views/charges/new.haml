@@ -1,5 +1,17 @@
-= form_tag charges_path do
-  %article
-    %label.amount
-      %span Amount: $5.00
-  %script.stripe-button{"data-amount" => "500", "data-description" => "A month's subscription", "data-key" => ENV["STRIPE_TEST_PUBLISHABLE_KEY"], :src => "https://checkout.stripe.com/checkout.js"}
+= render 'layouts/header'
+.container
+  .row
+    .col-sm-4.col-sm-offset-4
+      %h1.text-center.yesteryear.charges-head Dejeuner 
+      %p 
+        You are now paying for the
+        = @plan 
+        plan
+      %p Your payment will be securely processed by our provider Stripe. Your card data will never be stored by us. Please press the button below to pay. 
+      = form_tag charges_path do
+        %article
+          %label.amount
+            %span= @display_price
+        %script.stripe-button{"data-amount" => "#{@price}", "data-description" => "Subscribing to the #{@plan} plan", "data-key" => ENV["STRIPE_TEST_PUBLISHABLE_KEY"], :src => "https://checkout.stripe.com/checkout.js"}
+        / to keep track of what plan the user is subscribing to 
+        = hidden_field_tag "stripe_plan_id", @stripe_plan_id
