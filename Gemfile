@@ -19,6 +19,7 @@ gem 'plivo'
 gem 'daemons'
 gem 'figaro'
 gem 'will_paginate', '~> 3.0'
+gem 'stripe'
 
 group :development do 
   gem "better_errors"
