@@ -8,16 +8,19 @@ class ChargesController < ApplicationController
     @amount = 500 
 
     customer = Stripe::Customer.create(
-      :email => 'example@stripe.com', 
-      :card => params[:stripeToken] 
+      :email => params[:stripeEmail, 
+      :card => params[:stripeToken], 
+      :plan => 'dejeuner-petit'
       )
 
-    charge = Stripe::Charge.create(
-      :customer => customer.id,
-      :amount => @amount, 
-      :description => 'Rails Stripe customer', 
-      :currency => 'usd'
-      )
+    # if Stripe::Charge.create(
+    #   :customer => customer.id,
+    #   :amount => @amount, 
+    #   :description => 'Rails Stripe customer', 
+    #   :currency => 'usd'
+    #   )
+    #   flash[:notice] = "payment successful"
+    # end
 
     rescue Stripe::CardError => e 
       flash[:error] = e.message
