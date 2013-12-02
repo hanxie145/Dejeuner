@@ -17,3 +17,6 @@
 
 # Ignore application configuration
 /config/application.yml
+
+# Ignore the list of plivo numbers 
+plivo_numbers.txt

@@ -1,0 +1,35 @@
+= render 'layouts/header'
+#main-container.main-container
+  .main-container-inner
+    = render 'layouts/sidebar'
+    .main-content
+      #breadcrumbs.breadcrumbs
+        %ul.breadcrumb
+          %li.active
+            %a{:href => "/market"} 
+            %i.fa.fa-bullhorn
+            Marketing
+          %li
+            credit refill
+        / .breadcrumb
+      .page-content
+        .page-header
+          %h1
+            Top up on your sms credits
+        / /.page-header
+        .row
+          .col-xs-12
+            .row
+              .col-sm-6
+                .widget-box
+                  .widget-header
+                    %h4 Create a new campaign
+                  .widget-body
+                    .widget-main
+                      %label How many credits would you like?
+                      %input{:type => "text"}/ 
+                      .hr.hr16
+                      %script.stripe-button{"data-name" => "Dejeuner", "data-amount" => "#{@price}", "data-description" => "Topping up on credits", "data-key" => ENV["STRIPE_TEST_PUBLISHABLE_KEY"], "data-email" => @user.email, :src => "https://checkout.stripe.com/checkout.js"}
+              .col-sm-6
+                %blockquote.green.pull-right
+                  %p Price is 1.5 cents per sms credit

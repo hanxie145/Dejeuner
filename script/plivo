@@ -1,0 +1,20 @@
+#!/usr/bin/env ruby
+include Plivo
+
+# make a txt file of all the rented plivo numbers we have
+
+# initialize the api 
+auth_id = ENV["PLIVO_AUTH_ID"]
+auth_token = ENV["PLIVO_AUTH_TOKEN"]
+p = RestAPI.new(auth_id, auth_token)
+
+# get plivo data
+data = p.get_numbers 
+
+# write it to a file
+open("plivo_numbers.txt", "wb") do |file|
+    # write the number and region to the file 
+    data[1]["objects"].each do |x|
+      file.puts "#{x["number"]} in #{x['region']}"
+    end
+end

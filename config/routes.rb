@@ -31,6 +31,7 @@ Dejeuner::Application.routes.draw do
   get 'main' => 'product#main'
   get 'profile' => 'product#profile'
   get 'help' => 'product#help'
+  get 'sms_credit_refill' => 'product#sms_credit_refill'
 
   # marketing 
   get 'sms_response' => 'twilio#sms_response'

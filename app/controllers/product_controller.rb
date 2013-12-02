@@ -42,6 +42,10 @@ class ProductController < ApplicationController
   def market 
     set_user()
   end
+
+  def sms_credit_refill
+    set_user()
+  end
   
   def help 
     set_user()
