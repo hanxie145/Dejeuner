@@ -4,6 +4,7 @@ Dejeuner::Application.routes.draw do
   resources :charges
   resources :numbers
   resources :reviews
+  resources :sms_contacts, only: [:destroy, :index]
   devise_for :users
 
   # charges 
@@ -37,8 +38,6 @@ Dejeuner::Application.routes.draw do
   get 'sms_response' => 'sms_response#sms_response'
   get 'market' => 'product#market'
   post 'market' => 'sms#send_message'
-  get 'subscribers' => 'sms#subscribers', as: :sms_contacts
-  resources :sms_contacts, only: [:destroy]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
