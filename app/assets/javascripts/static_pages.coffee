@@ -58,12 +58,32 @@ staticPagesGraphs = ->
       label = li.find("label.inline").get(0)
       e.stopImmediatePropagation()  if label is e.target or $.contains(label, e.target)
 
+# function for the sms credit refill page. To take the number of credits the user enters in and calculate how much it costs. Then append the data to the stripe payments button and the total cost input textfield 
+smsCreditRefill = -> 
+  $('#sms-credits-desired').on 'input', -> 
+    # get user input on how many sms credits they want
+    num_sms_credits = $(this).val()
+
+    # calculate the price in cents
+    price_per_sms = 150
+    total_price = num_sms_credits * price_per_sms
+
+    # display price in dollars 
+    price =  "$" + (total_price / 100).toString()
+    console.log price
+    $('#sms-credits-price').val(price) 
+
+    # change the params of the button to GET with params equalling how many credits the user wants. Uhm horrible practices lol...?
+    $('.sms_credit_button').attr 'href', "/charges/new?num_sms_credits=#{total_price}&type=sms_credit_refill"
+
 $(document).ready -> 
   alertFadeOut()
   sidebarToggle()
   staticPagesGraphs()
+  smsCreditRefill()
 
 $(document).on "page:change", -> 
   alertFadeOut()
   sidebarToggle()
   staticPagesGraphs()
+  smsCreditRefill()
