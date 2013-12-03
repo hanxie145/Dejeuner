@@ -10,7 +10,7 @@ class SmsResponseController < ApplicationController
     user = Number.where('number = ?', @to)[0].user 
 
     # check if customer has texted STOP and thus wants to unsubscribe
-    unless @text === 'STOP'
+    unless @text.upcase === 'STOP'
       user.create_review(@text, @to)
       user.sms_contacts.create number: @from
       # figure out sms_response 
