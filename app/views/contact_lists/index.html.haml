@@ -1,0 +1,21 @@
+%h1 Listing contact_lists
+
+%table
+  %tr
+    %th User
+    %th Name
+    %th
+    %th
+    %th
+
+  - @contact_lists.each do |contact_list|
+    %tr
+      %td= contact_list.user_id
+      %td= contact_list.name
+      %td= link_to 'Show', contact_list
+      %td= link_to 'Edit', edit_contact_list_path(contact_list)
+      %td= link_to 'Destroy', contact_list, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Contact list', new_contact_list_path

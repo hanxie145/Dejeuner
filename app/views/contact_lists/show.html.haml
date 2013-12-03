@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b User:
+  = @contact_list.user_id
+%p
+  %b Name:
+  = @contact_list.name
+
+= link_to 'Edit', edit_contact_list_path(@contact_list)
+\|
+= link_to 'Back', contact_lists_path

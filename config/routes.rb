@@ -1,5 +1,4 @@
 Dejeuner::Application.routes.draw do
-
   resources :signup_emails, only: [:create]
   resources :charges
   resources :numbers
