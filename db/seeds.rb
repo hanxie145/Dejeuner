@@ -5,7 +5,12 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-u = User.where('email = ?', 'txie145@gmail.com')[0]
+u = User.find_or_create_by(email: 'txie145@gmail.com') do |user|
+  user.name = 'Tony Xie'
+  user.password = 'testtest'
+  user.password_confirmation = 'testtest'
+end
+u.create_sms_response response: "Show this for 5% off your meal today!"
 u.numbers.create number: "17787260394"
 u.numbers.create number: "17787260393"
 for x in 1..100

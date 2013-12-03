@@ -1,9 +1,20 @@
 class ChargesController < ApplicationController
   before_filter :authenticate_user!
+  # sms credit price to change in future
+  PRICE_SMS_CREDITS = 1.5
 
   def new 
     set_user()
     @email = @user.email
+    type = params[:type]
+
+    # if the type of charge is to refill sms credits 
+    if type === 'sms_credit_refill'
+      # figure out how many credits the user is paying for and what price he should pay for them
+      credits = params[:num_sms_credits]
+      @price = credits.to_i * PRICE_SMS_CREDITS / 100
+      @user_action = "Paying $#{@price} for #{credits} sms credits at $#{PRICE_SMS_CREDITS / 100.00} per credit"
+    end 
     @plan = params[:plan]
 
     # figure out the price

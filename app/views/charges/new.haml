@@ -4,9 +4,8 @@
     .col-sm-4.col-sm-offset-4
       %h1.text-center.yesteryear.charges-head Dejeuner 
       %p 
-        You are now paying for the
-        = @plan 
-        plan
+        You are now 
+        = @user_action
       %p Your payment will be securely processed by our provider Stripe. Your card data will never be stored by us. Please press the button below to pay. 
       = form_tag charges_path do
         %article
