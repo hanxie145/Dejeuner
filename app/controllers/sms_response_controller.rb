@@ -13,14 +13,16 @@ class SmsResponseController < ApplicationController
     unless @text === 'STOP'
       user.create_review(@text, @to)
       user.sms_contacts.create number: @from
+      # figure out sms_response 
+      @response = user.sms_response.response
+      render 'sms_response.xml.erb', :content_type => 'text/xml'
     else
-      user.sms_contacts.where('number = ?', @from).delete
-    end 
-    
-    # figure out sms_response 
-    @response = user.sms_response.response
-
-    render 'sms_response.xml.erb', :content_type => 'text/xml'
+      unsubscribe_number = user.sms_contacts.where('number = ?', @from)[0]
+      if unsubscribe_number
+        unsubscribe_number.destroy
+      end
+      render 'unsubscribe.xml.erb', :content_type => 'text/xml'
+    end
   end 
 
 end
