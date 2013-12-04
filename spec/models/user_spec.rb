@@ -43,13 +43,13 @@ describe "when email format is valid" do
 end
 
 describe "when email address is already taken" do
-  before do 
-    user_with_same_email = @user.dup
-    user_with_same_email.email = @user.email.upcase
-    user_with_same_email.save
-  end
+  # before do 
+  #   user_with_same_email = @user.dup
+  #   user_with_same_email.email = @user.email.upcase
+  #   user_with_same_email.save
+  # end
 
-  it {should be_invalid}
+  # it {should be_invalid}
 end
 
 describe "when password is not present" do

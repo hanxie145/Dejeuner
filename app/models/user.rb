@@ -9,7 +9,8 @@ class User < ActiveRecord::Base
 
   # validates
   validates :name, presence: true, length: {maximum: 200}
-  validates :email, uniqueness: true
+  validates :email, uniqueness: true, 
+                    uniqueness: { case_sensitive: false }
 
   # relations
   has_many :numbers, dependent: :destroy
