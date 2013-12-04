@@ -37,7 +37,9 @@
                       .form-group
                         %label.col-sm-3.control-label.no-padding-right{:for => "form-field-2"} My numbers
                         .col-sm-9
-                          %input.col-sm-12{:value => "1231231234", :type => "text"}
+                          - if @numbers.any?
+                            - @numbers.each do |number|
+                              %input.col-sm-12{:value => number.number, :type => "text"}
                       .form-group
                         = link_to '#', class: 'btn btn-info btn-block' do 
                           %i.fa.fa-phone 

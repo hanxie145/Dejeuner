@@ -15,6 +15,7 @@ class CampaignsController < ApplicationController
     else
       @reward = ""
     end
+    @numbers = current_user.numbers
   end
 
   # GET /campaigns/1
