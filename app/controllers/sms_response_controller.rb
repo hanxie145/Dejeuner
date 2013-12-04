@@ -23,6 +23,5 @@ class SmsResponseController < ApplicationController
       end
       render 'unsubscribe.xml.erb', :content_type => 'text/xml'
     end
-  end 
-
+  end
 end

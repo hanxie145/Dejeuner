@@ -9,7 +9,7 @@ class SmsController < ApplicationController
     phone_numbers = ["17185772625", "17185771083", "17185750512", "17185750144", "17185584451"]
 
     # get msg and contacts
-    message = params[:message]
+    message = params[:message] + ' Reply with STOP to unsubscribe.'
     contacts = current_user.sms_contacts
 
     # build dst field. For Plivo sending to more than one number is done by putting numbers in the dst field seperated by a <. E.g "number1<number2<number3"
