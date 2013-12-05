@@ -77,6 +77,11 @@
                 = form_tag do
                   %p 160 character limit per sms. Sms's over 160 characters will be split into two sms's and cost two credits. All marketing sms's automatically have an unsubscribe option attached to them to stay compliant with Canadian / US marketing regulations.  
                   = text_area_tag 'message', nil, :class => 'form-control market-text-area', placeholder: "Come in to Tony's Tonics on Wednesday between 5 and 8PM for 50% off on all beers on tap!"
+                  %p When do you want to send out your message?
+                  .input-group.bootstrap-timepicker
+                    %input#timepicker1.form-control{type: "text"}/
+                    %span.input-group-addon
+                      %i.fa.fa-clock-o
                   .clearfix.form-actions
                     .col-sm-offset-3.col-sm-9
                       = link_to main_path, class: 'btn btn-default' do 
