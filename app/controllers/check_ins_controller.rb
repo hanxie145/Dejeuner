@@ -7,7 +7,9 @@ class CheckInsController < ApplicationController
 
   def create
     set_user()
-    number = params[:number]
+
+    # change number according to NA plivo standards
+    number = "1" + params[:number]
 
     # create the sms contact for the user if they do not have one 
     unless @user.sms_contacts.where("number = ?", number).any?
