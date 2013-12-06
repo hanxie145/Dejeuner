@@ -41,6 +41,19 @@ class ProductController < ApplicationController
 
   def market 
     set_user()
+    # list of months 
+    @months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+    @months_with_index = []
+    i = 1
+    @months.each do |month| 
+      @months_with_index << [month, i]
+      i = i + 1
+    end
+    @month_values = (1..12).to_a
+    @date_values = (1..31).to_a
+    @year_values = (2013..2099).to_a
+    # get current month for month select 
+    @current_month_number = Time.now.month
   end
 
   def sms_credit_refill

@@ -76,7 +76,7 @@ smsCreditRefill = ->
     # change the params of the button to GET with params equalling how many credits the user wants. Uhm horrible practices lol...?
     $('.sms_credit_button').attr 'href', "/charges/new?num_sms_credits=#{total_price}&type=sms_credit_refill"
 
-# Timepicker on the send message page
+# DatePicker and Timepicker on the send message page
 sendMessageTimePicker = -> 
   if $('#timepicker1').length 
 
@@ -89,6 +89,10 @@ sendMessageTimePicker = ->
     # be lazy and replace old font-awesome syntax with new one, since I can't figure out where it actually happens in the old 
     $('.bootstrap-timepicker-widget i').removeClass 'icon-chevron-up'
     $('.bootstrap-timepicker-widget i').addClass 'fa fa-chevron-up'
+
+  if $('.date-picker').length 
+    $('.date-picker').datepicker {autoclose:true}
+
 
 $(document).ready -> 
   alertFadeOut()

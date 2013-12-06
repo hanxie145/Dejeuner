@@ -11,6 +11,7 @@
  *= require_self
  *= require font-awesome
  *= require bootstrap
+ *= require bootstrap-timepicker
  *= require ace-ie
  *= require ace-rtl
  *= require ace-skins
