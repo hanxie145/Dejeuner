@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131206230050) do
+ActiveRecord::Schema.define(version: 20131206230351) do
 
   create_table "campaigns", force: true do |t|
     t.string   "description"
@@ -78,7 +78,7 @@ ActiveRecord::Schema.define(version: 20131206230050) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "check_in_count"
+    t.integer  "check_in_count", default: 0
   end
 
   create_table "sms_responses", force: true do |t|
