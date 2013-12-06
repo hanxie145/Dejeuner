@@ -1,0 +1,30 @@
+= render 'layouts/header'
+#main-container.main-container
+  .main-container-inner
+    = render 'layouts/sidebar'
+    .main-content
+      #breadcrumbs.breadcrumbs
+        %ul.breadcrumb
+          %li
+            %i.fa.fa-check
+            Checkin
+        / .breadcrumb
+      .page-content
+        .page-header
+          %h1
+            Check in
+            %small
+              %i.fa.fa-angle-double-right
+              Come back for seconds
+        / /.page-header
+        .row
+          .col-xs-12
+            = form_tag do
+              .form-group
+                = text_field_tag :number, nil, class: "form-control", placeholder: "Number to be check in"
+              .clearfix.form-actions.center
+                = button_tag class: 'btn btn-primary' do 
+                  %i.fa.fa-check
+                  Check in
+                %select.pull-right
+                  %option{:value => "NA"} North America 

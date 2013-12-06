@@ -37,6 +37,20 @@
           %a{href: "#"}
             %i.fa.fa-angle-double-right
             Past campaigns
+    %li{:class => ('active' if controller_name() == 'check_ins' || controller_name() == 'sms_contacts') }
+      %a.dropdown-toggle{href: "#"}
+        %i.fa.fa-user
+        %span.menu-text Subscribers
+        %b.arrow.fa.fa-angle-down
+      %ul.submenu
+        %li{:class => ('active' if controller_name() == 'sms_contacts' && action_name() == 'index') }
+          %a{href: "/subscribers"}
+            %i.fa.fa-angle-double-right
+            My subscribers            
+        %li{:class => ('active' if controller_name() == 'check_ins' && action_name() == 'new') }
+          %a{href: "/checkin"}
+            %i.fa.fa-angle-double-right
+            Check in            
     %li{:class => ('active' if controller_name() == 'product' && action_name() == 'market') }
       %a.dropdown-toggle{href: "#"}
         %i.fa.fa-bullhorn
@@ -50,10 +64,6 @@
         %li 
           %a{:href => "/sms_credit_refill"}
             Top up on sms credits
-        %li
-          %a{href: "/subscribers"}
-            %i.fa.fa-angle-double-right
-            Subscribers
         %li
           %a{href: "/market/history"}
             %i.fa.fa-angle-double-right

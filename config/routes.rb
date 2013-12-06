@@ -39,6 +39,11 @@ Dejeuner::Application.routes.draw do
   post 'market' => 'sms#send_message'
   get 'subscribers' => 'sms_contacts#index', as: :sms_contacts
 
+  # checkins
+  get "checkin" => 'check_ins#new'
+  post "checkin" => "check_ins#create"
+  get "check_ins/destroy"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
