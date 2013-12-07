@@ -15,7 +15,7 @@ class SmsContact < ActiveRecord::Base
     # get a list of check in rewards and see which one to send
     check_in_reward = self.user.check_in_rewards.where("check_in_count = ?", new_check_in_count).first
     if check_in_reward
-      message = check_in_reward.reward
+      message = "Thanks for checking in. Show this sms to get " +check_in_reward.reward
       self.send_message message
     else
       message = "Thanks for checking in!"
