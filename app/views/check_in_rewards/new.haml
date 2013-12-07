@@ -1,0 +1,25 @@
+= render 'layouts/header'
+#main-container.main-container
+  .main-container-inner
+    = render 'layouts/sidebar'
+    .main-content
+      #breadcrumbs.breadcrumbs
+        %ul.breadcrumb
+          %li
+            %a{:href => "/checkin"} 
+              %i.fa.fa-check
+              Checkin
+          %li 
+            Loyalty rewards
+        / .breadcrumb
+      .page-content
+        .page-header
+          %h1
+            Loyalty rewards
+            %small
+              %i.fa.fa-angle-double-right
+              Keep them coming back for seconds
+        / /.page-header
+        .row
+          .col-xs-12
+            

@@ -286,3 +286,28 @@
     color: #fff;
   }
 }
+
+// for check in page. Make it look nicer
+.checkin-hero {
+  background: #ffffff image-url("fall-leaves-blur.JPG") no-repeat center center fixed; 
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  width: 100%; 
+  height: 300px; 
+  text-align: center;
+}
+
+.checkin-header-inner{ 
+  h1 {
+    font-family: 'Yesteryear', cursive;
+    font-size: 100px;
+    margin-top: 0;
+    padding-top: 10px;
+  }
+  color: white;
+  background-color: transparent;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}

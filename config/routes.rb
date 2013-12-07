@@ -1,4 +1,7 @@
 Dejeuner::Application.routes.draw do
+  get "check_in_rewards/new"
+  get "check_in_rewards/create"
+  get "check_in_rewards/destroy"
   resources :signup_emails, only: [:create]
   resources :charges
   resources :numbers
@@ -42,7 +45,7 @@ Dejeuner::Application.routes.draw do
   # checkins
   get "checkin" => 'check_ins#new'
   post "checkin" => "check_ins#create"
-  get "loyalty" => "check_ins#loyalty"
+  get "loyalty" => "check_in_rewards#new"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
