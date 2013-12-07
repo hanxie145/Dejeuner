@@ -1,27 +1,16 @@
-# freakkking turbolinks
-myFunct = -> 
+# For the virtual telephone pad on checkins
+checkInNumbers = -> 
+  $('.check-in-virtual-number').click -> 
+    prevNum = $('.check-in-number').val()
+    newNum = prevNum + $(this).text()
+    $('.check-in-number').val newNum
 
-  # animate quick links
-  $('.dash-quick-link').on 'mouseenter', -> 
-    $('img', this).stop().animate {"margin-left": "60px"}, 200, 'linear'
-  $('.dash-quick-link').on 'mouseleave', -> 
-    $('img', this).stop().animate {"margin-left": "0px"}, 200, 'linear'
-
-  # bleh hacky
-  $('.restaurant-quick-link').click (e) ->
-    e.preventDefault()
-    window.location.href = "/profile"
-
-  $('.reviews-quick-link').click (e) -> 
-    e.preventDefault()
-    window.location.href = "/reviews"
-
-  $('marketing-quick-link').click (e) -> 
-    e.preventDefault()
-    window.location.href = '/market'
+  # for removing a number
+  $('.check-in-remove').click -> 
+    $('.check-in-number').val ""
 
 $(document).ready ->
-  myFunct()
+  checkInNumbers()
 
 $(document).on "page:change", -> 
-  myFunct()
+  checkInNumbers()

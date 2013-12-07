@@ -19,12 +19,40 @@
         / /.page-header
         .row
           .col-xs-12
+            %p By checking in you agree to join our mobile subscribers list. 
             = form_tag do
               .form-group
-                = text_field_tag :number, nil, class: "form-control", placeholder: "Number to be check in"
+                = text_field_tag :number, nil, class: "form-control check-in-number", placeholder: "6041234567"
+              .check-in-numbers
+                .row 
+                  .col-sm-4
+                    %p.check-in-virtual-number  1
+                  .col-sm-4
+                    %p.check-in-virtual-number 2
+                  .col-sm-4
+                    %p.check-in-virtual-number 3
+                .row
+                  .col-sm-4
+                    %p.check-in-virtual-number 4
+                  .col-sm-4
+                    %p.check-in-virtual-number 5
+                  .col-sm-4
+                    %p.check-in-virtual-number 6
+                .row
+                  .col-sm-4
+                    %p.check-in-virtual-number 7
+                  .col-sm-4
+                    %p.check-in-virtual-number 8
+                  .col-sm-4
+                    %p.check-in-virtual-number 9
+                .row
+                  .col-sm-4
+                    %p.check-in-virtual-number 0
+                  .col-sm-8
+                    %p.check-in-remove
+                      Reset
+                      %i.fa.fa-times                  
               .clearfix.form-actions.center
                 = button_tag class: 'btn btn-primary' do 
                   %i.fa.fa-check
                   Check in
-                %select.pull-right
-                  %option{:value => "NA"} North America 

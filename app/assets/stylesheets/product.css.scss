@@ -271,3 +271,18 @@
 //   }
 
 // }
+
+// for the checkin page. Styling the virtual phone numbers
+.check-in-numbers {
+  .col-sm-4, .col-sm-8{
+    height: 50px;
+    text-align: center;
+    background-color: rgb(119, 119, 119);
+    border: #fff 1px solid;
+  }
+  p {
+    font-size: 25px; 
+    font-weight: 700;
+    color: #fff;
+  }
+}
