@@ -37,7 +37,7 @@
           %a{href: "#"}
             %i.fa.fa-angle-double-right
             Past campaigns
-    %li{:class => ('active' if controller_name() == 'check_ins' || controller_name() == 'sms_contacts') }
+    %li{:class => ('active' if controller_name() == 'check_ins' || controller_name() == 'sms_contacts'|| controller_name() == 'check_in_rewards') }
       %a.dropdown-toggle{href: "#"}
         %i.fa.fa-user
         %span.menu-text Subscribers
@@ -48,10 +48,10 @@
             %i.fa.fa-angle-double-right
             My subscribers            
         %li{:class => ('active' if controller_name() == 'check_ins' && action_name() == 'new') }
-          %a{href: "/checkin"}
+          %a{href: "/checkin", "data-no-turbolink" => 'true'}
             %i.fa.fa-angle-double-right
             Check in  
-        %li{:class => ('active' if controller_name() == 'check_ins' && action_name() == 'loyalty') }
+        %li{:class => ('active' if controller_name() == 'check_in_rewards' && action_name() == 'new') }
           %a{href: "/loyalty"}
             %i.fa.fa-angle-double-right
             Loyalty rewards                      

@@ -18,8 +18,27 @@
             Loyalty rewards
             %small
               %i.fa.fa-angle-double-right
-              Keep them coming back for seconds
+              Build a deeper relationship with customers
         / /.page-header
         .row
           .col-xs-12
+            .row
+              .col-sm-10
+                - for reward in @current_rewards 
+                  %h3.lighter 
+                    After
+                    %span.red= reward.check_in_count 
+                    check ins customers get 
+                    %span.red= reward.reward
+                .form-inline
+                  = form_tag do 
+                    %h3.lighter
+                      After
+                      = text_field_tag :check_in_number, nil, class: "form-control input-small red", placeholder: '1'
+                      check ins customers should get...
+                    = text_area_tag :reward, nil, rows: 4, :class => "form-control red", placeholder: "50% off on their next entree"
+                    .clearfix.form-actions.center
+                      = button_tag class: 'btn btn-primary' do 
+                        %i.fa.fa-heart 
+                        Create reward
             
