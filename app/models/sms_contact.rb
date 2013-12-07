@@ -11,19 +11,26 @@ class SmsContact < ActiveRecord::Base
     # save the contact to the user's list 
     new_check_in_count = self.check_in_count + 1
     self.update_attribute :check_in_count, new_check_in_count
-    self.send_message
+
+    # get a list of check in rewards and see which one to send
+    check_in_reward = self.user.check_in_rewards.where("check_in_count = ?", new_check_in_count).first
+    if check_in_reward
+      message = check_in_reward.reward
+      self.send_message message
+    else
+      message = "Thanks for checking in!"
+      self.send_message message
+    end
   end
 
   # send the confirmation message with the loyalty prize
   # TODO add in loyalty prize
-  def send_message
+  def send_message(message)
     # plivo stuff
     auth_id = ENV["PLIVO_AUTH_ID"]
     auth_token = ENV["PLIVO_AUTH_TOKEN"]
     phone_numbers = ["17185772625"]
 
-    # TODO add in loyalty prize
-    message = "Thank you for checking in"
     dst = self.number
     p = RestAPI.new auth_id, auth_token
     params = {'src' => phone_numbers[0], 
