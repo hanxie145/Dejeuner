@@ -23,6 +23,7 @@ class CheckInsController < ApplicationController
     redirect_to action: 'new'
   end
 
-  def destroy
+  def loyalty
+    set_user()
   end
 end

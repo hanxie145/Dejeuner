@@ -42,7 +42,7 @@ Dejeuner::Application.routes.draw do
   # checkins
   get "checkin" => 'check_ins#new'
   post "checkin" => "check_ins#create"
-  get "check_ins/destroy"
+  get "loyalty" => "check_ins#loyalty"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
