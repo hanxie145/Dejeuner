@@ -55,12 +55,16 @@
           %a{href: "/loyalty"}
             %i.fa.fa-angle-double-right
             Loyalty rewards                      
-    %li{:class => ('active' if controller_name() == 'product' && action_name() == 'market') }
+    %li{:class => ('active' if (controller_name() == 'product' && action_name() == 'market') || (controller_name() == 'product' && action_name() == 'generate_sms') ) }
       %a.dropdown-toggle{href: "#"}
         %i.fa.fa-bullhorn
         %span.menu-text Marketing
         %b.arrow.fa.fa-angle-down
       %ul.submenu
+        %li{:class => ('active' if controller_name() == 'product' && action_name() == 'generate_sms') }
+          %a{href: "/generate_sms"}
+            %i.fa.fa-angle-double-right
+            Craft a sms
         %li{:class => ('active' if controller_name() == 'product' && action_name() == 'market') }
           %a{href: "/market"}
             %i.fa.fa-angle-double-right

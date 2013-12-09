@@ -39,6 +39,13 @@ class ProductController < ApplicationController
     @plan = @user.plan
   end
 
+  def generate_sms 
+    set_user()
+  end
+
+  def create_sms
+  end
+
   def market 
     set_user()
     # list of months 

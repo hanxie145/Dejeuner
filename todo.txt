@@ -1,0 +1,4 @@
+FEATURES
+
+- add checkins until next reward to the response sms from check ins
+

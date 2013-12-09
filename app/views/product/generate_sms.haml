@@ -1,0 +1,285 @@
+= render 'layouts/header'
+#main-container.main-container
+  .main-container-inner
+    = render 'layouts/sidebar'
+    .main-content
+      #breadcrumbs.breadcrumbs
+        %ul.breadcrumb
+          %li
+            %i.fa.fa-envelope
+            Craft a marketing sms
+        / .breadcrumb
+      .page-content
+        .page-header
+          %h1
+            Craft a marketing sms
+            %small
+              %i.fa.fa-angle-double-right
+              Get the most out of your marketing
+        / /.page-header
+        .row
+          .col-xs-12
+            / PAGE CONTENT BEGINS
+            .row
+              .col-sm-12
+                %p 
+                  We know that you want to just keep running the core part of your business. The craft a sms service lets you leave the content and timing of sms marketing up to us. Simply fill out some questions and we will generate a sms and a time to schedule it for. 
+                .widget-box
+                  .widget-header.widget-header-blue.widget-header-flat
+                  .widget-body
+                    .widget-main
+                      #fuelux-wizard.row-fluid{"data-target" => "#step-container"}
+                        %ul.wizard-steps
+                          %li.active{"data-target" => "#step1"}
+                            %span.step 1
+                            %span.title Industry
+                          %li{"data-target" => "#step2"}
+                            %span.step 2
+                            %span.title Requirements and time
+                          %li{"data-target" => "#step3"}
+                            %span.step 3
+                            %span.title Sms
+                      %hr/
+                      #step-container.step-content.row-fluid.position-relative
+                        #step1.step-pane.active
+                          %h3.lighter First, we have to know what type of industry you are in.
+                          %h3.lighter.red 
+                            I am in business in the
+                            %select{:name => "industry", id: 'industry-select'}
+                              %option{:value => "restaurant"} restaurants 
+                            industry
+                        #step2.step-pane
+                          %h3.lighter Great! Now, we have to know what you want to do with this sms. 
+                          %h3.lighter.red 
+                            I want to 
+                            %select{:name => "intention", id: 'intention-select'}                             
+                              %option{:value => "customers"} drive more customers to the business
+                          %h3.lighter When would you want to do this? 
+                          %h3.lighter.red
+                            On 
+                            %select{:name => "date", id: 'sms-generate-date-select'} 
+                              %option{:value => "monday"} Monday
+                              %option{:value => "tuesday"} Tuesday
+                              %option{:value => "wednesday"} Wednesday
+                              %option{:value => "thursday"} Thursday
+                              %option{:value => "friday"} Friday
+                              %option{:value => "saturday"} Saturday
+                              %option{:value => "sunday"} Sunday
+                            between 
+                            %input{:type => "text", class: 'input-small', placeholder: 'time'}  
+                            and 
+                            %input{:type => "text", class: 'input-small', placeholder: 'time'} 
+                        #step3.step-pane
+                          .center
+                            %h3.blue.lighter This is step 3
+                      %hr/
+                      .row-fluid.wizard-actions
+                        %button.btn.btn-prev
+                          %i.icon-arrow-left
+                          Prev
+                        %button.btn.btn-success.btn-next{"data-last" => "Finish "}
+                          Next
+                          %i.icon-arrow-right.icon-on-right
+                    / /widget-main
+                  / /widget-body
+            #modal-wizard.modal
+              .modal-dialog
+                .modal-content
+                  .modal-header{"data-target" => "#modal-step-contents"}
+                    %ul.wizard-steps
+                      %li.active{"data-target" => "#modal-step1"}
+                        %span.step 1
+                        %span.title Validation states
+                      %li{"data-target" => "#modal-step2"}
+                        %span.step 2
+                        %span.title Alerts
+                      %li{"data-target" => "#modal-step3"}
+                        %span.step 3
+                        %span.title Payment Info
+                      %li{"data-target" => "#modal-step4"}
+                        %span.step 4
+                        %span.title Other Info
+                  #modal-step-contents.modal-body.step-content
+                    #modal-step1.step-pane.active
+                      .center
+                        %h4.blue Step 1
+                    #modal-step2.step-pane
+                      .center
+                        %h4.blue Step 2
+                    #modal-step3.step-pane
+                      .center
+                        %h4.blue Step 3
+                    #modal-step4.step-pane
+                      .center
+                        %h4.blue Step 4
+                  .modal-footer.wizard-actions
+                    %button.btn.btn-sm.btn-prev
+                      %i.icon-arrow-left
+                      Prev
+                    %button.btn.btn-success.btn-sm.btn-next{"data-last" => "Finish "}
+                      Next
+                      %i.icon-arrow-right.icon-on-right
+                    %button.btn.btn-danger.btn-sm.pull-left{"data-dismiss" => "modal"}
+                      %i.icon-remove
+                      Cancel
+            / PAGE CONTENT ENDS
+            / /.col
+            / /.row
+            / /.page-content
+            / /.main-content
+            / inline scripts related to this page
+            :javascript
+              jQuery(function($) {
+              
+                $('[data-rel=tooltip]').tooltip();
+              
+                $(".select2").css('width','200px').select2({allowClear:true})
+                .on('change', function(){
+                  $(this).closest('form').validate().element($(this));
+                }); 
+              
+              
+                var $validation = false;
+                $('#fuelux-wizard').ace_wizard().on('change' , function(e, info){
+                  if(info.step == 1 && $validation) {
+                    if(!$('#validation-form').valid()) return false;
+                  }
+                }).on('finished', function(e) {
+                  bootbox.dialog({
+                    message: "Thank you! Your information was successfully saved!", 
+                    buttons: {
+                      "success" : {
+                        "label" : "OK",
+                        "className" : "btn-sm btn-primary"
+                      }
+                    }
+                  });
+                }).on('stepclick', function(e){
+                  //return false;//prevent clicking on steps
+                });
+              
+              
+                $('#skip-validation').removeAttr('checked').on('click', function(){
+                  $validation = this.checked;
+                  if(this.checked) {
+                    $('#sample-form').hide();
+                    $('#validation-form').removeClass('hide');
+                  }
+                  else {
+                    $('#validation-form').addClass('hide');
+                    $('#sample-form').show();
+                  }
+                });
+              
+              
+              
+                //documentation : http://docs.jquery.com/Plugins/Validation/validate
+              
+              
+                $.mask.definitions['~']='[+-]';
+                $('#phone').mask('(999) 999-9999');
+              
+                jQuery.validator.addMethod("phone", function (value, element) {
+                  return this.optional(element) || /^\(\d{3}\) \d{3}\-\d{4}( x\d{1,6})?$/.test(value);
+                }, "Enter a valid phone number.");
+              
+                $('#validation-form').validate({
+                  errorElement: 'div',
+                  errorClass: 'help-block',
+                  focusInvalid: false,
+                  rules: {
+                    email: {
+                      required: true,
+                      email:true
+                    },
+                    password: {
+                      required: true,
+                      minlength: 5
+                    },
+                    password2: {
+                      required: true,
+                      minlength: 5,
+                      equalTo: "#password"
+                    },
+                    name: {
+                      required: true
+                    },
+                    phone: {
+                      required: true,
+                      phone: 'required'
+                    },
+                    url: {
+                      required: true,
+                      url: true
+                    },
+                    comment: {
+                      required: true
+                    },
+                    state: {
+                      required: true
+                    },
+                    platform: {
+                      required: true
+                    },
+                    subscription: {
+                      required: true
+                    },
+                    gender: 'required',
+                    agree: 'required'
+                  },
+              
+                  messages: {
+                    email: {
+                      required: "Please provide a valid email.",
+                      email: "Please provide a valid email."
+                    },
+                    password: {
+                      required: "Please specify a password.",
+                      minlength: "Please specify a secure password."
+                    },
+                    subscription: "Please choose at least one option",
+                    gender: "Please choose gender",
+                    agree: "Please accept our policy"
+                  },
+              
+                  invalidHandler: function (event, validator) { //display error alert on form submit   
+                    $('.alert-danger', $('.login-form')).show();
+                  },
+              
+                  highlight: function (e) {
+                    $(e).closest('.form-group').removeClass('has-info').addClass('has-error');
+                  },
+              
+                  success: function (e) {
+                    $(e).closest('.form-group').removeClass('has-error').addClass('has-info');
+                    $(e).remove();
+                  },
+              
+                  errorPlacement: function (error, element) {
+                    if(element.is(':checkbox') || element.is(':radio')) {
+                      var controls = element.closest('div[class*="col-"]');
+                      if(controls.find(':checkbox,:radio').length > 1) controls.append(error);
+                      else error.insertAfter(element.nextAll('.lbl:eq(0)').eq(0));
+                    }
+                    else if(element.is('.select2')) {
+                      error.insertAfter(element.siblings('[class*="select2-container"]:eq(0)'));
+                    }
+                    else if(element.is('.chosen-select')) {
+                      error.insertAfter(element.siblings('[class*="chosen-container"]:eq(0)'));
+                    }
+                    else error.insertAfter(element.parent());
+                  },
+              
+                  submitHandler: function (form) {
+                  },
+                  invalidHandler: function (form) {
+                  }
+                });
+              
+                
+                
+                
+                $('#modal-wizard .modal-header').ace_wizard();
+                $('#modal-wizard .wizard-actions .btn[data-dismiss=modal]').removeAttr('disabled');
+              })
+              
