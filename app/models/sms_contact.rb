@@ -5,6 +5,8 @@ class SmsContact < ActiveRecord::Base
   validates :number, presence: true
   validates_uniqueness_of :number, scope: :user_id
 
+  scope :this_month, -> {where('created_at >= ?', Date.today.beginning_of_month)}
+
   # method for customers checking in. Update the number's check_in_count by 1. Limit the check in count of a number to 1 a day. Save the number to the users subscribers list tnen after check in send a confirmation sms to a the number
   # TODO limit check ins to once a day
   def check_in 
