@@ -1,4 +1,5 @@
 class ProductController < ApplicationController
+  include ProductHelper
   before_filter :authenticate_user!
 
   def main 
@@ -47,15 +48,9 @@ class ProductController < ApplicationController
   end
 
   def market 
-    set_user()
+    set_user
     # list of months 
-    @months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
-    @months_with_index = []
-    i = 1
-    @months.each do |month| 
-      @months_with_index << [month, i]
-      i = i + 1
-    end
+    get_months
     @month_values = (1..12).to_a
     @date_values = (1..31).to_a
     @year_values = (2013..2099).to_a
