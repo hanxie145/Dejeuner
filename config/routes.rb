@@ -32,6 +32,8 @@ Dejeuner::Application.routes.draw do
   get 'profile' => 'product#profile'
   get 'help' => 'product#help'
   get 'sms_credit_refill' => 'product#sms_credit_refill'
+  get 'generate_sms' => 'product#generate_sms'
+  post 'generate_sms' => 'product#create_sms'
 
   # marketing 
   get 'sms_response' => 'sms_response#sms_response'
