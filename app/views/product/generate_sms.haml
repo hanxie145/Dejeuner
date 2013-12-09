@@ -70,8 +70,18 @@
                             and 
                             %input{:type => "text", class: 'input-small', placeholder: 'time'} 
                         #step3.step-pane
-                          .center
-                            %h3.blue.lighter This is step 3
+                          %h3.lighter Your crafted marketing sms:
+                          %blockquote 
+                            %p 
+                              / TODO place with real sms 
+                              Tony's Tonics: Come between 5 and 8pm anytime from Monday to Wednesday for a free appetitizer with your meal. 
+                          = link_to "#", class: "btn btn-primary" do
+                            %i.fa.fa-clock-o
+                            Schedule this for 
+                            / TODO replace with time
+                          = link_to "#", class: "btn btn-primary" do
+                            %i.fa.fa-envelope
+                            Send it out now!
                       %hr/
                       .row-fluid.wizard-actions
                         %button.btn.btn-prev
