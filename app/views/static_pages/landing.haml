@@ -6,7 +6,7 @@
         %h1.landing-head Dejeuner
         %h1.lighter Keep customers coming back for seconds with multi-tier loyalty rewards and sms marketing. Dejeuner not only helps you acquire contacts but market to them through our custom craft-a-sms and scheduling services.
         .center
-          = link_to "Sign Up", '/pricing', :class => "btn btn-info btn-lg"
+          = link_to "Start your free trial", '/pricing', :class => "btn btn-primary btn-lg"
           = link_to "Sign In", new_user_session_path, :class => "btn btn-info btn-lg"
 .cursive
   %h1.red Dejeuner in three simple steps.
@@ -34,6 +34,33 @@
     .row
       .col-sm-12
         %h1.lighter.white Simple pricing. No apps to download. No troublesome keywords. Unlimited contact lists. No sms marketing expertise required. Dejeuner works for you.
-/ .row.sign-up-landing
-/   .col-lg-12
-/     = link_to "Sign Up", new_user_registration_path, :class => "btn btn-success btn-lg"
+.container
+  / START THE FEATURETTES
+  %hr.featurette-divider/
+  #contact.featurette
+    = image_tag "#{asset_path "platform-pic.png"}", class: "featurette-image img-circle img-responsive pull-left"
+    %h2.featurette-heading
+      The power of big business
+      %span.text-muted with the simplicity of small business.
+    %p.lead Whether you want to market to a few hundred or a hundred thousand customers, our web platform can handle it. Dejeuner is also designed from the ground up to be beautifully accessible on laptops, mobile phones, and tablets.
+  %hr.featurette-divider/
+  #about.featurette
+    = image_tag "#{asset_path "numbers.png"}", class: "featurette-image img-circle img-responsive pull-right"
+    %h2.featurette-heading
+      We are different
+      %span.text-muted from anything out there.
+    %p.lead Dedicated numbers. No keywords. No apps needed. Unlimited contact lists. Free sms responses to all your customers when they text in. All Canadian mobile providers supported. The best part is that all of this is offered all on our plans, which are priced transparently and simply. Only pay for access to the platform and the sms's you need. 
+  %hr.featurette-divider/
+  #services.featurette
+    = image_tag "#{asset_path "schedule-message.png"}", class: "featurette-image img-circle img-responsive pull-left"
+    %h2.featurette-heading
+      We will handle the marketing
+      %span.text-muted so you do not have to.
+    %p.lead Sms marketing is powerful with over 90% open rates from customers and sms coupons being redeemed ten times more often than traditional ones. But most businesses do not have the expertise required to launch their own sms campaigns. We provide both the technology infrastructure to host these campaigns and with our custom craft-a-sms service we will also generate marketing sms's for you to send out. Combined with our scheduling service, all this means that we will take care of all the sms marketing so you can focus on running the core part of your business.
+.landing-shout-out.bottom
+  .container
+    .row
+      .col-sm-12
+        .center
+          %h1.lighter.white Keep your customers coming back for seconds.
+          = link_to "Start your free trial", pricing_path, class: "btn btn-primary btn-lg"
