@@ -11,6 +11,8 @@ describe User do
   it {should respond_to(:password_confirmation)}
   it {should respond_to(:restaurant)}
   it {should be_valid}
+  its(:sms_credit) { should == 0}
+  its(:sms_sent) { should == 0}
 
 describe "when name is not present" do
   before {@user.name =""}
