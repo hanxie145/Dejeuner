@@ -10,7 +10,7 @@
         %p By checking in you agree to join our mobile subscribers list. 
         = form_tag do
           .form-group
-            = text_field_tag :number, nil, class: "form-control check-in-number", placeholder: "6041234567"                  
+            = number_field_tag :number, nil, class: "form-control check-in-number", placeholder: "6041234567", step: 0                  
             .clearfix.form-actions.center
               = button_tag class: 'btn btn-primary' do 
                 %i.fa.fa-check
