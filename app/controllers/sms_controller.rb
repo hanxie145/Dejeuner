@@ -17,7 +17,7 @@ class SmsController < ApplicationController
       year = params[:year]
       month = params[:month]
       date = params[:date]
-      time_to_send_at = Time.new(year, month, date, hour, minute, second)
+      time_to_send_at = Time.zone.local(year, month, date, hour, minute, second)
 
       # Send the message in the background at the time specified
       current_user.delay(run_at: time_to_send_at).send_sms_message params[:message]
