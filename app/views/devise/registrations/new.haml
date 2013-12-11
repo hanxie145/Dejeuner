@@ -20,6 +20,8 @@
                     %label.block.clearfix
                       = f.text_field :name, placeholder: 'Name (First and Last)', class: 'form-control input-lg'
                     %label.block.clearfix
+                      = f.text_field :business_name, placeholder: "Business's name", class: 'form-control input-lg'
+                    %label.block.clearfix
                       = f.password_field :password, placeholder: 'Password', class: 'form-control input-lg'
                     %label.block.clearfix
                       = f.password_field :password_confirmation, placeholder: 'Repeat password', class: 'form-control input-lg'
@@ -28,7 +30,7 @@
                       %input.ace{:type => "checkbox"}/
                       %span.lbl
                         I accept the
-                        %a{:href => "#"} User Agreement
+                        %a{:href => "/terms_of_use"} User Agreement
                     .space-24
                     .clearfix
                       %button.width-30.pull-left.btn.btn-sm{:type => "reset"}

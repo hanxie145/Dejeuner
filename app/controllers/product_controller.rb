@@ -4,7 +4,7 @@ class ProductController < ApplicationController
 
   def main 
     set_user()
-    @restaurant = @user.restaurant 
+    @business = @user.business_name 
 
     # reviews 
     @reviews = current_user.reviews
@@ -34,7 +34,7 @@ class ProductController < ApplicationController
     @name = @user.name
     @first_name = @name.split(' ')[0]
     @last_name = @name.split(' ')[1]
-    @restaurant = @user.restaurant
+    @business = @user.business_name
     @numbers = @user.numbers
     @number = pluralize(@numbers.length, "Number")
     @plan = @user.plan

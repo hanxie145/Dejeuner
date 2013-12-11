@@ -24,4 +24,8 @@ class StaticPagesController < ApplicationController
     set_user()
   end
 
+  def terms
+    set_user
+  end
+
 end
