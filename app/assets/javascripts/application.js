@@ -16,5 +16,4 @@
 //= require ace-elements
 //= require ace-extra
 //= require ace
-//= require additional-methods
 //= require_tree .
