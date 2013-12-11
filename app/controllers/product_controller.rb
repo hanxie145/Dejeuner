@@ -51,6 +51,9 @@ class ProductController < ApplicationController
     set_user
     # list of months 
     get_months
+    @month_date = Time.now.month
+    @day_date = Time.now.day
+    @year_date = Time.now.year
     @month_values = (1..12).to_a
     @date_values = (1..31).to_a
     @year_values = (2013..2099).to_a

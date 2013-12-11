@@ -82,9 +82,9 @@
                   .form-inline
                     .row
                       .col-sm-3
-                        = select_tag 'month', options_for_select(@months_with_index)
-                        = select_tag 'date', options_for_select(@date_values)
-                        = select_tag 'year', options_for_select(@year_values)
+                        = select_tag 'month', options_for_select(@months_with_index, @month_date)
+                        = select_tag 'date', options_for_select(@date_values, @day_date)
+                        = select_tag 'year', options_for_select(@year_values, @year_date)
                       .col-sm-4
                         .input-group.bootstrap-timepicker
                           %input#timepicker1.form-control{type: "text"}/
