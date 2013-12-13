@@ -10,6 +10,10 @@
             Keep your customers coming back for seconds
 .container
   .row
+    .col-sm-12
+      %p.lighter.p-larger All our plans come with unlimited subscribers and contact lists. They also include our mobile check in, craft-a-sms, and sms scheduling services. 
+      %p.lighter.p-larger We offer a trial plan for those who want to test the service before committing. The only difference with our trial plan is that it caps the number of subscribers at 200. 
+    .hr.hr16
     .col-xs-4.col-sm-3.pricing-span-header
       .widget-box.transparent.pricing-widget 
         .widget-header
@@ -17,25 +21,25 @@
         .widget-body
           .widget-main.no-padding
             %ul.list-unstyled.list-striped.pricing-table-header
-              %li Unique Dejeuner Number
-              %li Subscriber count
-              %li Marketing blasts
-              %li Email support
-              %li Private phone support
+              %li Dedicated Dejeuner Number
+              %li Unlimited Subscribers and contact lists
+              %li Sms credits
               %li Schedule marketing blasts
-              %li Special technical support
+              %li Craft-a-sms service
+              %li Email support
+              %li Phone support
     .col-xs-8.col-sm-9.pricing-span-body
       .pricing-span
         .widget-box.pricing-box-small
           .widget-header.header-color-orange
-            %h5.bigger.lighter Petite
+            %h5.bigger.lighter Trial
           .widget-body
             .widget-main.no-padding
               %ul.list-unstyled.list-striped.pricing-table
                 %li 
                   %i.fa.fa-check.green 
-                %li 1000
-                %li 5 / month
+                %li 100 subscribers
+                %li 0
                 %li 
                   %i.fa.fa-check.green
                 %li 
@@ -46,22 +50,22 @@
                   %i.fa.fa-times.red
               .price
                 %span.label.label-lg.label-inverse.arrowed-in.arrowed-in-right
-                  $49
-                  %small /month
+                  Free!
             %div
               %a.btn.btn-block.btn-sm.btn-warning{:href => new_user_registration_path(:plan => "petite")}
                 %span Start your free 14 day trial
       .pricing-span
         .widget-box.pricing-box-small
           .widget-header.header-color-blue
-            %h5.bigger.lighter Moyenne
+            %h5.bigger.lighter Petite
           .widget-body
             .widget-main.no-padding
               %ul.list-unstyled.list-striped.pricing-table
                 %li
                   %i.fa.fa-check.green
-                %li 1500
-                %li 10 / month
+                %li 
+                  %i.fa.fa-check.green                
+                %li 500
                 %li
                   %i.fa.fa-check.green
                 %li
@@ -72,8 +76,7 @@
                   %i.fa.fa-times.red
               .price
                 %span.label.label-lg.label-inverse.arrowed-in.arrowed-in-right
-                  $99
-                  %small /month
+                  $79 per location
             %div
               %a.btn.btn-block.btn-sm.btn-primary{:href => new_user_registration_path(:plan => "moyenne")}
                 %span Start your free 14 day trial
@@ -86,8 +89,9 @@
               %ul.list-unstyled.list-striped.pricing-table
                 %li 
                   %i.fa.fa-check.green
-                %li 5,000
-                %li 15
+                %li
+                  %i.fa.fa-check.green
+                %li 1000
                 %li
                   %i.fa.fa-check.green
                 %li
@@ -98,14 +102,14 @@
                   %i.fa.fa-check.green
               .price
                 %span.label.label-lg.label-inverse.arrowed-in.arrowed-in-right
-                  $149
+                  $149 per location
                   %small /month
             %div
               %a.btn.btn-block.btn-sm.btn-success{:href => new_user_registration_path(:plan => "grande")}
                 %span Start your free 14 day trial
     .col-sm-12
       .page-footer
-        %h1 
+        %h3.lighter 
           More than 5,000 subscribers?
           %a{:href => "/contact"} Contact us 
           for special prices
