@@ -50,7 +50,7 @@ Dejeuner::Application.routes.draw do
   # loyalty rewards
   get "loyalty_rewards" => 'check_in_rewards#new', as: :new_check_in_reward
   post "loyalty" => "check_in_rewards#create"
-  get "check_in_rewards/destroy"
+  delete "loyalty_rewards/:id" => 'check_in_rewards#destroy', as: :check_in_reward
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -22,20 +22,31 @@
         / /.page-header
         .row
           .col-xs-12
+            = render 'shared/flash'
+            - if @check_in_reward.errors.any?
+              .alert.alert-block.alert-alert
+                %button.close{"data-dismiss" => "alert", type: "button"}
+                  %i.fa.fa-times
+                %h3.lighter Error!
+                - @check_in_reward.errors.full_messages.each do |msg|
+                  %p= msg
             .row
-              .col-sm-10
+              .col-sm-12
                 - for reward in @current_rewards 
                   %h3.lighter 
                     After
                     %span.red= reward.check_in_count 
                     check ins customers get 
                     %span.red= reward.reward
+                    %span.pull-right 
+                      = link_to "Delete reward", reward, method: :delete, class: "btn btn-danger btn-sm"
                 .form-inline
                   = form_tag do 
                     %h3.lighter
                       After
                       = text_field_tag :check_in_number, nil, class: "form-control input-small red", placeholder: '1'
                       check ins customers should get...
+                    %p Maxmium 100 characters.
                     = text_area_tag :reward, nil, rows: 4, :class => "form-control red", placeholder: "50% off on their next entree"
                     .clearfix.form-actions.center
                       = button_tag class: 'btn btn-primary' do 

@@ -95,14 +95,14 @@ sendMessageTimePicker = ->
 
 
 $(document).ready -> 
-  alertFadeOut()
+  # alertFadeOut()
   sidebarToggle()
   staticPagesGraphs()
   smsCreditRefill()
   sendMessageTimePicker()
 
 $(document).on "page:change", -> 
-  alertFadeOut()
+  # alertFadeOut()
   sidebarToggle()
   staticPagesGraphs()
   smsCreditRefill()
