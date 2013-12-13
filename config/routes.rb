@@ -52,6 +52,9 @@ Dejeuner::Application.routes.draw do
   post "loyalty" => "check_in_rewards#create"
   delete "loyalty_rewards/:id" => 'check_in_rewards#destroy', as: :check_in_reward
 
+  # devise redirect after edit profile
+  match 'user_root' => 'product#profile'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
