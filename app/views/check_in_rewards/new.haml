@@ -39,7 +39,7 @@
                     check ins customers get 
                     %span.red= reward.reward
                     %span.pull-right 
-                      = link_to "Delete reward", reward, method: :delete, class: "btn btn-danger btn-sm"
+                      = link_to "Delete reward", reward, method: :delete, class: "btn btn-danger btn-sm", confirm: "Sure?"
                 .form-inline
                   = form_tag do 
                     %h3.lighter
@@ -49,6 +49,9 @@
                     %p Maxmium 100 characters.
                     = text_area_tag :reward, nil, rows: 4, :class => "form-control red", placeholder: "50% off on their next entree"
                     .clearfix.form-actions.center
+                      = link_to main_path, class: "btn btn-info" do 
+                        %i.fa.fa-dashboard 
+                        Back to dashboard
                       = button_tag class: 'btn btn-primary' do 
                         %i.fa.fa-heart 
                         Create reward
