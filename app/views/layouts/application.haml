@@ -25,11 +25,4 @@
       ga('create', 'UA-41153877-4', 'dejeuner.herokuapp.com');
       ga('send', 'pageview');
   %body
-    - flash.each do |key, value|
-      .alert{:class => "#{key}"}
-        .container
-          %p.red.float-right{"data-dismiss" => "alert"}
-            %i.fa.fa-times.fa-2x
-          %p 
-            = value
     = yield

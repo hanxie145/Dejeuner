@@ -42,23 +42,36 @@ p {
 
 // for flash
 .alert {
-  position: fixed;
-  width: 200px;
-  z-index: 10000;
-  right: 10em;
+  margin-bottom: 10px;
 
-  .container {
-    width: 300px;
-    height: 100px;
-    background-color: black;
-    border-radius: 1em;
-    padding: 1em;
+  &.alert-notice {
     color: #468847;
     background-color: #dff0d8;
     border-color: #d6e9c6;
-    border: 1px solid transparent;
-    border-radius: 4px;
   }
+
+  &.alert-alert{
+    color: #b94a48;
+    background-color: #f2dede;
+    border-color: #eed3d7;
+  }
+
+  &.alert-alert {
+
+  }
+
+//   .container {
+//     width: 300px;
+//     height: 100px;
+//     background-color: black;
+//     border-radius: 1em;
+//     padding: 1em;
+//     color: #468847;
+//     background-color: #dff0d8;
+//     border-color: #d6e9c6;
+//     border: 1px solid transparent;
+//     border-radius: 4px;
+//   }
 }
 
 // for sessions/new in devise 
