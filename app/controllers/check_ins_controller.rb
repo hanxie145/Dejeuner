@@ -30,6 +30,11 @@ class CheckInsController < ApplicationController
         @num_until_next_reward = i - @check_in_count
         flag = true
       end
+
+      # if we reach the end of the array without setting @num_until_next_reward then it means the user has reached the last loyalty reward, so we set it to the last element of the array.
+      if i === arr_of_check_in_count.last && !@num_until_next_reward
+        @num_until_next_reward = i
+      end
     end
 
     @reward = @user.check_in_rewards.where('check_in_count = ?', @check_in_count).first
