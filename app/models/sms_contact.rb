@@ -42,4 +42,9 @@ class SmsContact < ActiveRecord::Base
         }
     p.send_message params
   end
+
+  # reset check in count to zero
+  def reset_check_in_count 
+    self.update_attribute :check_in_count, 0
+  end
 end

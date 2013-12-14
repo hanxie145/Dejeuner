@@ -1,0 +1,23 @@
+.container
+  .row
+    .col-sm-12.center
+      = render 'shared/flash'
+      %h1 
+        Checkin successful at
+        = @user.business_name
+      %h3.lighter 
+        Thank you for checking in 
+        = pluralize(@check_in_count, 'time')
+        already.
+      - if @reward
+        %h3.lighter
+          You get 
+          = @reward.reward
+          ! 
+      %h3.lighter 
+        You have 
+        = @num_until_next_reward
+        Checkins until your next reward.
+      = link_to "/checkin", class: 'btn btn-lg btn-primary' do 
+        %i.fa.fa-check 
+        New checkin
