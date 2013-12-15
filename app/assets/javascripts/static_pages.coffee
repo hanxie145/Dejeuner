@@ -7,6 +7,13 @@ sidebarToggle = ->
     e.preventDefault()
     $('#sidebar').toggleClass '.menu-min'
 
+# get the number of days in the month. Used in the x-axis of the graph
+daysInTheMonthCalc = (month) ->
+  year = new Date().getFullYear()
+  monthStart = new Date(year, month, 1);
+  monthEnd = new Date(year, month + 1, 1);
+  monthLength = (monthEnd - monthStart) / (1000 * 60 * 60 * 24)
+
 # for the line chart on the dashboard page
 staticPagesGraphs = -> 
   d1 = [[1,10], [2, 150], [3, 237], [4, 288], [5, 388], [6, 678], [7, 1000]]
@@ -30,6 +37,8 @@ staticPagesGraphs = ->
           show: true
 
       xaxis:
+        min: 1
+        max: daysInTheMonthCalc(12)
         tickLength: 0
 
       yaxis:
