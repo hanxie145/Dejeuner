@@ -51,14 +51,17 @@ class ProductController < ApplicationController
     set_user
     # list of months 
     get_months
-    @month_date = Time.now.month
-    @day_date = Time.now.day
-    @year_date = Time.now.year
+
+    # set the time zone and get today's date
+    Time.zone = @user.time_zone
+    @month_date = Time.zone.now.month
+    @day_date = Time.zone.now.day
+    @year_date = Time.zone.now.year
     @month_values = (1..12).to_a
     @date_values = (1..31).to_a
     @year_values = (2013..2099).to_a
     # get current month for month select 
-    @current_month_number = Time.now.month
+    @current_month_number = Time.zone.now.month
   end
 
   def sms_credit_refill
