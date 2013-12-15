@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131211010904) do
+ActiveRecord::Schema.define(version: 20131215052737) do
 
   create_table "campaigns", force: true do |t|
     t.string   "description"
@@ -116,6 +116,7 @@ ActiveRecord::Schema.define(version: 20131211010904) do
     t.integer  "sms_sent",               default: 0
     t.string   "plan"
     t.integer  "subscriber_limit",       default: 100
+    t.string   "time_zone"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
