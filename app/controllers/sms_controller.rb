@@ -23,7 +23,7 @@ class SmsController < ApplicationController
       time_to_send_at = Time.zone.local(year, month, date, hour, minute, second).in_time_zone('UTC')
 
       # Send the message in the background at the time specified
-      current_user.delay(run_at: time_to_send_at).send_sms_message params[:message]
+      @user.delay(run_at: time_to_send_at, user_id: @user.id).send_sms_message params[:message]
       flash[:notice] = "Message send successful"
       redirect_to main_path
     end
