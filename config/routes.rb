@@ -52,6 +52,10 @@ Dejeuner::Application.routes.draw do
   post "loyalty" => "check_in_rewards#create"
   delete "loyalty_rewards/:id" => 'check_in_rewards#destroy', as: :check_in_reward
 
+  # delayed jobs
+  get 'scheduled_messages' => "delayed_jobs#index"
+  delete 'scheduled_messages/:id' => "delayed_jobs#delete", as: :scheduled_message
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -18,7 +18,7 @@ class SmsController < ApplicationController
       month = params[:month]
       date = params[:date]
 
-      # 
+      # schedule the message according to the user's time zone. Create the message time in the user's time zone then convert to UTC +0000 (the application's time zone)
       Time.zone = @user.time_zone
       time_to_send_at = Time.zone.local(year, month, date, hour, minute, second).in_time_zone('UTC')
 
