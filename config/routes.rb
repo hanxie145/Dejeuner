@@ -9,6 +9,7 @@ Dejeuner::Application.routes.draw do
   # charges 
   get 'charges/new/:plan' => 'charges#new', as: :new_charges
   get 'upgrade_plan' => 'charges#upgrade_plan'
+  delete 'charges' => 'charges#destroy', as: :delete_subscription
 
   # campaigns
   resources :campaigns

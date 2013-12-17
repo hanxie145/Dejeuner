@@ -33,10 +33,6 @@
           %a{href: "/reviews"}
             %i.fa.fa-angle-double-right
             Reviews
-        %li
-          %a{href: "#"}
-            %i.fa.fa-angle-double-right
-            Past campaigns
     %li{:class => ('active' if controller_name() == 'check_ins' || controller_name() == 'sms_contacts'|| controller_name() == 'check_in_rewards') }
       %a.dropdown-toggle{href: "#"}
         %i.fa.fa-user
@@ -55,7 +51,7 @@
           %a{href: "/loyalty"}
             %i.fa.fa-angle-double-right
             Loyalty rewards                      
-    %li{:class => ('active' if (controller_name() == 'product' && action_name() == 'market') || (controller_name() == 'product' && action_name() == 'generate_sms') || (controller_name() == 'delayed_jobs') ) }
+    %li{:class => ('active' if (controller_name() == 'product' && action_name() == 'market') || (controller_name() == 'product' && action_name() == 'generate_sms') || (controller_name() == 'delayed_jobs') || (controller_name() == 'product' && action_name() == 'sms_credit_refill'))}
       %a.dropdown-toggle{href: "#"}
         %i.fa.fa-bullhorn
         %span.menu-text Marketing
@@ -69,13 +65,9 @@
           %a{href: "/market"}
             %i.fa.fa-angle-double-right
             Send out a blast
-        %li 
+        %li{:class => ('active' if controller_name() == 'product' && action_name() == 'sms_credit_refill') }
           %a{:href => "/sms_credit_refill"}
             Top up on sms credits
-        %li
-          %a{href: "/market/history"}
-            %i.fa.fa-angle-double-right
-            Marketing history
         %li{:class => ('active' if controller_name() == 'delayed_jobs' && action_name() == 'index') } 
           %a{:href => "/scheduled_messages"}
             %i.fa.fa-angle-double-right 

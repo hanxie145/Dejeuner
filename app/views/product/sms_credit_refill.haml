@@ -32,11 +32,11 @@
                       .hr.hr16
                       .form-group
                         %label Total Price 
-                        %input#sms-credits-price.float-right{:type => "text", :name => "price", placeholder: "$1.50"}/ 
+                        %input#sms-credits-price.float-right{:type => "text", :name => "price", placeholder: "$3.50"}/ 
                       .form-group 
                         = link_to new_charge_path(:type => "sms_credit_refill", :num_sms_credits => "100"), class: "btn btn-primary btn-block sms_credit_button", "data-no-turbolink" => 'true' do 
                           %i.fa.fa-credit-card
                           Go to checkout
               .col-sm-6
                 %blockquote.green.pull-right
-                  %p Price is 1.5 cents per sms credit
+                  %p Price is 3.5 cents per sms credit

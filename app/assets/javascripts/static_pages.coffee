@@ -74,7 +74,7 @@ smsCreditRefill = ->
     num_sms_credits = $(this).val()
 
     # calculate the price in cents
-    price_per_sms = 1.5
+    price_per_sms = 3.5
     total_price = num_sms_credits * price_per_sms
 
     # display price in dollars 

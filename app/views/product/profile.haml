@@ -53,6 +53,7 @@
                               %label.col-sm-4.control-label.no-padding-right{:for => "form-field-first"}
                               .col-sm-8
                                 = link_to "Upgrade plan", upgrade_plan_path, class: "btn btn-primary btn-sm"
+                                = link_to "Cancel subscription", delete_subscription_path, method: :delete, class: "btn btn-danger btn-sm"
                             .space-4
                             .form-group
                               %label.col-sm-4.control-label.no-padding-right{:for => "form-field-first"} Time Zone
