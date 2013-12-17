@@ -76,6 +76,10 @@
           %a{href: "/market/history"}
             %i.fa.fa-angle-double-right
             Marketing history
+        %li 
+          %a{:href => "/scheduled_messages"}
+            %i.fa.fa-angle-double-right 
+            Scheduled messages 
     %li 
       = link_to destroy_user_session_path, method: :delete do 
         %i.fa.fa-sign-out

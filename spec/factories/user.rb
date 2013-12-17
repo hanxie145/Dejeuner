@@ -4,7 +4,7 @@ FactoryGirl.define do
     email 'txie145@gmail.com'
     password 'changeme145'
     password_confirmation 'changeme145'
-    restaurant "Tony's Tonics"
+    business_name "Tony's Tonics"
     # required if the Devise Confirmable module is used
     # confirmed_at Time.now
   end
