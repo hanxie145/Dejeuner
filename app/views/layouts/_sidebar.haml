@@ -55,7 +55,7 @@
           %a{href: "/loyalty"}
             %i.fa.fa-angle-double-right
             Loyalty rewards                      
-    %li{:class => ('active' if (controller_name() == 'product' && action_name() == 'market') || (controller_name() == 'product' && action_name() == 'generate_sms') ) }
+    %li{:class => ('active' if (controller_name() == 'product' && action_name() == 'market') || (controller_name() == 'product' && action_name() == 'generate_sms') || (controller_name() == 'delayed_jobs') ) }
       %a.dropdown-toggle{href: "#"}
         %i.fa.fa-bullhorn
         %span.menu-text Marketing
@@ -76,7 +76,7 @@
           %a{href: "/market/history"}
             %i.fa.fa-angle-double-right
             Marketing history
-        %li 
+        %li{:class => ('active' if controller_name() == 'delayed_jobs' && action_name() == 'index') } 
           %a{:href => "/scheduled_messages"}
             %i.fa.fa-angle-double-right 
             Scheduled messages 

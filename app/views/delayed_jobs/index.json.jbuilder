@@ -8,5 +8,6 @@ json.array!(@scheduled_messages) do |scheduled_message|
     json.hour scheduled_message.run_at.hour
     json.minute scheduled_message.run_at.min
   end
-  json.message scheduled_message.handler.split('args').last
+  message = scheduled_message.handler.split('args').last
+  json.message message.slice(4, message.length)
 end
