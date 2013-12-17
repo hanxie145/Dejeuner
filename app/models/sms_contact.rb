@@ -7,12 +7,19 @@ class SmsContact < ActiveRecord::Base
 
   scope :this_month, -> {where('created_at >= ?', Date.today.beginning_of_month)}
 
+  # scopes to figure out which customers have not been back for awhile
+  scope :since_last_week, -> {where('last_check_in < ?', Date.today - 1.week)}
+  scope :since_last_month, -> {where('last_check_in < ?', Date.today - 1.month)}
+
   # method for customers checking in. Update the number's check_in_count by 1. Limit the check in count of a number to 1 a day. Save the number to the users subscribers list tnen after check in send a confirmation sms to a the number
   # TODO limit check ins to once a day
   def check_in 
     # save the contact to the user's list 
     new_check_in_count = self.check_in_count + 1
     self.update_attribute :check_in_count, new_check_in_count
+
+    # update last_check_in attribute
+    self.update_attribute :last_check_in, Time.zone.now.in_time_zone(@user.time_zone)
 
     # get a list of check in rewards and see which one to send
     check_in_reward = self.user.check_in_rewards.where("check_in_count = ?", new_check_in_count).first

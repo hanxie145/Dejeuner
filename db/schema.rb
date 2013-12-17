@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131215080103) do
+ActiveRecord::Schema.define(version: 20131216224744) do
 
   create_table "campaigns", force: true do |t|
     t.string   "description"
@@ -88,6 +88,7 @@ ActiveRecord::Schema.define(version: 20131215080103) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "check_in_count", default: 0
+    t.datetime "last_check_in"
   end
 
   create_table "sms_responses", force: true do |t|
