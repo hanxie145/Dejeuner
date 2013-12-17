@@ -28,6 +28,10 @@ class User < ActiveRecord::Base
     self.reviews.create(body: body, from_number: from_number)
   end
 
+  def is_trial
+    self.plan === 'trial'
+  end
+
   # Send sms message to the users contacts
   def send_sms_message(message)
     # plivo stuff

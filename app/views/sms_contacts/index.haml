@@ -22,6 +22,10 @@
             = render 'shared/flash'          
             .row
               .col-sm-12
+                - if @user.plan === 'trial'
+                  %p 
+                    You are currently on the trial plan, so your number of subscribers is limited to 250. Upgrade to have more contacts 
+                    %a{:href => "#"} here. 
                 .table-header Your subscribers
                 .table-responsive
                   #sample-table-2_wrapper.dataTables_wrapper{:role => "grid"}

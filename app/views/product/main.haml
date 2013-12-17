@@ -21,6 +21,14 @@
         / /.page-header
         .row
           .col-xs-12
+            / tell trial users to upgrade 
+            - if @user.is_trial
+              .alert.alert-block.alert-notice
+                %button.close{"data-dismiss" => "alert", type: "button"}
+                  %i.fa.fa-times
+                %p 
+                  You are currently in trial mode. For unlimited subscribers and more sms messages
+                  = link_to "Upgrade here", "#", class: "btn btn-primary btn-sm"
             = render 'shared/flash'
             / PAGE CONTENT BEGINS
             .row

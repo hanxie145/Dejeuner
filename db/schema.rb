@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131216224744) do
+ActiveRecord::Schema.define(version: 20131217180719) do
 
   create_table "campaigns", force: true do |t|
     t.string   "description"
@@ -99,8 +99,8 @@ ActiveRecord::Schema.define(version: 20131216224744) do
   end
 
   create_table "users", force: true do |t|
-    t.string   "email",                  default: "",    null: false
-    t.string   "encrypted_password",     default: "",    null: false
+    t.string   "email",                  default: "",      null: false
+    t.string   "encrypted_password",     default: "",      null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -116,7 +116,7 @@ ActiveRecord::Schema.define(version: 20131216224744) do
     t.string   "key_word"
     t.integer  "sms_credit",             default: 0
     t.integer  "sms_sent",               default: 0
-    t.string   "plan"
+    t.string   "plan",                   default: "trial"
     t.integer  "subscriber_limit",       default: 100
     t.string   "time_zone",              default: "UTC"
   end

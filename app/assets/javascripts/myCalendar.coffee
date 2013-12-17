@@ -49,14 +49,14 @@ calendarFunc = ->
         calendar.fullCalendar "unselect"
 
       eventClick: (calEvent, jsEvent, view) ->
-        form = $("<form class='form-inline'><label>Change event name  </label></form>")
-        form.append "<input class='middle' autocomplete=off type=text value='" + calEvent.title + "' /> "
-        form.append "<button type='submit' class='btn btn-sm btn-success'><i class='icon-ok'></i> Save</button>"
+        form = $("<form class='form-inline'></form>")
+        form.append "<blockquote><p>#{calEvent.title}</p></blockquote>" 
+        form.append "<p class='lighter p-larger'>Will be sent on <b>#{calEvent.start}</b></p>"
         div = bootbox.dialog(
           message: form
           buttons:
             delete:
-              label: "<i class='icon-trash'></i> Delete Event"
+              label: "<i class='icon-trash'></i> Delete Message"
               className: "btn-sm btn-danger"
               callback: (cal_event) ->
                 calendar.fullCalendar "removeEvents", (ev) ->
@@ -65,7 +65,6 @@ calendarFunc = ->
                 $.ajax 
                   url: "scheduled_messages/#{calEvent.id}",
                   type: 'DELETE', 
-                  success: alert "success"
 
             close:
               label: "<i class='icon-remove'></i> Close"

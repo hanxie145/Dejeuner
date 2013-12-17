@@ -49,6 +49,10 @@
                               %label.col-sm-4.control-label.no-padding-right{:for => "form-field-first"} Plan
                               .col-sm-8
                                 %input#form-field-username.col-xs-12.col-sm-10{:type => "text", :value => @plan}
+                            .form-group  
+                              %label.col-sm-4.control-label.no-padding-right{:for => "form-field-first"}
+                              .col-sm-8
+                                = link_to "Upgrade plan", "#", class: "btn btn-primary btn-sm"
                             .space-4
                             .form-group
                               %label.col-sm-4.control-label.no-padding-right{:for => "form-field-first"} Time Zone
