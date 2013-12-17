@@ -2,13 +2,6 @@ calendarFunc = ->
 
   if $('#calendar').length
 
-    # make the ajax call for the data about scheduled messages        
-    myData = []
-    $.ajax(
-      url: "scheduled_messages.json"
-    ).done (response) ->
-      console.log response
-
     # initialize the external events
     #    -----------------------------------------------------------------
     $("#external-events div.external-event").each ->
@@ -38,18 +31,6 @@ calendarFunc = ->
         right: "month,agendaWeek,agendaDay"
 
       events: [
-        title: "All Day Event"
-        start: new Date(y, m, 1)
-        className: "label-important"
-      ,
-        title: "Long Event"
-        start: new Date(y, m, d - 5)
-        end: new Date(y, m, d - 2)
-        className: "label-success"
-      ,
-        title: "Some Event"
-        start: new Date(y, m, d - 3, 16, 0)
-        allDay: false
       ]
       editable: true
 
@@ -91,6 +72,19 @@ calendarFunc = ->
           div.modal "hide"
           false
     )
+    # Make ajax call to get data about user's scheduled messages then display them on the calendar      
+    $.ajax(
+      url: "scheduled_messages.json"
+    ).done (response) ->
+      for data in response
+        d = new Date()
+        calendar.fullCalendar "renderEvent",
+                title: data.message
+                # interesting date's month is zero index, but why nothing else =.=
+                start: new Date(d.getFullYear(), data.run_at.month - 1, data.run_at.day, data.run_at.hour, data.run_at.minute)
+                allDay: false
+              , true # make the event "stick
+        console.log data
 
 $(document).ready -> 
   calendarFunc()
