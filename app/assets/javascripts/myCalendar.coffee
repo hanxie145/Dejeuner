@@ -58,9 +58,14 @@ calendarFunc = ->
             delete:
               label: "<i class='icon-trash'></i> Delete Event"
               className: "btn-sm btn-danger"
-              callback: ->
+              callback: (cal_event) ->
                 calendar.fullCalendar "removeEvents", (ev) ->
                   ev._id is calEvent._id
+                # make ajax call to delete delayed job event
+                $.ajax 
+                  url: "scheduled_messages/#{calEvent.id}",
+                  type: 'DELETE', 
+                  success: alert "success"
 
             close:
               label: "<i class='icon-remove'></i> Close"
@@ -79,12 +84,12 @@ calendarFunc = ->
       for data in response
         d = new Date()
         calendar.fullCalendar "renderEvent",
+                id: data.id
                 title: data.message
                 # interesting date's month is zero index, but why nothing else =.=
                 start: new Date(d.getFullYear(), data.run_at.month - 1, data.run_at.day, data.run_at.hour, data.run_at.minute)
                 allDay: false
               , true # make the event "stick
-        console.log data
 
 $(document).ready -> 
   calendarFunc()

@@ -54,7 +54,7 @@ Dejeuner::Application.routes.draw do
 
   # delayed jobs
   get 'scheduled_messages' => "delayed_jobs#index"
-  delete 'scheduled_messages/:id' => "delayed_jobs#delete", as: :scheduled_message
+  delete 'scheduled_messages/:id' => "delayed_jobs#destroy", as: :scheduled_message
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

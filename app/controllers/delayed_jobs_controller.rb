@@ -10,6 +10,13 @@ class DelayedJobsController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
+    set_user
+    @scheduled_message = Delayed::Job.where('id = ?', params[:id]).first
+    @scheduled_message.destroy
+    respond_to do |format|
+      format.html {}
+      format.json {}
+    end
   end
 end
