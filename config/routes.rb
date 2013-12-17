@@ -7,7 +7,8 @@ Dejeuner::Application.routes.draw do
   devise_for :users
 
   # charges 
-  get 'charges/new/:plan' => 'charges#new'
+  get 'charges/new/:plan' => 'charges#new', as: :new_charges
+  get 'upgrade_plan' => 'charges#upgrade_plan'
 
   # campaigns
   resources :campaigns

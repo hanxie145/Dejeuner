@@ -3,6 +3,10 @@ class ChargesController < ApplicationController
   # sms credit price to change in future
   PRICE_SMS_CREDITS = 1.5
 
+  def upgrade_plan 
+    set_user()
+  end
+
   def new 
     set_user()
     @email = @user.email
@@ -45,7 +49,7 @@ class ChargesController < ApplicationController
       )
       # update user's plan 
       current_user.update_attribute :plan, @plan
-      flash[:notice] = "Successfully subscribed to Dejeuner"
+      flash[:notice] = "Subscription successful. Congratulations, welcome to Dejeuner!"
       redirect_to main_path
     end
 

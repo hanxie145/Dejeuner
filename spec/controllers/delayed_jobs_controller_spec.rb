@@ -11,9 +11,9 @@ describe DelayedJobsController do
     end
   end
 
-  describe "GET 'delete'" do
+  describe "GET 'destroy'" do
     it "returns http success" do
-      get 'delete'
+      get 'destroy'
       response.should be_success
     end
   end

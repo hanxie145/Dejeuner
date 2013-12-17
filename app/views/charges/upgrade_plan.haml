@@ -1,0 +1,23 @@
+= render 'layouts/header'
+#main-container.main-container
+  .main-container-inner
+    = render 'layouts/sidebar'
+    .main-content
+      #breadcrumbs.breadcrumbs
+        %ul.breadcrumb
+          %li
+            %i.fa.fa-heart
+            Upgrade plan
+        / .breadcrumb
+      .page-content
+        .page-header
+          %h1
+            Upgrade plan
+        / /.page-header
+        .row
+          .col-xs-12
+            .row
+              .col-sm-12
+                = link_to "Petite", new_charges_path(plan: "petite"), class: "btn btn-primary", "data-no-turbolink" => true
+                = link_to "Grande", new_charges_path(plan: "grande"), class: "btn btn-primary", "data-no-turbolink" => true
+              
