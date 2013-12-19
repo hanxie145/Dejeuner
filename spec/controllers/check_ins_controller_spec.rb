@@ -11,11 +11,11 @@ describe CheckInsController do
     end
   end
 
-  describe "GET 'destroy'" do
-    it "returns http success" do
-      get 'destroy'
-      response.should be_success
-    end
+  describe 'check in process' do 
+    it 'checks in correctly' do 
+      SmsContact.should_receive :create
+      post 'create', number: "6049108862"
+    end 
   end
 
 end

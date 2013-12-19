@@ -6,7 +6,6 @@ class SmsContact < ActiveRecord::Base
   validates_uniqueness_of :number, scope: :user_id
 
   scope :this_month, -> {where('created_at >= ?', Date.today.beginning_of_month)}
-
   # scopes to figure out which customers have not been back for awhile
   scope :since_last_week, -> {where('last_check_in < ?', Date.today - 1.week)}
   scope :since_last_month, -> {where('last_check_in < ?', Date.today - 1.month)}
@@ -19,7 +18,7 @@ class SmsContact < ActiveRecord::Base
     self.update_attribute :check_in_count, new_check_in_count
 
     # update last_check_in attribute
-    # self.update_attribute :last_check_in, Time.zone.now.in_time_zone(self.user.time_zone)
+    self.update_attribute :last_check_in, Time.zone.now.in_time_zone(self.user.time_zone)
 
     # get a list of check in rewards and see which one to send
     check_in_reward = self.user.check_in_rewards.where("check_in_count = ?", new_check_in_count).first

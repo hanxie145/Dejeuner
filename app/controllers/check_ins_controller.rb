@@ -18,7 +18,7 @@ class CheckInsController < ApplicationController
       @check_in_count = 1
     else
       # update the customer's check in count by one.
-      contact = SmsContact.where('number = ?', number).first
+      contact = @user.sms_contacts.where('number = ?', number).first
       contact.check_in
       @check_in_count = contact.check_in_count
     end
