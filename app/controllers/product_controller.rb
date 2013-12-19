@@ -27,6 +27,17 @@ class ProductController < ApplicationController
 
     # subscriber data for the sales chart. Get all subscribers by filtering from beginning of month 
     @subscribers_this_month = current_user.sms_contacts.this_month.count
+    days_in_month = Time.days_in_month(Time.now.month, Time.now.year)
+    # data for the subscribers graph. Get subscriber data by date
+    graphData = Array.new(days_in_month, 0)
+    for contact in current_user.sms_contacts.this_month
+      day = contact.created_at.day
+      graphData[day] = graphData[day] + 1
+    end
+    @graph_subscriber_data = *(1..days_in_month)
+    for i in (0..graphData.length - 1)
+      @graph_subscriber_data[i] = [i + 1, graphData[i]]
+    end
   end 
 
   def profile

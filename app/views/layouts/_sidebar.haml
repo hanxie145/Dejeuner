@@ -76,7 +76,7 @@
       = link_to destroy_user_session_path, method: :delete do 
         %i.fa.fa-sign-out
         %span.menu-text Log out 
-    %li 
+    %li{:class => ('active' if controller_name() == 'product' && action_name() == 'help') } 
       %a{:href => "/help"}
         %i.fa.fa-question
         %span.menu-text How to use

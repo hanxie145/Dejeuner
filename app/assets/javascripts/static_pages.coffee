@@ -16,7 +16,9 @@ daysInTheMonthCalc = (month) ->
 
 # for the line chart on the dashboard page
 staticPagesGraphs = -> 
-  d1 = [[1,10], [2, 150], [3, 237], [4, 288], [5, 388], [6, 678], [7, 1000]]
+  d1 = $('#sales-charts').data('graph')
+  console.log $('#sales-charts').data('graph')
+  # d1 = [[1,10], [2, 150], [3, 237], [4, 288], [5, 388], [6, 678], [7, 1000]]
 
   if $('#sales-charts').length
     sales_charts = $("#sales-charts").css(
@@ -44,7 +46,7 @@ staticPagesGraphs = ->
       yaxis:
         ticks: 10
         min: 0
-        max: 1000
+        max: 100
         tickDecimals: 3
 
       grid:
