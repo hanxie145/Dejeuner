@@ -102,6 +102,12 @@ sendMessageTimePicker = ->
   if $('.date-picker').length 
     $('.date-picker').datepicker {autoclose:true}
 
+# js for the help page's accordion 
+helpAccordion = -> 
+  $('.accordion').on 'hide', (e) -> 
+    $(e.target).prev().children(0).addClass('collapsed')
+  $('.accordion').on 'show', (e) -> 
+    $(e.target).prev().children(0).removeClass('collapsed')
 
 $(document).ready -> 
   # alertFadeOut()
@@ -109,6 +115,7 @@ $(document).ready ->
   staticPagesGraphs()
   smsCreditRefill()
   sendMessageTimePicker()
+  helpAccordion()
 
 $(document).on "page:change", -> 
   # alertFadeOut()
@@ -116,3 +123,4 @@ $(document).on "page:change", ->
   staticPagesGraphs()
   smsCreditRefill()
   sendMessageTimePicker()
+  helpAccordion()
