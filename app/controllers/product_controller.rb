@@ -37,12 +37,21 @@ class ProductController < ApplicationController
     # loyalty rewards 
     @loyalty_rewards = @user.check_in_rewards.order(:check_in_count)
 
+    # data for the piecharts
+    subscribers = @user.sms_contacts
+    h = Hash.new
+    h[:last_week] = subscribers.since_last_week.count
+    h[:two_weeks] = subscribers.since_2_weeks.count
+    h[:last_month] = subscribers.since_last_month.count
+    h[:regulars] = subscribers.count - h[:two_weeks] - h[:last_week] - h[:last_month]
+    @piechart_subscriber_data = h
+
     # subscriber data for the sales chart. Get all subscribers by filtering from beginning of month 
-    @subscribers_this_month = current_user.sms_contacts.this_month.count
+    @subscribers_this_month = @user.sms_contacts.this_month.count
     days_in_month = Time.days_in_month(Time.now.month, Time.now.year)
     # data for the subscribers graph. Get subscriber data by date
     graphData = Array.new(days_in_month, 0)
-    for contact in current_user.sms_contacts.this_month
+    for contact in @user.sms_contacts.this_month
       day = contact.created_at.day
       graphData[day] = graphData[day] + 1
     end

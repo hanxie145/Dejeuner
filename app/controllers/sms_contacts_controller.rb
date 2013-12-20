@@ -6,8 +6,14 @@ class SmsContactsController < ApplicationController
   # GET /SmsContacts.json
   def index
     set_user()
-    @sms_contacts = @user.sms_contacts.paginate(page: params[:page], per_page: 15)
-
+    timeframe = params[:timeframe]
+    if timeframe === "last week"
+      @sms_contacts = @user.sms_contacts.since_last_week.paginate(page: params[:page], per_page: 15)
+    elsif timeframe === 'last month'
+      @sms_contacts = @user.sms_contacts.since_last_month.paginate(page: params[:page], per_page: 15)
+    else
+      @sms_contacts = @user.sms_contacts.paginate(page: params[:page], per_page: 15)
+    end
     respond_to do |format| 
       format.html {}
       format.json {render layout: 'empty', content_type: 'application/json'}

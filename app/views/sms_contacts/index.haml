@@ -31,6 +31,14 @@
                   #sample-table-2_wrapper.dataTables_wrapper{:role => "grid"}
                     .row
                       .col-sm-6
+                        %p 
+                          %label
+                            %input.ace.ace-switch.ace-switch-4.all-subscribers-switch{name: "switch-field-1", type: "checkbox", value: (params[:timeframe] ? 'on' : 'off')}/
+                            %span.lbl
+                          See customers who have not checked in since 
+                          %select#timeframe-select{:name => "timeframe select"}
+                            %option{:selected => (params[:timeframe] === 'last week' ? true : false), :value => "last+week"} last week 
+                            %option{:selected => (params[:timeframe] === 'last month' ? true : false), :value => "last+month"} last month   
                         = will_paginate @sms_contacts
                     %table#sample-table-2.table.table-striped.table-bordered.table-hover.dataTable{"aria-describedby" => "sample-table-2_info"}
                       %thead

@@ -32,7 +32,7 @@
             = render 'shared/flash'
             / PAGE CONTENT BEGINS
             .row
-              .col-sm-12.infobox-container
+              .col-sm-6.infobox-container
                 .infobox.infobox-green
                   .infobox-fa.fa
                     %i.fa.fa-comments
@@ -71,10 +71,19 @@
                       / some hacking to pluralize, because we only want the second part of the word
                       = (pluralize @contacts_count, "subscriber").split(' ')[1]
                 .space-6
+              .col-sm-6
+                .widget-box
+                  .widget-header.widget-header-flat
+                    %h4.lighter
+                      %i.fa.fa-user
+                      Customer break down 
+                  .widget-body
+                    .widget-main
+                      #piechart-placeholder{"data-graph" => @piechart_subscriber_data}
             .row
               .space-6
               .col-sm-12
-                .widget-box
+                .widget-box.transparent
                   .widget-header.widget-header-flat
                     %h4.lighter
                       %i.fa.fa-signal

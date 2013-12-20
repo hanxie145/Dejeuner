@@ -8,6 +8,7 @@ class SmsContact < ActiveRecord::Base
   scope :this_month, -> {where('created_at >= ?', Date.today.beginning_of_month)}
   # scopes to figure out which customers have not been back for awhile or should be rewarded for their awesomeness
   scope :since_last_week, -> {where('last_check_in < ?', Date.today - 1.week)}
+  scope :since_2_weeks, -> {where('last_check_in < ?', Date.today - 2.weeks)}
   scope :since_last_month, -> {where('last_check_in < ?', Date.today - 1.month)}
   scope :with_check_in_count_more_than, ->(check_in_count) { where('check_in_count > ?', check_in_count) }
 
