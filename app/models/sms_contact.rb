@@ -6,9 +6,10 @@ class SmsContact < ActiveRecord::Base
   validates_uniqueness_of :number, scope: :user_id
 
   scope :this_month, -> {where('created_at >= ?', Date.today.beginning_of_month)}
-  # scopes to figure out which customers have not been back for awhile
+  # scopes to figure out which customers have not been back for awhile or should be rewarded for their awesomeness
   scope :since_last_week, -> {where('last_check_in < ?', Date.today - 1.week)}
   scope :since_last_month, -> {where('last_check_in < ?', Date.today - 1.month)}
+  scope :with_check_in_count_more_than, ->(check_in_count) { where('check_in_count > ?', check_in_count) }
 
   # method for customers checking in. Update the number's check_in_count by 1. Limit the check in count of a number to 1 a day. Save the number to the users subscribers list tnen after check in send a confirmation sms to a the number
   # TODO limit check ins to once a day

@@ -80,10 +80,11 @@
                       Past campaigns
                   .widget-body
                     .widget-main
-                      %p
-                        1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, saepe, quasi, voluptates ea maxime vitae unde magnam pariatur repellat harum temporibus sit ducimus est explicabo neque quas voluptate incidunt perferendis.
-                      %p 
-                        2. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, velit perspiciatis voluptates corporis reiciendis maxime qui id alias numquam voluptatum! Nam, optio itaque totam dolore odio dicta officia ad rerum?
-                      %p 
-                        3. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, praesentium, maxime animi et natus possimus autem voluptatem magni reiciendis modi dolores aliquid quo minus! Hic, sapiente at voluptatem dolores vero.
+                      - if @past_campaigns
+                        - for campaign in @past_campaigns
+                          %p
+                            %b= campaign.created_at
+                            = campaign.description
+                      - else 
+                        %h4.lighter.blue No campaigns yet
                       = link_to "See all past campaigns", '#', class: 'btn btn-info btn-block'                             

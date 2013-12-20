@@ -17,6 +17,7 @@ class CampaignsController < ApplicationController
       @reward = ""
     end
     @numbers = current_user.numbers
+    @past_campaigns = @campaigns.slice(1, @campaigns.length)
   end
 
   # GET /campaigns/1
