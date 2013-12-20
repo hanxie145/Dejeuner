@@ -13,7 +13,4 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require ace-elements
-//= require ace-extra
-//= require ace
 //= require_tree .

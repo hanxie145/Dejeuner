@@ -16,11 +16,8 @@ daysInTheMonthCalc = (month) ->
 
 # for the line chart on the dashboard page
 staticPagesGraphs = -> 
-  d1 = $('#sales-charts').data('graph')
-  console.log $('#sales-charts').data('graph')
-  # d1 = [[1,10], [2, 150], [3, 237], [4, 288], [5, 388], [6, 678], [7, 1000]]
-
   if $('#sales-charts').length
+    d1 = $('#sales-charts').data('graph')
     sales_charts = $("#sales-charts").css(
       width: "100%"
       height: "300px"
