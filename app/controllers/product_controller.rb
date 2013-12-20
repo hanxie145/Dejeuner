@@ -25,6 +25,18 @@ class ProductController < ApplicationController
       @last_marketing_blast = "No marketing blasts sent yet"
     end
 
+    # schedule messages
+    delayed_jobs = Delayed::Job.where('user_id = ?', @user.id)
+    @num_scheduled_messages_next_week = delayed_jobs.where('run_at <= ?', Time.zone.now + 1.week).count
+    @next_message = delayed_jobs.order('run_at ASC').first
+    if @next_message
+      message = @next_message.handler.split('args').last
+      @next_message_content = message.slice(4, message.length)
+    end
+
+    # loyalty rewards 
+    @loyalty_rewards = @user.check_in_rewards.order(:check_in_count)
+
     # subscriber data for the sales chart. Get all subscribers by filtering from beginning of month 
     @subscribers_this_month = current_user.sms_contacts.this_month.count
     days_in_month = Time.days_in_month(Time.now.month, Time.now.year)

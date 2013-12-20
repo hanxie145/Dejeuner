@@ -74,7 +74,7 @@
             .row
               .space-6
               .col-sm-12
-                .widget-box.transparent
+                .widget-box
                   .widget-header.widget-header-flat
                     %h4.lighter
                       %i.fa.fa-signal
@@ -103,6 +103,51 @@
                       %h4.bigger.pull-right.blue 
                         = @user.sms_sent
             .hr.hr32.hr-dotted
+            .row 
+              .col-sm-6
+                .widget-box
+                  .widget-header
+                    %h4.lighter.smaller 
+                      %i.fa.fa-check-circle-o.blue 
+                      Your loyalty rewards
+                  .widget-body
+                    .widget-main
+                      - if @loyalty_rewards.any?
+                        - for reward in @loyalty_rewards 
+                          %p
+                            At 
+                            %span.red= reward.check_in_count
+                            checkins customers get 
+                            %span.red= reward.reward
+                      = link_to 'loyalty_rewards', class: 'btn btn-block btn-info' do 
+                        %i.fa.fa-heart 
+                        Go to loyalty rewards                                      
+                      = link_to 'checkin', class: 'btn btn-block btn-info' do 
+                        %i.fa.fa-check 
+                        Go to check ins              
+              .col-sm-6
+                .widget-box
+                  .widget-header
+                    %h4.lighter.smaller 
+                      %i.fa.fa-calendar.blue 
+                      Scheduled messages
+                  .widget-body
+                    .widget-main
+                      %p 
+                        You have
+                        = @num_scheduled_messages_next_week 
+                        scheduled messages next week
+                      - if @next_message
+                        %p 
+                          Your next message is: 
+                          %b= @next_message_content
+                        %p 
+                          On 
+                          %b= @next_message.run_at 
+                      = link_to 'scheduled_messages', class: 'btn btn-block btn-info' do 
+                        %i.fa.fa-calendar 
+                        See my scheduled messages                            
+            .hr.hr32.hr-dotted            
             .row
               .col-sm-6
                 .widget-box
@@ -114,12 +159,12 @@
                     .widget-main
                       %p
                         = @current_campaign
-                      = link_to new_campaign_path, class: 'btn btn-block btn-info' do 
+                      = link_to campaigns_path, class: 'btn btn-block btn-info' do 
                         %i.fa.fa-flag 
                         Start a new campaign
                 .hr.hr32.hr-dotted
                 .widget-box 
-                  .widget-header.transparent 
+                  .widget-header
                     %h4.lighter.smaller 
                       %i.fa.fa-bullhorn.blue 
                       Last marketing blast sent
