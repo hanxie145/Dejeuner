@@ -38,7 +38,7 @@
                           See customers who have not checked in since 
                           %select#timeframe-select{:name => "timeframe select"}
                             %option{:selected => (params[:timeframe] === 'last week' ? true : false), :value => "last+week"} last week 
-                            %option{:selected => (params[:timeframe] === 'last month' ? true : false), :value => "two+weeks"} two weeks ago
+                            %option{:selected => (params[:timeframe] === 'two weeks' ? true : false), :value => "two+weeks"} two weeks ago
                             %option{:selected => (params[:timeframe] === 'last month' ? true : false), :value => "last+month"} last month   
                         = will_paginate @sms_contacts
                     %table#sample-table-2.table.table-striped.table-bordered.table-hover.dataTable{"aria-describedby" => "sample-table-2_info"}

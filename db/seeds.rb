@@ -11,11 +11,15 @@ u = User.find_or_create_by(email: 'txie145@gmail.com') do |user|
   user.password_confirmation = 'testtest'
 end
 u.create_sms_response response: "Show this for 5% off your meal today!"
-u.numbers.create number: "17787260394"
-u.numbers.create number: "17787260393"
-for x in 1..100
-  u.reviews.create body: "Pilsner is the best!", from_number: "1604910886#{x}"
+for x in 1..20
+  s = u.sms_contacts.create number: "1604910#{x}"
+  s.update_attribute :last_check_in, Date.today - 1.day - 1.week
 end
-for x in 1..150
-  u.sms_contacts.create number: "1604910886#{x}"
+for x in 1..20
+  s = u.sms_contacts.create number: "1604910#{x}"
+  s.update_attribute :last_check_in, Date.today - 1.day - 2.weeks
+end
+for x in 1..20
+  s = u.sms_contacts.create number: "1604910#{x}"
+  s.update_attribute :last_check_in, Date.today - 1.day - 1.month
 end

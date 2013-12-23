@@ -20,6 +20,7 @@ subscriberFilter = ->
       Turbolinks.visit("?timeframe=#{timeframe}")      
     else
       $(this).val 'off'
+      Turbolinks.visit("?timeframe=#{timeframe}")      
 
   $('#timeframe-select').change (e) -> 
     val = $(this).val()
