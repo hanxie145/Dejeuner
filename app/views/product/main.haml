@@ -76,10 +76,33 @@
                   .widget-header.widget-header-flat
                     %h4.lighter
                       %i.fa.fa-user
-                      Customer break down 
+                      Subscriber break down 
                   .widget-body
                     .widget-main
                       #piechart-placeholder{"data-graph" => @piechart_subscriber_data}
+                      .hr.hr8.hr-double
+                      .clearfix
+                        .grid3
+                          %span.grey
+                            %i.icon-twitter-sign.icon-2x.purple
+                            Have not checked in for a week
+                          %h4.bigger.pull-right 
+                            = @subscribers_last_week
+                        .grid3
+                          %span.grey
+                            Have not checked in for two weeks
+                          %h4.bigger.pull-right 
+                            = @subscribers_two_weeks                            
+                        .grid3
+                          %span.grey
+                            %i.icon-pinterest-sign.icon-2x.red
+                            Have not checked in for a month
+                          %h4.bigger.pull-right 
+                            = @subscribers_last_month
+                      .hr.hr8-hr-dotted
+                      = link_to '/generate_sms', class: "btn btn-primary btn-block" do 
+                        %i.fa.fa-heart 
+                        Get them coming back!
             .row
               .space-6
               .col-sm-12
@@ -131,7 +154,7 @@
                       = link_to 'loyalty_rewards', class: 'btn btn-block btn-info' do 
                         %i.fa.fa-heart 
                         Go to loyalty rewards                                      
-                      = link_to 'checkin', class: 'btn btn-block btn-info' do 
+                      = link_to 'checkin', class: 'btn btn-block btn-info', "data-no-turbolink" => true do 
                         %i.fa.fa-check 
                         Go to check ins              
               .col-sm-6

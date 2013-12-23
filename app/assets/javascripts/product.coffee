@@ -54,6 +54,7 @@ productDrawPieChart = ->
         clickable: true
 
   if $('#piechart-placeholder').length
+    pie = $('#piechart-placeholder')
     $(".easy-pie-chart.percentage").each ->
       $box = $(this).closest(".infobox")
       barColor = $(this).data("color") or ((if not $box.hasClass("infobox-dark") then $box.css("color") else "rgba(255,255,255,0.95)"))
@@ -74,22 +75,21 @@ productDrawPieChart = ->
     )
     data = [
       label: "have not checked in for a week"
-      data: 38.7
+      data: pie.data('graph-last-week')
       color: "#68BC31"
     ,
       label: "have not checked in for two weeks"
-      data: 24.5
+      data: pie.data('graph-two-weeks')
       color: "#2091CF"
     ,
       label: "have not checked in for a month"
-      data: 8.2
+      data: pie.data('graph-last-month')
       color: "#AF4E96"
     ,
       label: "have checked in this week"
-      data: 18.6
+      data: pie.data('graph-this-week')
       color: "#DA5430"
     ]
-    console.log $('#piechart-placeholder').data('graph')
     drawPieChart placeholder, data
 
     ###

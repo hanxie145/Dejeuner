@@ -40,10 +40,14 @@ class ProductController < ApplicationController
     # data for the piecharts
     subscribers = @user.sms_contacts
     h = Hash.new
-    h[:last_week] = subscribers.since_last_week.count
-    h[:two_weeks] = subscribers.since_2_weeks.count
-    h[:last_month] = subscribers.since_last_month.count
-    h[:regulars] = subscribers.count - h[:two_weeks] - h[:last_week] - h[:last_month]
+    @subscribers_last_week = subscribers.since_last_week.count
+    @subscribers_two_weeks = subscribers.since_2_weeks.count
+    @subscribers_last_month = subscribers.since_last_month.count
+    @subscribers_this_week = subscribers.this_week.count
+    h[:this_week] = @subscribers_this_week
+    h[:last_week] = @subscribers_last_week
+    h[:two_weeks] = @subscribers_two_weeks
+    h[:last_month] = @subscribers_last_month
     @piechart_subscriber_data = h
 
     # subscriber data for the sales chart. Get all subscribers by filtering from beginning of month 
