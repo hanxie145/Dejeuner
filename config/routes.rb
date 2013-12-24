@@ -35,8 +35,6 @@ Dejeuner::Application.routes.draw do
   get 'profile' => 'product#profile'
   get 'help' => 'product#help'
   get 'sms_credit_refill' => 'product#sms_credit_refill'
-  get 'generate_sms' => 'product#generate_sms'
-  post 'generate_sms' => 'product#create_sms'
 
   # marketing 
   get 'sms_response' => 'sms_response#sms_response'
@@ -57,6 +55,11 @@ Dejeuner::Application.routes.draw do
   # delayed jobs
   get 'scheduled_messages' => "delayed_jobs#index"
   delete 'scheduled_messages/:id' => "delayed_jobs#destroy", as: :scheduled_message
+
+  # generate sms page 
+  get 'generate_sms' => 'product#generate_sms'
+  post 'generate_sms' => 'product#create_sms'
+  post 'generate_sms/schedule_sms' => 'product#schedule_sms'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

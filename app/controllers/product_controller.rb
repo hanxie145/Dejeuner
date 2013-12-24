@@ -80,6 +80,11 @@ class ProductController < ApplicationController
     set_user()
   end
 
+  def schedule_sms
+    set_user()
+    
+  end
+
   def create_sms
   end
 

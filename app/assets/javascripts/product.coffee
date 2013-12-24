@@ -115,13 +115,17 @@ productDrawPieChart = ->
         $tooltip.hide()
         previousPoint = null
 
+# for the generate sms page
+generateSmsJs = ->     
 
 $(document).ready ->
   checkInNumbers()
   subscriberFilter()
   productDrawPieChart()
+  generateSmsJs()
 
 $(document).on "page:change", -> 
   checkInNumbers()
   subscriberFilter()
   productDrawPieChart()
+  generateSmsJs()

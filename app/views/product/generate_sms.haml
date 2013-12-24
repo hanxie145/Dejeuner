@@ -23,7 +23,7 @@
             .row
               .col-sm-12
                 %p 
-                  We know that you want to just keep running the core part of your business. The craft a sms service lets you leave the content and timing of sms marketing up to us. Simply fill out some questions and we will generate a sms and a time to schedule it for. 
+                  Focus on running your business and let us handle the marketing. Simply answer a few questions about your needs and we will generate a sms that will keep your customers coming back for seconds. 
                 .widget-box
                   .widget-header.widget-header-blue.widget-header-flat
                   .widget-body
@@ -35,25 +35,31 @@
                             %span.title Industry
                           %li{"data-target" => "#step2"}
                             %span.step 2
-                            %span.title Requirements and time
+                            %span.title Customer segment and time
                           %li{"data-target" => "#step3"}
-                            %span.step 3
+                            %span.step 2
+                            %span.title Reward                  
+                          %li{"data-target" => "#step4"}
+                            %span.step 4
                             %span.title Sms
                       %hr/
                       #step-container.step-content.row-fluid.position-relative
                         #step1.step-pane.active
                           %h3.lighter First, we have to know what type of industry you are in.
-                          %h3.lighter.red 
+                          %h3.lighter 
                             I am in business in the
-                            %select{:name => "industry", id: 'industry-select'}
+                            %select.red{:name => "industry", id: 'industry-select'}
                               %option{:value => "restaurant"} restaurants 
+                              %option{:value => "cafe"} cafes 
                             industry
                         #step2.step-pane
-                          %h3.lighter Great! Now, we have to know what you want to do with this sms. 
-                          %h3.lighter.red 
-                            I want to 
+                          %h3.lighter Which group of customers would you like to market towards? 
+                          %h3.lighter
                             %select{:name => "intention", id: 'intention-select'}                             
-                              %option{:value => "customers"} drive more customers to the business
+                              %option{:value => "all-customers"} All customers
+                              %option{:value => "one-week"} customers who have not come back for one week
+                              %option{:value => "two-weeks"} customers have who not come back for two weeks
+                              %option{:value => "one month"} customers who have not come back for over one month                              
                           %h3.lighter When would you want to do this? 
                           %h3.lighter.red
                             On 
@@ -70,18 +76,38 @@
                             and 
                             %input{:type => "text", class: 'input-small', placeholder: 'time'} 
                         #step3.step-pane
+                          %h3.lighter What would you like to offer as a prize?
+                          .checkbox
+                            %label 
+                              %input.ace{:type => 'checkbox'}
+                              %span.lbl Coupon
+                          %p 
+                            Showing this coupon, customers should get...
+                            %input{:type => "textarea", placeholder: '50% off a coffee of their choice'} 
+                          .checkbox
+                            %label 
+                              %input.ace{:type => 'checkbox'}
+                              %span.lbl Daily deal
+                          %p 
+                            Between 
+                            = 'time'
+                            and 
+                            = 'time'
+                            customers should get...
+                            %input{:type => "textarea", placeholder: 'buy one get one free one meals'}  
+                        #step4.step-pane
                           %h3.lighter Your crafted marketing sms:
                           %blockquote 
-                            %p 
+                            %p#generated_sms
                               / TODO place with real sms 
                               Tony's Tonics: Come between 5 and 8pm anytime from Monday to Wednesday for a free appetitizer with your meal. 
-                          = link_to "#", class: "btn btn-primary" do
-                            %i.fa.fa-clock-o
-                            Schedule this for 
-                            / TODO replace with time
-                          = link_to "#", class: "btn btn-primary" do
-                            %i.fa.fa-envelope
-                            Send it out now!
+                          %h3.lighter 
+                            This message will go out to 
+                            %span.customer-segment customers who have not come back for one week
+                          = form_tag('/generate_sms/schedule_sms') do
+                            = submit_tag(class: "btn btn-primary", id: 'generate-sms-schedule-sms') do
+                              %i.fa.fa-clock-o
+                              Schedule this message
                       %hr/
                       .row-fluid.wizard-actions
                         %button.btn.btn-prev
