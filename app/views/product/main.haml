@@ -70,6 +70,22 @@
                     .infobox-content 
                       / some hacking to pluralize, because we only want the second part of the word
                       = (pluralize @contacts_count, "subscriber").split(' ')[1]
+                .infobox.infobox-blue.infobox-dark
+                  .infobox-fa.fa
+                    %i.fa.fa-check-circle-o
+                  .infobox-data
+                    %span.infobox-data-number 
+                      = @check_ins_count
+                    .infobox-content 
+                      Check ins today                      
+                .infobox.infobox-orange.infobox-dark
+                  .infobox-fa.fa
+                    %i.fa.fa-calendar
+                  .infobox-data
+                    %span.infobox-data-number 
+                      = @scheduled_messages_count
+                    .infobox-content 
+                      Scheduled Messages
                 .space-6
               .col-sm-6
                 .widget-box

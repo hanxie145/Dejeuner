@@ -27,6 +27,7 @@ class ProductController < ApplicationController
 
     # schedule messages
     delayed_jobs = Delayed::Job.where('user_id = ?', @user.id)
+    @scheduled_messages_count = delayed_jobs.count
     @num_scheduled_messages_next_week = delayed_jobs.where('run_at <= ?', Time.zone.now + 1.week).count
     @next_message = delayed_jobs.order('run_at ASC').first
     if @next_message
@@ -36,6 +37,9 @@ class ProductController < ApplicationController
 
     # loyalty rewards 
     @loyalty_rewards = @user.check_in_rewards.order(:check_in_count)
+
+    # check ins 
+    @check_ins_count = @user.sms_contacts.where('last_check_in > ?', Date.today).count
 
     # data for the piecharts
     subscribers = @user.sms_contacts
