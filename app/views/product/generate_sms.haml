@@ -51,15 +51,17 @@
                           #step2.step-pane
                             %h3.lighter Which group of customers would you like to market towards? 
                             %h3.lighter
-                              = select_tag 'customer_segment', options_for_select([["All subscribers", "all subscribers"], ['Customers who have not come back for one week', 'one week'], ['Customers who have not come back for two weeks', 'two weeks'], ['Customers who have not come back for one month', 'one month']])
+                              = select_tag 'customer_segment', options_for_select([["All subscribers", "all subscribers"], ['Customers who have not come back for one week', 'one week'], ['Customers who have not come back for two weeks', 'two weeks'], ['Customers who have not come back for one month', 'one month']]), class: 'red'
                             %h3.lighter When would you want to do this? 
                             %h3.lighter.red
                               On 
-                              = select_tag 'date', options_for_select([['Monday', 'monday'], ['Tuesday', 'tuesday'], ['Wednesday', 'wednesday'], ['Thursday', 'thursday'], ['Friday', 'friday'], ['Saturday', 'saturday'], ['Sunday', 'sunday']])
+                              = text_field_tag 'date', Time.zone.today, id: 'datepicker'
                               between 
-                              = text_field_tag 'time_begin', nil, placeholder: 'starting time'
+                              .bootstrap-timepicker.inline
+                                %input#generate-sms-timepicker1{:name => 'time_begin', :type => "text"}/ 
                               and 
-                              = text_field_tag 'time_end', nil, placeholder: 'ending time'
+                              .bootstrap-timepicker.inline
+                                %input#generate-sms-timepicker2{:name => 'time_end', :type => "text"}/ 
                           #step3.step-pane
                             %h3.lighter What would you like to offer as a prize?
                             .radio

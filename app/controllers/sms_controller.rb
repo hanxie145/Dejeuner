@@ -19,14 +19,16 @@ class SmsController < ApplicationController
         # get the time and create a new dateTime object
         params[:meridian] === 'PM' ? hour = params[:hour].to_i + 12 : hour = params[:hour].to_i
         minute = params[:minute].to_i
-        second = params[:second].to_i
-        year = params[:year]
-        month = params[:month]
         date = params[:date]
+
+        # get the year,month,day from the date string "yyyy-mm-dd"
+        year = date.slice(0,4)
+        month = date.slice(5,2)
+        day = date.slice(8,2)
 
         # schedule the message according to the user's time zone. Create the message time in the user's time zone then convert to UTC +0000 (the application's time zone)
         Time.zone = @user.time_zone
-        time_to_send_at = Time.zone.local(year, month, date, hour, minute, second).in_time_zone('UTC')
+        time_to_send_at = Time.zone.local(year, month, day, hour, minute, 0).in_time_zone('UTC')
 
         # Send the message in the background at the time specified
         @user.delay(run_at: time_to_send_at, user_id: @user.id).send_sms_message params[:message]

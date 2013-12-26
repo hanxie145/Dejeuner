@@ -122,11 +122,14 @@ generateSmsJs = ->
 
   $("#modal-wizard .modal-header").ace_wizard()
   $("#modal-wizard .wizard-actions .btn[data-dismiss=modal]").removeAttr "disabled"    
+  if $('#datepicker').length 
+    $('#datepicker').datepicker()
 
 # js for the market page 
 marketPageJs = ->
-  if $('.schedule-time-box').length
-    if $('.schedule-time-box').val() is 'later'
+  # if the later radio button is checked, then the schedule box should be visible
+  if $('.message_now_or_later').length
+    if $('input[name=message_now_or_later]:checked').val() is 'later'
       $('.schedule-time-box').fadeIn()
 
   $('.message_now_or_later').click (e) -> 

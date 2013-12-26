@@ -44,7 +44,7 @@
                         sms credits left
                       = link_to '/sms_credit_refill', class: "btn btn-block btn-primary" do 
                         %i.fa.fa-briefcase
-                        Buy more credits
+                        Refill credits
             .hr.hr-8.hr-double
             .row
               .col-sm-12
@@ -60,21 +60,24 @@
                       %span.lbl Now
                   .radio
                     %label 
-                      = radio_button_tag 'message_now_or_later', 'later', false, class: 'ace message_now_or_later'
+                      = radio_button_tag 'message_now_or_later', 'later', (params[:message_now_or_later] === 'later' ? true : false), class: 'ace message_now_or_later'
                       %span.lbl Later    
                   .widget-box.schedule-time-box
                     .widget-header
                       %h3 Schedule time
                     .widget-body
                       .widget-main
-                        = select_tag 'month', options_for_select(@months_with_index, @month_date)
-                        = select_tag 'date', options_for_select(@date_values, @day_date)
-                        = select_tag 'year', options_for_select(@year_values, @year_date)
-                        .col-sm-4
-                          .input-group.bootstrap-timepicker
-                            %input#timepicker1.form-control{type: "text"}/
-                            %span.input-group-addon
-                              %i.fa.fa-clock-o
+                        .row
+                          .col-sm-3
+                            .input-group
+                              %span.input-group-addon 
+                                %i.fa.fa-calendar 
+                              %input#datepicker.form-control{name: 'date', :type => "text", value: (params[:date] || Time.zone.today)}/ 
+                          .col-sm-4
+                            .input-group.bootstrap-timepicker
+                              %span.input-group-addon
+                                %i.fa.fa-clock-o                            
+                              %input#timepicker1.form-control{type: "text", value: params[:time_begin]}/
                   .clearfix.form-actions
                     .col-sm-offset-3.col-sm-9
                       = link_to main_path, class: 'btn btn-default' do 

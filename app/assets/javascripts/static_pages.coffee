@@ -90,11 +90,32 @@ sendMessageTimePicker = ->
 
     # time picker js
     $('#timepicker1').timepicker
-      minuteStep: 1,
-      showSeconds: true,
-      showMeridian: true
+      minuteStep: 15,
+      showMeridian: true,
 
     # be lazy and replace old font-awesome syntax with new one, since I can't figure out where it actually happens in the old 
+    $('.bootstrap-timepicker-widget i').removeClass 'icon-chevron-up'
+    $('.bootstrap-timepicker-widget i').addClass 'fa fa-chevron-up'
+
+  if $('#generate-sms-timepicker1').length 
+
+    # time picker js
+    $('#generate-sms-timepicker1').timepicker
+      minuteStep: 15,
+      showMeridian: true,
+      defaultTime: '5:00 PM'
+
+    # be lazy and replace old font-awesome syntax with new one, since I can't figure out where it actually happens in the old 
+    $('.bootstrap-timepicker-widget i').removeClass 'icon-chevron-up'
+    $('.bootstrap-timepicker-widget i').addClass 'fa fa-chevron-up'
+
+  if $('#generate-sms-timepicker2').length 
+
+    # time picker js
+    $('#generate-sms-timepicker2').timepicker
+      minuteStep: 15,
+      showMeridian: true,
+      defaultTime: '8:00 PM'
     $('.bootstrap-timepicker-widget i').removeClass 'icon-chevron-up'
     $('.bootstrap-timepicker-widget i').addClass 'fa fa-chevron-up'
 

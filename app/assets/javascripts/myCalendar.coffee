@@ -36,18 +36,6 @@ calendarFunc = ->
 
       selectable: true
       selectHelper: true
-      select: (start, end, allDay) ->
-        bootbox.prompt "New Event Title:", (title) ->
-          if title isnt null
-            calendar.fullCalendar "renderEvent",
-              title: title
-              start: start
-              end: end
-              allDay: allDay
-            , true # make the event "stick"
-
-        calendar.fullCalendar "unselect"
-
       eventClick: (calEvent, jsEvent, view) ->
         form = $("<form class='form-inline'></form>")
         form.append "<blockquote><p>#{calEvent.title}</p></blockquote>" 
