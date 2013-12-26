@@ -99,6 +99,7 @@ class ProductController < ApplicationController
       
     # generate the sms 
     sms = generate_sms_from_args(@user.business_name, params[:industry], params[:customer_segment], params[:date], params[:time_begin], params[:time_end], reward_type, reward)
+    flash[:notice] = "Sms generated! Now just click the schedule button below to schedule it"
     redirect_to :action => 'market', sms: sms
   end
 

@@ -53,18 +53,28 @@
                   %p 160 character limit per sms. Sms's over 160 characters will be split into two sms's and cost two credits. All marketing sms's automatically have an unsubscribe option attached to them to stay compliant with Canadian / US marketing regulations.  
                   = text_area_tag 'message', @sms, :class => 'form-control market-text-area', placeholder: "Come in to Tony's Tonics on Wednesday between 5 and 8PM for 50% off on all beers on tap!"
                   .hr.hr16.hr-dotted
-                  %p Send out my message on
-                  .form-inline
-                    .row
-                      .col-sm-3
+                  %h3.blue Send out my message...
+                  .radio
+                    %label 
+                      = radio_button_tag 'message_now_or_later', 'now', true, class: 'ace message_now_or_later'
+                      %span.lbl Now
+                  .radio
+                    %label 
+                      = radio_button_tag 'message_now_or_later', 'later', false, class: 'ace message_now_or_later'
+                      %span.lbl Later    
+                  .widget-box.schedule-time-box
+                    .widget-header
+                      %h3 Schedule time
+                    .widget-body
+                      .widget-main
                         = select_tag 'month', options_for_select(@months_with_index, @month_date)
                         = select_tag 'date', options_for_select(@date_values, @day_date)
                         = select_tag 'year', options_for_select(@year_values, @year_date)
-                      .col-sm-4
-                        .input-group.bootstrap-timepicker
-                          %input#timepicker1.form-control{type: "text"}/
-                          %span.input-group-addon
-                            %i.fa.fa-clock-o
+                        .col-sm-4
+                          .input-group.bootstrap-timepicker
+                            %input#timepicker1.form-control{type: "text"}/
+                            %span.input-group-addon
+                              %i.fa.fa-clock-o
                   .clearfix.form-actions
                     .col-sm-offset-3.col-sm-9
                       = link_to main_path, class: 'btn btn-default' do 
@@ -72,4 +82,4 @@
                         Back to dashboard
                       = button_tag class: 'btn btn-info' do 
                         %i.fa.fa-envelope-o
-                        Send message
+                        %span.market-blast-message Send my message

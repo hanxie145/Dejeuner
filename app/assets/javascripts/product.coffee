@@ -123,14 +123,30 @@ generateSmsJs = ->
   $("#modal-wizard .modal-header").ace_wizard()
   $("#modal-wizard .wizard-actions .btn[data-dismiss=modal]").removeAttr "disabled"    
 
+# js for the market page 
+marketPageJs = ->
+  if $('.schedule-time-box').length
+    if $('.schedule-time-box').val() is 'later'
+      $('.schedule-time-box').fadeIn()
+
+  $('.message_now_or_later').click (e) -> 
+    if $(this).val() is 'later' 
+      $('.schedule-time-box').fadeIn()
+      $('.market-blast-message').text 'Schedule my message'
+    else 
+      $('.schedule-time-box').fadeOut()
+      $('.market-blast-message').text 'Send my message'
+
 $(document).ready ->
   checkInNumbers()
   subscriberFilter()
   productDrawPieChart()
   generateSmsJs()
+  marketPageJs()
 
 $(document).on "page:change", -> 
   checkInNumbers()
   subscriberFilter()
   productDrawPieChart()
   generateSmsJs()
+  marketPageJs()
