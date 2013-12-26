@@ -19,64 +19,39 @@
         / /.page-header
         .row
           .col-xs-12
+            = render 'shared/flash'
             .row
               .col-sm-6
-                %h3.lighter.blue Marketing best practices
                 .widget-container-span
-                  .widget-box{:style => "opacity: 1; z-index: 0;"}
+                  .widget-box.transparent
                     .widget-header
-                      %h4.smaller.lighter.blue Types of contests 
-                      .widget-toolbar.no-border
-                        %ul#myTab.nav.nav-tabs
-                          %li.active
-                            %a{"data-toggle" => "tab", :href => "#coupon"} Coupon
-                          %li
-                            %a{"data-toggle" => "tab", :href => "#event"} Event
-                          %li
-                            %a{"data-toggle" => "tab", :href => "#weekly-deal"} Weekly Deal
-                          %li 
-                            %a{"data-toggle" => 'tab', :href => "#competition"} Competition
+                      %h3 Craft a sms
                     .widget-body
                       .widget-main.padding-6
-                        .tab-content
-                          #coupon.tab-pane.in.active
-                            %p Use Dejeuner to send out an one-time coupon via sms. Drive customers back with rewards. All our coupons are tagged with a special code to make sure that they are unique. 
-                            .well
-                              %h4.green Example: 
-                              %p Show this text to your server for 50% off on your beer.
-                          #event.tab-pane
-                            %p Have an event you want to advertise?
-                            .well
-                              %h4.red Example:
-                              %p Come in today for a 1/4kg chicken wing platter with any meal!
-                            %p Tip: Use Dejeuner to drive customers at a time when you have a lull in the business. But do not be surprised with they show up to your doorsteps a little bit later!
-                          #weekly-deal.tab-pane
-                            %p Not all events are one-day only. Sometimes your business will have weekly deals. 
-                            .well
-                              %h4.orange Example:
-                              %p Buy 1 get 1 free for the next week, August 14 - 21!
-                          #competition.tab-pane
-                            %p Dejeuner supports two-way sms marketing competitions as well. 
-                            .well
-                              %h4.purple Example:
-                              %p Respond with BEER to have a chance to win free beer for the week at Tony's Tonics.
+                        %p.lighter.p-larger Not a marketing expert? Let us craft a sms for you. 
+                        = link_to '/generate_sms', class: 'btn btn-primary btn-block' do 
+                          %i.fa.fa-edit 
+                          Generate sms
               .col-sm-6
-                %h3.lighter.blue Do not run low!
-                %blockquote
-                  %p 
-                    You have 
-                    = @user.sms_credit || 0
-                    sms credits left
-                  = link_to '#', class: "btn btn-block btn-info" do 
-                    %i.fa.fa-briefcase
-                    Buy more credits
-            .hr.hr-8.hr-dotted
+                .widget-box.transparent
+                  .widget-header
+                    %h3.blue Do not run low!
+                  .widget-body
+                    .widget-main.padding-6
+                      %p.lighter.p-larger
+                        You have 
+                        = @user.sms_credit || 0
+                        sms credits left
+                      = link_to '/sms_credit_refill', class: "btn btn-block btn-primary" do 
+                        %i.fa.fa-briefcase
+                        Buy more credits
+            .hr.hr-8.hr-double
             .row
               .col-sm-12
-                %h2.lighter.blue Send out a marketing blast
+                %h2.blue Send out a marketing blast
                 = form_tag do
                   %p 160 character limit per sms. Sms's over 160 characters will be split into two sms's and cost two credits. All marketing sms's automatically have an unsubscribe option attached to them to stay compliant with Canadian / US marketing regulations.  
-                  = text_area_tag 'message', nil, :class => 'form-control market-text-area', placeholder: "Come in to Tony's Tonics on Wednesday between 5 and 8PM for 50% off on all beers on tap!"
+                  = text_area_tag 'message', @sms, :class => 'form-control market-text-area', placeholder: "Come in to Tony's Tonics on Wednesday between 5 and 8PM for 50% off on all beers on tap!"
                   .hr.hr16.hr-dotted
                   %p Send out my message on
                   .form-inline

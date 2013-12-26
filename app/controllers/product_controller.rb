@@ -106,6 +106,7 @@ class ProductController < ApplicationController
     set_user
     # list of months 
     get_months
+    @sms = params[:sms]
 
     # set the time zone and get today's date
     Time.zone = @user.time_zone
