@@ -116,7 +116,12 @@ productDrawPieChart = ->
         previousPoint = null
 
 # for the generate sms page
-generateSmsJs = ->     
+generateSmsJs = -> 
+  $("#fuelux-wizard").ace_wizard().on "finished", (e) ->
+    $("#generate-sms-form").submit()
+
+  $("#modal-wizard .modal-header").ace_wizard()
+  $("#modal-wizard .wizard-actions .btn[data-dismiss=modal]").removeAttr "disabled"    
 
 $(document).ready ->
   checkInNumbers()

@@ -59,7 +59,6 @@ Dejeuner::Application.routes.draw do
   # generate sms page 
   get 'generate_sms' => 'product#generate_sms'
   post 'generate_sms' => 'product#create_sms'
-  post 'generate_sms/schedule_sms' => 'product#schedule_sms'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,7 +1,7 @@
 module GenerateSmsHelper
 
   # generate a sms for the customer to send out
-  def generate_sms(businessName, industry, customerSegment, date, timeBegin, timeEnd, rewardType, reward)
+  def generate_sms_from_args(businessName, industry, customerSegment, date, timeBegin, timeEnd, rewardType, reward)
     sms = businessName + ": "
 
     # change sms according to which customer segment we're targetting 

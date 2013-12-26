@@ -1,5 +1,5 @@
 class ProductController < ApplicationController
-  include ProductHelper
+  include ProductHelper, GenerateSmsHelper
   before_filter :authenticate_user!
 
   def main 
@@ -80,16 +80,26 @@ class ProductController < ApplicationController
     @plan = @user.plan
   end
 
-  def generate_sms 
+  def generate_sms
     set_user()
   end
 
   def schedule_sms
     set_user()
-    
   end
 
   def create_sms
+    set_user
+    reward_type = params[:reward_type]
+    if reward_type === 'coupon'
+      reward = params[:coupon_reward]
+    elsif reward_type === 'deal'
+      reward = params[:deal_reward]
+    end
+      
+    # generate the sms 
+    sms = generate_sms_from_args(@user.business_name, params[:industry], params[:customer_segment], params[:date], params[:time_begin], params[:time_end], reward_type, reward)
+    redirect_to :action => 'market', sms: sms
   end
 
   def market 
