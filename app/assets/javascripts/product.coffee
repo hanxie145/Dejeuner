@@ -131,6 +131,7 @@ marketPageJs = ->
   if $('.message_now_or_later').length
     if $('input[name=message_now_or_later]:checked').val() is 'later'
       $('.schedule-time-box').fadeIn()
+      $('.market-blast-message').text 'Schedule my message'
 
   $('.message_now_or_later').click (e) -> 
     if $(this).val() is 'later' 
