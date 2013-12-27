@@ -139,8 +139,8 @@ landingHowToUseJs = ->
           if slideNum is 1
             $(".device").removeClass('device--browser')
             $(".flat-ios-device-container").removeClass('device--browser')
+          $(".landing-device-example-#{slideNum + 1}").fadeIn()            
         $(".landing-how-to-use-slide-#{slideNum}").removeClass 'active-how-to-use-slide'
-        $(".landing-device-example-#{slideNum + 1}").fadeIn()
         $(".landing-how-to-use-slide-#{slideNum + 1}").fadeIn 400, -> 
           $(this).addClass 'active-how-to-use-slide'
 
@@ -153,8 +153,8 @@ landingHowToUseJs = ->
           if slideNum is 2
             $(".device").removeClass('device--ipad').addClass('device--browser')
             $(".flat-ios-device-container").removeClass('device--ipad').addClass('device--browser')
+          $(".landing-device-example-#{slideNum - 1}").fadeIn()
         $(".landing-how-to-use-slide-#{slideNum}").removeClass 'active-how-to-use-slide'
-        $(".landing-device-example-#{slideNum - 1}").fadeIn()
         $(".landing-how-to-use-slide-#{slideNum - 1}").fadeIn 400, -> 
           $(this).addClass 'active-how-to-use-slide'
 
