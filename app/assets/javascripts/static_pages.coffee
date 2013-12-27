@@ -129,6 +129,49 @@ helpAccordion = ->
   $('.accordion').on 'show', (e) -> 
     $(e.target).prev().children(0).removeClass('collapsed')
 
+# for the landing how to use slide
+landingHowToUseJs = -> 
+  $(".landing-next-slide").click (e) ->
+    unless $('.active-how-to-use-slide').data('slide') is 3
+      $(".active-how-to-use-slide").fadeOut 400, -> 
+        slideNum = $(this).data('slide') 
+        $(".landing-device-example-#{slideNum}").fadeOut 400, -> 
+          if slideNum is 1
+            $(".device").removeClass('device--browser')
+            $(".flat-ios-device-container").removeClass('device--browser')
+        $(".landing-how-to-use-slide-#{slideNum}").removeClass 'active-how-to-use-slide'
+        $(".landing-device-example-#{slideNum + 1}").fadeIn()
+        $(".landing-how-to-use-slide-#{slideNum + 1}").fadeIn 400, -> 
+          $(this).addClass 'active-how-to-use-slide'
+
+  $(".landing-prev-slide").click (e) ->
+    unless $('.active-how-to-use-slide').data('slide') is 1
+      $(".active-how-to-use-slide").fadeOut 400, -> 
+        slideNum = $(this).data('slide') 
+        console.log slideNum
+        $(".landing-device-example-#{slideNum}").fadeOut 400, -> 
+          if slideNum is 2
+            $(".device").removeClass('device--ipad').addClass('device--browser')
+            $(".flat-ios-device-container").removeClass('device--ipad').addClass('device--browser')
+        $(".landing-how-to-use-slide-#{slideNum}").removeClass 'active-how-to-use-slide'
+        $(".landing-device-example-#{slideNum - 1}").fadeIn()
+        $(".landing-how-to-use-slide-#{slideNum - 1}").fadeIn 400, -> 
+          $(this).addClass 'active-how-to-use-slide'
+
+  $('.btn-to-tablet-or-phone').click (e) -> 
+    e.preventDefault()
+    if $(".device").hasClass('device--ipad') 
+      $(".device").removeClass 'device--ipad'
+      $('.flat-ios-device-container').removeClass 'device--ipad'
+      $('.icon-to-tablet').removeClass('fa-mobile').addClass 'fa-tablet'
+      $('.message-to-tablet').text 'See check in on tablet'
+    else 
+      $('.device').addClass 'device--ipad'
+      $('.flat-ios-device-container').addClass 'device--ipad'
+      $('.icon-to-tablet').removeClass('fa-tablet').addClass 'fa-mobile'
+      $('.message-to-tablet').text 'See check in on mobile'
+
+
 $(document).ready -> 
   # alertFadeOut()
   sidebarToggle()
@@ -136,6 +179,7 @@ $(document).ready ->
   smsCreditRefill()
   sendMessageTimePicker()
   helpAccordion()
+  landingHowToUseJs()
 
 $(document).on "page:change", -> 
   # alertFadeOut()
@@ -144,3 +188,4 @@ $(document).on "page:change", ->
   smsCreditRefill()
   sendMessageTimePicker()
   helpAccordion()
+  landingHowToUseJs()

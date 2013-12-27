@@ -30,6 +30,9 @@ $border-color: #333;
   border-radius: 50px  * $scale;
   box-shadow: 6px 6px 0px rgba(#000, .05);
   transition: all $anim-duration $anim-type;
+  float: right;
+  margin-top: 2em;
+  margin-bottom: 2em;
 }
 
 // The device in-call speaker
@@ -79,6 +82,7 @@ $border-color: #333;
   border-radius: 3px * $scale;
   margin: 80px * $scale 15px * $scale 80px * $scale 15px * $scale;
   transition: all $anim-duration $anim-type;
+  padding: 0.5em;
 }
 // The home button
 .device__footer {
@@ -192,6 +196,7 @@ $border-color: #333;
 }
 .device--browser .device__footer {
   transform: scale(0);
+  display: none;
 }
 
 
@@ -209,9 +214,8 @@ $border-color: #333;
   height: 100%;
   min-height: 100%;
   text-align: center;
-  background: #AAEC57;
+  background: #dd5a43;
   transition: background $anim-duration $anim-type;
-  padding: 2em;
   
   &:before {
     content: '';

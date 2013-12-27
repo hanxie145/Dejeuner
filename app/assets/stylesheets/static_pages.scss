@@ -33,6 +33,11 @@
   }
 }
 
+.background-red {
+  background-color: #dd5a43;
+  width: 100%;
+}
+
 .landing-shout-out {
   background: #ffffff image-url("hipster-coffee-shop-blur.jpg") no-repeat center center fixed; 
   -moz-background-size: cover;
@@ -93,6 +98,8 @@
     font-family: 'Yesteryear', cursive;
     margin-top: 0;
     padding-top: 20px;
+    font-weight: 400;
+    font-size: 3em;
   }
   height: 80px;
   width: 100%;
@@ -257,4 +264,36 @@ footer {
 .charges-head {
   font-size: 90px;
   font-weight: 400;
+}
+
+.landing-prev-next {
+  list-style-type: none;
+  margin-top: 1.5em;
+  margin-left: 0;
+  margin-bottom: 0;
+  li {
+    color: #fff; 
+    display: inline;
+    &:nth-child(n+1){
+      margin-left: 2em;
+    }
+  h3 {
+    display: inline; 
+  }
+  }
+}
+
+.landing-how-to-use {
+  color: #fff;
+}
+
+.landing-how-to-use-slide-2, .landing-how-to-use-slide-3 {
+  display: none;
+}
+
+.landing-device-example-2, .landing-device-example-3 {
+  display: none;
+  h1 {
+    margin-top: 0;
+  }
 }

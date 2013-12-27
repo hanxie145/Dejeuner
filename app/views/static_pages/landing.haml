@@ -9,37 +9,93 @@
         .center
           = link_to "Start your free trial", '/pricing', :class => "btn btn-primary btn-lg"
           = link_to "Sign In", new_user_session_path, :class => "btn btn-info btn-lg"
-.flat-ios-device-container
-  .device
-    .device__header
-    .device__content
-      %h1.yesteryear.lighter Dejeuner for Tony's Cafe
-      .form-group
-        %input{:type => "text", class: 'input-sm', value: '6048628282'}
-      .form-group
-        %button.btn.btn-primary.btn-sm Check In  
-    .device__footer
 .cursive
   %h1.red Dejeuner in three simple steps.
-/ begin benefits
-.benefits-container
+.background-red          
   .container
     .row
-      .col-sm-4.landing-benefits
-        .landing-benefits-inner
-          %i.fa.fa-heart.fa-5x
-          %h1.lighter Sign up and get a number
-          %p Sign up and get your own unique number for your store. Display this number.
-      .col-sm-4.landing-benefits
-        .landing-benefits-inner
-          %i.fa.fa-coffee.fa-5x        
-          %h1.lighter Create campaigns and get feedback
-          %p Create a question you want answered through Dejeuner. Display this question in your store. Customer text feedback on this question to your Dejeuner number.
-      .col-sm-4.landing-benefits
-        .landing-benefits-inner
-          %i.fa.fa-bullhorn.fa-5x 
-          %h1.lighter Market to customers with sms
-          %p But no marketing expertise required. Our craft-a-sms service will generate a marketing sms for you. And our scheduling service allows you to focus on running your business while we take care of the marketing. 
+      .col-sm-3.landing-how-to-use
+        %ul.landing-prev-next
+          %li.landing-prev-slide
+            %h3 
+              %i.fa.fa-arrow-circle-left.fa-3x
+              Prev
+          %li.landing-next-slide
+            %h3 
+              Next
+              %i.fa.fa-arrow-circle-right.fa-3x 
+        .landing-how-to-use-slide-1.active-how-to-use-slide{"data-slide" => 1}
+          %h1 1. Set loyalty rewards
+          %p.p-larger Set custom loyalty rewards to get your customers coming back. Dejeuner functions like a traditional loyalty card, except there is no paper to carry around or apps to download. 
+        .landing-how-to-use-slide-2{"data-slide" => 2}
+          %h1 2. Display check in page
+          %p.p-larger Display the check in page at your business' register to your customers. Our check in page is accessible and looks great on any internet capable device. Such as a smart phone or a tablet.
+          %button.btn.btn-primary.btn-to-tablet-or-phone 
+            %i.fa.fa-tablet.icon-to-tablet 
+            %span.message-to-tablet See check in on tablet  
+        .landing-how-to-use-slide-3{'data-slide' => 3}
+          %h1 3. Customer checks in
+          %p.p-larger When customers check in we keep track of how many times they have checked in and give them the appropriate reward via sms. We also store their number for you and allow you to communicate with them later on via sms marketing.
+          %button.btn.btn-primary.btn-to-tablet-or-phone 
+            %i.fa.fa-tablet.icon-to-tablet 
+            %span.message-to-tablet See check in on tablet              
+      .col-sm-9
+        .flat-ios-device-container.container--browser
+          .device.device--browser
+            .device__header
+            .device__content
+              .landing-device-example-1
+                %h1 Your Loyalty Rewards
+                %p.pull-left
+                  After
+                  %span.red 6 
+                  check ins customers get 
+                  %span.red 50% off their next coffee drink
+                %p.pull-left
+                  After 
+                  %span.red 10 
+                  check ins customers get
+                  %span.red  a free croissant with their next check in
+                %p.pull-left 
+                  After
+                  %input.input-sm{:type => "text", value: '5', class: 'red'}/
+                  check ins 
+                  customers should get 
+                  %input.input-sm{:type => "text", value: 'a free apple tart', class: 'red'}/  
+                %button.btn.btn-primary.btn-sm.pull-left 
+                  %i.fa.fa-heart
+                  Create reward
+              .landing-device-example-2
+                %h1.yesteryear.lighter Dejeuner for Tony's Cafe
+                .form-group
+                  %input{:type => "text", class: 'input-sm', value: '6048628282'}
+                .form-group
+                  %button.btn.btn-primary.btn-sm Check In    
+              .landing-device-example-3
+                %h1.yesteryear.lighter Thank you for checking in
+                %p.pull-left You have checked in 6 times. 
+                %p.pull-left You get 50% off your next coffee drink!
+                %p.pull-left 4 more check ins until your next reward
+            .device__footer
+/ begin benefits
+/ .benefits-container
+/   .container
+/     .row
+/       .col-sm-4.landing-benefits
+/         .landing-benefits-inner
+/           %i.fa.fa-heart.fa-5x
+/           %h1.lighter Sign up and get a number
+/           %p Sign up and get your own unique number for your store. Display this number.
+/       .col-sm-4.landing-benefits
+/         .landing-benefits-inner
+/           %i.fa.fa-coffee.fa-5x        
+/           %h1.lighter Create campaigns and get feedback
+/           %p Create a question you want answered through Dejeuner. Display this question in your store. Customer text feedback on this question to your Dejeuner number.
+/       .col-sm-4.landing-benefits
+/         .landing-benefits-inner
+/           %i.fa.fa-bullhorn.fa-5x 
+/           %h1.lighter Market to customers with sms
+/           %p But no marketing expertise required. Our craft-a-sms service will generate a marketing sms for you. And our scheduling service allows you to focus on running your business while we take care of the marketing. 
 .landing-shout-out
   .container
     .row
