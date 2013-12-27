@@ -30,9 +30,8 @@ $border-color: #333;
   border-radius: 50px  * $scale;
   box-shadow: 6px 6px 0px rgba(#000, .05);
   transition: all $anim-duration $anim-type;
-  float: right;
   margin-top: 2em;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
 }
 
 // The device in-call speaker
