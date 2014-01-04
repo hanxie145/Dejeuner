@@ -68,6 +68,12 @@
                     .widget-body
                       .widget-main
                         .row
+                          .col-sm-12
+                            %p 
+                              Your time zone is 
+                              = @user.time_zone
+                              %span
+                                = link_to "change my time zone", profile_path, class: 'btn btn-sm btn-info'
                           .col-sm-3
                             .input-group
                               %span.input-group-addon 

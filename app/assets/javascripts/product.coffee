@@ -141,12 +141,24 @@ marketPageJs = ->
       $('.schedule-time-box').fadeOut()
       $('.market-blast-message').text 'Send my message'
 
+# JS for joyride product demo on main page
+joyrideJs = -> 
+  if $('#joyRideTipContent').length
+    $("#joyRideTipContent").joyride
+      autoStart: true
+      postStepCallback: (index, tip) ->
+        $(this).joyride "set_li", false, 1  if index is 2
+
+      modal: true
+      expose: true
+
 $(document).ready ->
   checkInNumbers()
   subscriberFilter()
   productDrawPieChart()
   generateSmsJs()
   marketPageJs()
+  joyrideJs()
 
 $(document).on "page:change", -> 
   checkInNumbers()
@@ -154,3 +166,4 @@ $(document).on "page:change", ->
   productDrawPieChart()
   generateSmsJs()
   marketPageJs()
+  joyrideJs()

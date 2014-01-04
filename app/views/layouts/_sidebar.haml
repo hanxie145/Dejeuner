@@ -7,11 +7,11 @@
       %a{href: "/main"}
         %i.fa.fa-dashboard
         %span.menu-text Dashboard
-    %li{:class => ('active' if controller_name() == 'product' && action_name() == 'profile') }
+    %li#profile_nav_link{:class => ('active' if controller_name() == 'product' && action_name() == 'profile') }
       %a{href: "/profile"}
         %i.fa.fa-user
         %span.menu-text Profile
-    %li{:class => ('active' if controller_name() == 'reviews' || controller_name() == 'campaigns') }
+    %li#campaigns_nav_link{:class => ('active' if controller_name() == 'reviews' || controller_name() == 'campaigns') }
       %a.dropdown-toggle{href: "#"}
         %i.fa.fa-flag
         %span.menu-text Campaigns
@@ -33,7 +33,7 @@
           %a{href: "/reviews"}
             %i.fa.fa-angle-double-right
             Reviews
-    %li{:class => ('active' if controller_name() == 'check_ins' || controller_name() == 'sms_contacts'|| controller_name() == 'check_in_rewards') }
+    %li#subscribers_nav_link{:class => ('active' if controller_name() == 'check_ins' || controller_name() == 'sms_contacts'|| controller_name() == 'check_in_rewards') }
       %a.dropdown-toggle{href: "#"}
         %i.fa.fa-user
         %span.menu-text Subscribers
@@ -51,7 +51,7 @@
           %a{href: "/loyalty"}
             %i.fa.fa-angle-double-right
             Loyalty rewards                      
-    %li{:class => ('active' if (controller_name() == 'product' && action_name() == 'market') || (controller_name() == 'product' && action_name() == 'generate_sms') || (controller_name() == 'delayed_jobs') || (controller_name() == 'product' && action_name() == 'sms_credit_refill'))}
+    %li#marketing_nav_link{:class => ('active' if (controller_name() == 'product' && action_name() == 'market') || (controller_name() == 'product' && action_name() == 'generate_sms') || (controller_name() == 'delayed_jobs') || (controller_name() == 'product' && action_name() == 'sms_credit_refill'))}
       %a.dropdown-toggle{href: "#"}
         %i.fa.fa-bullhorn
         %span.menu-text Marketing
