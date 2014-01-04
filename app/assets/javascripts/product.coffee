@@ -143,9 +143,9 @@ marketPageJs = ->
 
 # JS for joyride product demo on main page
 joyrideJs = -> 
-  if $('#joyRideTipContent').length
+  $('.btn-joyride').click (e) ->
+    e.preventDefault()
     $("#joyRideTipContent").joyride
-      autoStart: true
       postStepCallback: (index, tip) ->
         $(this).joyride "set_li", false, 1  if index is 2
 

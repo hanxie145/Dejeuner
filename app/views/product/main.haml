@@ -18,17 +18,20 @@
               Howzit going
               = @user.name
               , you have...
+            %button.btn.btn-primary.btn-joyride.float-right.btn-sm
+              %i.fa.fa-question-circle
+              Need a quick tour?
         / /.page-header
         .row
           .col-xs-12
-            / tell trial users to upgrade 
-            / - if @user.is_trial
-            /   .alert.alert-block.alert-notice
-            /     %button.close{"data-dismiss" => "alert", type: "button"}
-            /       %i.fa.fa-times
-            /     %p 
-            /       You are currently in trial mode. For unlimited subscribers and more sms messages
-            /       = link_to "Upgrade here", upgrade_plan_path, class: "btn btn-primary btn-sm"
+            -# tell users to upgrade
+            - if @user.is_trial
+              .alert.alert-block.alert-notice
+                %button.close{"data-dismiss" => "alert", type: "button"}
+                  %i.fa.fa-times
+                %p 
+                  You are currently in trial mode. For unlimited subscribers and more sms messages
+                  = link_to "Upgrade here", upgrade_plan_path, class: "btn btn-primary btn-sm"
             = render 'shared/flash'
             / PAGE CONTENT BEGINS
             .row
