@@ -71,9 +71,11 @@
                           .col-sm-12
                             %p 
                               Your time zone is 
-                              = @user.time_zone
+                              %b= @user.time_zone
+                              and it is 
+                              %b= Time.zone.now.in_time_zone(@user.time_zone).strftime("%l:%M%p")
                               %span
-                                = link_to "change my time zone", profile_path, class: 'btn btn-sm btn-info'
+                                = link_to "Not correct? Change my time zone.",edit_user_registration_path, class: 'btn btn-sm btn-info'
                           .col-sm-3
                             .input-group
                               %span.input-group-addon 

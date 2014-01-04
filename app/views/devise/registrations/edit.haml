@@ -34,7 +34,7 @@
                       = f.text_field :business_name, :class => "input form-control", :placeholder => "Business name"
                     .form-group
                       = f.label :time_zone
-                      = f.text_field :time_zone, :class => "input form-control", :placeholder => "Time Zone" 
+                      = f.time_zone_select :time_zone, TZInfo::Timezone.us_zones, {}, class: 'input form-control'
                     .hr.hr8.hr-dotted
                     %p                      
                     .form-group
