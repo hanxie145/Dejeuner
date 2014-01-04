@@ -11,7 +11,7 @@
 .container
   .row
     .col-sm-12
-      %p.lighter.p-larger All our plans come with unlimited subscribers, our mobile check in system, craft-a-sms, and sms scheduling services. 
+      %p.lighter.p-larger When you sign up, we provide you with a dedicated and local 10 digit number. For example, if you were in New York, we would provide you with a 718 area code number. No keywords needed. Our plans also come with unlimited subscribers, our mobile check in system, craft-a-sms, and sms scheduling services. Sms credits are 3.5 cents each.
       %p.lighter.p-larger We offer a trial plan for those who want to test the service before committing. The only difference with our trial plan is that it caps the number of subscribers at 200 and does not come with a dedicated number. 
     .hr.hr16
     .col-xs-4.col-sm-3.pricing-span-header
@@ -22,8 +22,11 @@
           .widget-main.no-padding
             %ul.list-unstyled.list-striped.pricing-table-header
               %li Sms credits
-              %li Email support
-              %li Phone support
+              %li Dedicated number
+              %li Check in portal
+              %li Craft-a-sms
+              %li Sms scheduling
+              %li Awesome support
     .col-xs-8.col-sm-9.pricing-span-body
       .pricing-span
         .widget-box.pricing-box-small
@@ -34,15 +37,21 @@
               %ul.list-unstyled.list-striped.pricing-table
                 %li 0
                 %li 
+                  %i.fa.fa-times.red
+                %li 
                   %i.fa.fa-check.green
                 %li 
-                  %i.fa.fa-times.red
+                  %i.fa.fa-check.green
+                %li 
+                  %i.fa.fa-check.green                  
+                %li 
+                  %i.fa.fa-check.green
               .price
                 %span.label.label-lg.label-inverse.arrowed-in.arrowed-in-right
                   Free forever.
             %div
               %a.btn.btn-block.btn-sm.btn-warning{:href => new_user_registration_path(:plan => "petite")}
-                %span Start your free 14 day trial
+                %span Sign up for free
       .pricing-span
         .widget-box.pricing-box-small
           .widget-header.header-color-blue
@@ -55,34 +64,21 @@
                   %i.fa.fa-check.green
                 %li
                   %i.fa.fa-check.green
+                %li
+                  %i.fa.fa-check.green
+                %li
+                  %i.fa.fa-check.green
+                %li
+                  %i.fa.fa-check.green                                    
               .price
                 %span.label.label-lg.label-inverse.arrowed-in.arrowed-in-right
                   $79 per location
             %div
               %a.btn.btn-block.btn-sm.btn-primary{:href => new_user_registration_path(:plan => "moyenne")}
                 %span Start your free 14 day trial
-      .pricing-span
-        .widget-box.pricing-box-small
-          .widget-header.header-color-green
-            %h5.bigger.lighter Grande
-          .widget-body
-            .widget-main.no-padding
-              %ul.list-unstyled.list-striped.pricing-table
-                %li 1000
-                %li
-                  %i.fa.fa-check.green
-                %li
-                  %i.fa.fa-check.green
-              .price
-                %span.label.label-lg.label-inverse.arrowed-in.arrowed-in-right
-                  $149 per location
-                  %small /month
-            %div
-              %a.btn.btn-block.btn-sm.btn-success{:href => new_user_registration_path(:plan => "grande")}
-                %span Start your free 14 day trial
     .col-sm-12
       .page-footer
         %h3.lighter 
-          More than 5,000 subscribers?
+          Planning on running bigger campaigns? More than 5,000 subscribers?
           %a{:href => "/contact"} Contact us 
           for special prices
