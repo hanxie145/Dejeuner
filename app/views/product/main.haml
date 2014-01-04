@@ -156,7 +156,7 @@
             .hr.hr32.hr-dotted
             .row 
               .col-sm-6
-                .widget-box
+                .widget-box.loyalty-rewards-box
                   .widget-header
                     %h3 
                       %i.fa.fa-check-circle-o.blue 
@@ -177,7 +177,7 @@
                         %i.fa.fa-check 
                         Go to check ins              
               .col-sm-6
-                .widget-box
+                .widget-box.scheduled-messages-box
                   .widget-header
                     %h3 
                       %i.fa.fa-calendar.blue 
@@ -200,7 +200,7 @@
                         See my scheduled messages                            
             .hr.hr32.hr-dotted            
             .row
-              .col-sm-6
+              .col-sm-6.campaigns-box
                 .widget-box
                   .widget-header
                     %h3 
@@ -214,7 +214,7 @@
                         %i.fa.fa-flag 
                         Start a new campaign
                 .hr.hr32.hr-dotted
-                .widget-box 
+                .widget-box.last-marketing-blast-box 
                   .widget-header
                     %h3 
                       %i.fa.fa-bullhorn.blue 
@@ -226,7 +226,7 @@
                         %i.fa.fa-envelope-o 
                         Send out a new marketing blast!
               .col-sm-6
-                .widget-box
+                .widget-box.recent-conversations-box
                   .widget-header
                     %h3
                       %i.fa.fa-comment.blue
@@ -268,17 +268,35 @@
     %h3 Getting around with the navigation menu
     %p Here is the navigation menu to take you to other parts of Dejeuner. Now I am going to run you through the portions of Dejeuner. 
   %li{"data-button" => "Next", "data-id" => "profile_nav_link", "data-options" => "tipLocation:right"}
-    %h3 Profile
-    %p Here you can see and edit your account information. You can also upgrade or cancel your subscription here as well.
+    %h3 Edit your information
+    %p Here you can see and edit your account information. Make sure you change your time zone here to the one you live in. You can also upgrade or cancel your subscription here as well.
   %li{"data-button" => "Next", "data-id" => "campaigns_nav_link", "data-options" => "tipLocation:right"}
-    %h3 Campaigns
-    %p Launch sms campaigns on the campaigns page. You can see your Dejeuner number here, change the sms response people get when they messgae your number, and also see the texts people have sent to your number. 
+    %h3 Launch sms campaigns
+    %p Launch sms campaigns on the campaigns page. You can see your Dejeuner number here, change the sms response people get when they message your number, and also see the texts people have sent to your number. 
   %li{"data-button" => "Next", "data-id" => "subscribers_nav_link", "data-options" => "tipLocation:right"}
-    %h3 Subscribers
+    %h3 See who's listening
     %p See all the mobile subscribers to your number here. People are automactically subscribed to your business' mobile marketing list when they either text yoru Dejeuner number or check in on the mobile check ins page.
   %li{"data-button" => "Next", "data-id" => "marketing_nav_link", "data-options" => "tipLocation:right"}
     %h3 Drive customer retention with sms's
     %p Generate and schedule sms's with our custom craft-a-sms service. Alternatively, you can write your own sms's to send out. Also see when your sms's are scheduled on a calendar view. Lastly, you can top up on your sms credits here as well. 
-  %li{"data-button" => "Close", "data-id" => "contact_header_link", "data-options" => "tipLocation:bottom"}
+  %li{"data-button" => "Next", "data-class" => "infobox-container", "data-options" => "tipLocation:bottom"}
+    %h3 See what's up
+    %p Here are some quick stats about your business on Dejeuner.    
+  %li{"data-button" => "Next", "data-class" => "loyalty-rewards-box", "data-options" => "tipLocation:right"}
+    %h3 Make a custom loyalty program
+    %p Here you can make your own loyalty program. Set what reward a customer should get after a certain number of check ins on your check ins page.
+  %li{"data-button" => "Next", "data-class" => "scheduled-messages-box", "data-options" => "tipLocation:left"}
+    %h3 Your scheduled messages
+    %p We know you want to run the core part of your business. So just pop onto Dejeuner at the start of every week, schedule your messages, and watch your customers come rolling in.     
+  %li{"data-button" => "Next", "data-class" => "campaigns-box", "data-options" => "tipLocation:bottom"}
+    %h3 Get feedback from your customers
+    %p If you want to run a mobile marketing campaign with a number you can also do that. Campaigns are questions you put in your business that the customer texts answers to. When they text in they are subscribed to your mobile marketing list.  
+  %li{"data-button" => "Next", "data-class" => "recent-conversations-box", "data-options" => "tipLocation:bottom"}
+    %h3 See what your customers think
+    %p These are the recent texts that we have received from your customers when they sms your Dejeuner number.           
+  %li{"data-button" => "Next", "data-class" => "last-marketing-blast-box", "data-options" => "tipLocation:bottom"}
+    %h3 What you are saying to your customers
+    %p The most recent texts you have sent out to your customers.                         
+  %li{"data-button" => "Close"}
     %h3 Need more help?
-    %p Here is a link to our contact infomation. Do not be afriad to drop us a line if you have a problem. 
+    %p Our contact infomation is in the top right. Do not be afriad to drop us a line if you have a problem. 

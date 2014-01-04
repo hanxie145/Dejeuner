@@ -146,9 +146,6 @@ joyrideJs = ->
   $('.btn-joyride').click (e) ->
     e.preventDefault()
     $("#joyRideTipContent").joyride
-      postStepCallback: (index, tip) ->
-        $(this).joyride "set_li", false, 1  if index is 2
-
       modal: true
       expose: true
 
