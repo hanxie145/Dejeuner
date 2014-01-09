@@ -23,7 +23,7 @@ class ChargesController < ApplicationController
       # figure out the price
       case @plan 
       when "petite"
-        @price = 4999
+        @price = 7999
         @stripe_plan_id = 'dejeuner-petite'
       when "moyenne"
         @price = 9999
